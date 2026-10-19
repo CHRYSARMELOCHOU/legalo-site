@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<noscript><meta http-equiv="refresh" content="0;url=/"></noscript>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
@@ -36,6 +37,8 @@ var LINKS = {
 };
 /* INTERRUPTEUR : false = "Bientôt disponible" ; true = redirection vers les boutiques */
 var LIVE = false;
+/* Tant que l'appli n'est pas publiée : ce lien (code QR) renvoie vers le site et son intro */
+if (!LIVE) { location.replace("/"); }
 document.getElementById('android').href = LIVE ? LINKS.android : "/";
 document.getElementById('ios').href = LIVE ? LINKS.ios : "/";
 if (LIVE) {
