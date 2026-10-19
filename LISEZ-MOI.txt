@@ -1,0 +1,91 @@
+LEGALO - SITE VITRINE : MODE D'EMPLOI
+=====================================
+
+CE QUE C'EST
+Un vrai site (HTML, CSS, JavaScript), pas une maquette. Il fonctionne tel quel.
+Aucun serveur, aucune base de données, aucun backend : ce sont des fichiers
+statiques que n'importe quel hébergeur peut afficher.
+
+CONTENU DU DOSSIER
+  index.html       le site (page d'accueil)
+            logo, captures d'écran, photo, code QR
+  app.html   page vers laquelle pointe le code QR (envoie chaque téléphone
+                   vers la bonne boutique : Android -> Play Store, iPhone -> App Store)
+  _headers         règles de sécurité (Cloudflare Pages et Netlify les lisent seuls)
+  robots.txt, 404.html
+
+HÉBERGER (le plus simple : Cloudflare Pages, gratuit)
+  1. Créez un compte sur pages.cloudflare.com (activez la double authentification).
+  2. "Create a project" > "Upload your static files" (envoi direct).
+  3. Glissez le CONTENU du dossier "site" (index.html doit être à la racine).
+  4. Cliquez Deploy : vous obtenez une adresse du type legalo.pages.dev.
+  5. "Custom domains" : ajoutez votre nom de domaine (legalo-officiel.com).
+     Le HTTPS est automatique.
+  Alternative : Netlify (app.netlify.com/drop, glisser-déposer du dossier).
+
+MODIFIER LE SITE ENSUITE
+  - Un texte, un lien, un numéro : ouvrez index.html avec un éditeur (VS Code,
+    Bloc-notes), changez le texte, enregistrez, puis renvoyez le dossier sur
+    l'hébergeur (Cloudflare : "Create deployment" ; Netlify : glissez à nouveau).
+  - Changement plus important : redemandez-le moi, je vous renvoie un dossier à jour.
+  - Pour des mises à jour automatiques : mettez le dossier sur GitHub et reliez-le
+    à Cloudflare Pages ; chaque modification enregistrée republie le site seule.
+
+LIENS À REMPLACER QUAND L'APPLI EST PUBLIÉE
+  Dans index.html, cherchez "var LINKS" :
+    android : lien exact de la fiche Play Store
+    ios     : lien exact de la fiche App Store
+  Faites la même chose dans app.html (variable LINKS).
+  Code QR : il contient https://legalo-officiel.com/app (votre domaine).
+  Le domaine est déjà pris en compte.
+  Le code QR reste le même pour toujours tant que l'adresse /app ne change pas :
+  seule la page app.html est à modifier pour changer les boutiques.
+
+BOUTONS
+  Tous fonctionnent. "Écrire" ouvre votre messagerie, "Appeler" lance l'appel sur
+  téléphone, WhatsApp ouvre la conversation, "Copier" copie l'e-mail ou le numéro.
+
+SÉCURITÉ
+  Un site statique n'a pas de base de données à pirater. Protégez surtout votre
+  compte hébergeur et votre registrar de domaine (mot de passe unique + 2FA).
+  Si un jour vous ajoutez un formulaire, utilisez un service dédié (Formspree,
+  Tally) plutôt que de coder un serveur.
+
+HÉBERGEMENT SUR LWS (ou tout hébergement classique avec cPanel / FTP)
+  1. Dans votre espace LWS, ouvrez le Gestionnaire de fichiers (ou FileZilla en FTP).
+  2. Allez dans le dossier du site (souvent "htdocs" ou "public_html").
+  3. Envoyez LE CONTENU du dossier "site" (index.html à la racine), sans oublier
+     le fichier caché .htaccess (affichez les fichiers cachés).
+  4. Activez le certificat SSL gratuit du domaine dans LWS, puis ouvrez le site.
+  Pour modifier : remplacez simplement les fichiers modifiés par les nouveaux.
+  (Le fichier _headers ne sert que sur Cloudflare/Netlify ; sur LWS c'est .htaccess.)
+
+PASSER DE "BIENTÔT DISPONIBLE" À "TÉLÉCHARGER" (le jour de la sortie)
+  Le site est livré en mode "Bientôt disponible". Le jour où l'appli est publiée :
+  1. Ouvrez index.html, cherchez "var LIVE=false;" et remplacez par "var LIVE=true;"
+  2. Dans le même fichier, cherchez "var LINKS" et collez les vrais liens
+     Play Store et App Store.
+  3. Ouvrez app.html, cherchez "var LIVE = false;" et mettez "var LIVE = true;"
+     puis collez les mêmes liens dans "var LINKS".
+  4. Enregistrez et remplacez les fichiers chez LWS. Le site affiche alors
+     "Disponible / Télécharger" et le code QR redirige vers la bonne boutique.
+  (Ou envoyez-moi les deux liens, je prépare le zip.)
+
+L'INTRO
+  Elle démarre toute seule à l'ouverture du site et dure 7 secondes. Le son (tambour,
+  balafon, coup de marteau) est fabriqué par le navigateur : aucun fichier audio.
+  Attention : les navigateurs bloquent le son tant que le visiteur n'a pas touché la
+  page. Si le son est bloqué, il démarre au premier toucher / clic / touche du visiteur.
+  "Passer l'intro" (ou la touche Echap) arrête l'animation.
+
+HÉBERGEMENT SUR VERCEL
+  Le fichier vercel.json contient les règles de sécurité pour Vercel (comme .htaccess pour LWS).
+  1. Créez un compte sur vercel.com (activez la double authentification).
+  2. Mettez le dossier "site" sur GitHub (github.com > New repository > "uploading an existing
+     file", glissez le contenu du dossier "site", puis Commit).
+  3. Sur Vercel : Add New > Project > importez ce dépôt GitHub > Framework "Other" > Deploy.
+  4. Settings > Domains : ajoutez legalo-officiel.com et suivez les réglages DNS indiqués.
+  Pour modifier : changez le fichier sur GitHub, Vercel republie tout seul en 1 minute.
+
+VERSION SIMPLIFIEE : tous les fichiers sont à la racine, sans sous-dossiers (plus facile à envoyer sur GitHub).
+La page du code QR est app.html, visible à l'adresse /app.
