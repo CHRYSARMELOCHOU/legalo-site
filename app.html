@@ -38,7 +38,7 @@ var LINKS = {
 /* INTERRUPTEUR : false = "Bientôt disponible" ; true = redirection vers les boutiques */
 var LIVE = false;
 /* Tant que l'appli n'est pas publiée : ce lien (code QR) renvoie vers le site et son intro */
-if (!LIVE) { location.replace("/"); }
+if (!LIVE) { location.replace("/telecharger"); }
 document.getElementById('android').href = LIVE ? LINKS.android : "/";
 document.getElementById('ios').href = LIVE ? LINKS.ios : "/";
 if (LIVE) {
