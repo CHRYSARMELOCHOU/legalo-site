@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#082858">
+<title>Ochou Store – Télécharge LEGALO</title>
+<meta name="description" content="Ochou Store : télécharge LEGALO, l'application juridique ivoirienne, sur Android ou iPhone en quelques gestes. Cours, Codex, Mon juriste, actes à générer.">
+<link rel="icon" href="ochou-store-img/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --royal:#082858;--royal2:#0d3a7e;--royal3:#12182e;
+  --gold:#C9A24A;--gold2:#F6E27A;--gold3:#E8C766;
+  --white:#fff;--bg:#F3F6FC;--ink:#0b1c3a;--muted:#55678a;
+  --serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --sans:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+.wrap{width:min(100% - 32px,1040px);margin-inline:auto}
+
+/* ---------- Intro animée (2 secondes) ---------- */
+#splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(70vw 50vh at 50% 40%,#123f8f,#061a3e 70%);pointer-events:none;animation:splashOut .4s 1.7s ease forwards}
+#splash .in{text-align:center}
+#splash img{width:96px;height:96px;margin:0 auto;border-radius:26px;background:#fff;padding:7px;box-shadow:0 0 0 2px var(--gold),0 0 60px rgba(201,162,74,.55);animation:pop .7s cubic-bezier(.2,1.4,.4,1) both}
+#splash b{display:block;margin-top:16px;font:700 1.35rem var(--serif);letter-spacing:.34em;color:#fff;animation:track 1.2s .25s ease both;white-space:nowrap}
+#splash i{display:block;height:3px;width:0;margin:12px auto 0;border-radius:3px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);animation:line 1s .45s ease forwards}
+@keyframes pop{from{transform:scale(.4) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes track{from{letter-spacing:.9em;opacity:0}to{letter-spacing:.34em;opacity:1}}
+@keyframes line{to{width:min(70vw,260px)}}
+@keyframes splashOut{to{opacity:0;visibility:hidden}}
+
+/* ---------- En-tête ---------- */
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,40,88,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,74,.35)}
+header.top .wrap{display:flex;align-items:center;gap:12px;height:58px}
+header.top img{width:36px;height:36px;border-radius:10px;background:#fff;padding:2px}
+header.top b{font:700 1.02rem var(--serif);letter-spacing:.2em;color:#fff}
+header.top .sp{flex:1}
+header.top a.help{font-size:.82rem;font-weight:700;color:var(--royal);background:linear-gradient(135deg,var(--gold2),var(--gold));padding:8px 14px;border-radius:999px;text-decoration:none}
+
+/* ---------- Héros ---------- */
+.hero{position:relative;background:radial-gradient(90vw 60vh at 100% 0%,rgba(27,79,176,.55),transparent 65%),radial-gradient(60vw 50vh at 0% 100%,rgba(201,162,74,.18),transparent 70%),linear-gradient(180deg,#061a3e,var(--royal));color:#fff;padding:34px 0 70px;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 -1px 0;height:46px;background:var(--bg);clip-path:ellipse(70% 100% at 50% 100%)}
+.hero .grid{display:grid;gap:30px;align-items:center}
+@media(min-width:860px){.hero .grid{grid-template-columns:1.1fr .9fr}.hero{padding:56px 0 90px}}
+.badge{display:inline-flex;gap:8px;align-items:center;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(246,226,122,.4);padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.06)}
+.hero h1{font:700 clamp(2rem,7.4vw,3.3rem)/1.12 var(--serif);margin:16px 0 12px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p.lead{margin:0 0 20px;color:#cfdcf4;font-size:1.05rem;max-width:34em}
+.who{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.who button{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);color:#fff;border-radius:999px;padding:9px 16px;font-weight:700;font-size:.9rem;transition:.25s}
+.who button[aria-pressed=true]{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--royal);border-color:transparent;transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(246,226,122,.8)}
+.seg{display:inline-flex;padding:4px;border-radius:16px;background:rgba(255,255,255,.1);margin-bottom:14px;position:relative}
+.seg button{position:relative;z-index:1;border:0;background:none;color:#cfdcf4;font-weight:800;padding:10px 20px;border-radius:12px;display:flex;gap:8px;align-items:center;transition:color .25s}
+.seg button[aria-selected=true]{color:var(--royal)}
+.seg .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:12px;background:linear-gradient(135deg,var(--gold2),var(--gold));transition:transform .3s cubic-bezier(.3,1.3,.5,1)}
+.seg[data-p=iphone] .pill{transform:translateX(100%)}
+.cta{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:430px;border:0;border-radius:20px;padding:19px 22px;font-weight:800;font-size:1.22rem;color:var(--royal);background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 18px 40px -14px rgba(246,226,122,.75);overflow:hidden;isolation:isolate;animation:glow 2.6s 2.2s infinite}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.7) 48%,transparent 66%);transform:translateX(-120%);animation:shine 3.2s 2.4s infinite;z-index:-1}
+.cta small{display:block;font-weight:700;font-size:.75rem;opacity:.78;line-height:1.2}
+.cta .ic{font-size:1.5rem}
+.cta:active{transform:scale(.98)}
+@keyframes shine{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes glow{0%,100%{box-shadow:0 18px 40px -14px rgba(246,226,122,.7)}50%{box-shadow:0 18px 56px -8px rgba(246,226,122,1)}}
+.micro{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;color:#b9cbea;font-size:.84rem}
+.micro span::before{content:"✓ ";color:var(--gold2);font-weight:800}
+#count{display:none;margin-top:10px;font-weight:700;color:var(--gold2)}
+#inapp{display:none;margin:0 0 16px;padding:12px 14px;border-radius:14px;background:#fff7dd;color:#4a3a05;font-size:.9rem;border:1px solid var(--gold)}
+#desk{display:none;margin:12px 0 0;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.1);font-size:.9rem;color:#dbe6fa}
+#desk button{margin-left:8px;border:0;border-radius:10px;padding:6px 12px;font-weight:800;background:var(--gold2);color:var(--royal)}
+
+/* ---------- Téléphone ---------- */
+.stage{position:relative;display:grid;place-items:center;min-height:430px}
+.halo{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(246,226,122,.38),transparent 65%);animation:breathe 5s infinite ease-in-out}
+@keyframes breathe{50%{transform:scale(1.18);opacity:.7}}
+.phone{position:relative;width:232px;aspect-ratio:480/936;border-radius:34px;padding:9px;background:linear-gradient(160deg,#1c2a4a,#05080f);box-shadow:0 0 0 2px rgba(201,162,74,.55),0 40px 70px -24px rgba(0,0,0,.8);animation:float 6s infinite ease-in-out;transform:rotate(-3deg)}
+@keyframes float{50%{transform:translateY(-12px) rotate(-1deg)}}
+.phone::before{content:"";position:absolute;top:13px;left:50%;width:62px;height:6px;margin-left:-31px;border-radius:6px;background:#05080f;z-index:3}
+.screen{position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden;background:#0a1a3c}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .6s}
+.screen img.on{opacity:1}
+.chip{position:absolute;z-index:4;background:#fff;color:var(--royal);font-weight:800;font-size:.78rem;padding:8px 12px;border-radius:12px;box-shadow:0 12px 28px -10px rgba(0,0,0,.6);animation:bob 4s infinite ease-in-out}
+.chip b{color:var(--gold)}
+.chip.c1{left:0;top:18%}.chip.c2{right:-2px;top:46%;animation-delay:-1.3s}.chip.c3{left:4%;bottom:10%;animation-delay:-2.4s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media(max-width:380px){.chip.c1,.chip.c3{left:-6px}.chip.c2{right:-8px}.phone{width:210px}}
+
+/* ---------- Sections ---------- */
+section{padding:44px 0}
+h2{font:700 clamp(1.6rem,5.6vw,2.2rem)/1.2 var(--serif);margin:0 0 8px;color:var(--royal)}
+.kicker{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sub{margin:0 0 22px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:16px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid rgba(8,40,88,.18);background:#fff;color:var(--royal);font-weight:800;border-radius:999px;padding:10px 18px;transition:.25s}
+.tabs button[aria-selected=true]{background:var(--royal);color:#fff;border-color:var(--royal);box-shadow:0 10px 22px -10px rgba(8,40,88,.8)}
+.panel{display:grid;gap:20px;align-items:center;background:#fff;border-radius:26px;padding:22px;box-shadow:0 24px 50px -30px rgba(8,40,88,.5);border:1px solid rgba(8,40,88,.08)}
+@media(min-width:780px){.panel{grid-template-columns:1fr 240px;padding:30px}}
+.panel h3{font:700 1.4rem/1.25 var(--serif);margin:0 0 12px}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.panel li{display:flex;gap:12px;align-items:flex-start}
+.panel li i{flex:0 0 auto;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));font-style:normal;font-size:1rem}
+.panel li b{display:block;color:var(--royal);line-height:1.3}
+.panel li span{font-size:.9rem;color:var(--muted);line-height:1.4;display:block}
+.panel .shot{justify-self:center;width:210px;aspect-ratio:480/936;border-radius:28px;overflow:hidden;box-shadow:0 0 0 6px #0b1c3a,0 0 0 8px var(--gold),0 30px 50px -24px rgba(8,40,88,.7);background:#0a1a3c}
+.panel .shot img{width:100%;height:100%;object-fit:cover;object-position:top;animation:fadein .5s}
+@keyframes fadein{from{opacity:0;transform:scale(1.04)}}
+.panel .cta2{margin-top:18px;display:inline-flex;border:0;border-radius:14px;padding:13px 20px;font-weight:800;color:var(--royal);background:linear-gradient(135deg,var(--gold2),var(--gold))}
+
+.steps3{display:grid;gap:14px;counter-reset:s}
+@media(min-width:760px){.steps3{grid-template-columns:repeat(3,1fr)}}
+.steps3 div{counter-increment:s;position:relative;background:#fff;border-radius:22px;padding:22px 20px 20px 20px;border:1px solid rgba(8,40,88,.08);box-shadow:0 18px 36px -26px rgba(8,40,88,.6)}
+.steps3 div::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;margin-bottom:10px;font:800 1.1rem var(--sans);color:var(--royal);background:linear-gradient(135deg,var(--gold2),var(--gold))}
+.steps3 b{display:block;color:var(--royal);font-size:1.08rem}
+.steps3 span{color:var(--muted);font-size:.92rem}
+
+.videoBox{display:none;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 30px 60px -30px rgba(8,40,88,.8);border:2px solid var(--gold)}
+.videoBox video{display:block;width:100%;max-height:70vh;background:#000}
+
+.founder{display:grid;gap:18px;align-items:center;background:linear-gradient(160deg,var(--royal),#061a3e);color:#fff;border-radius:28px;padding:24px;border:1px solid rgba(201,162,74,.5)}
+@media(min-width:700px){.founder{grid-template-columns:150px 1fr;padding:30px}}
+.founder img{width:130px;height:130px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--gold);margin:0 auto}
+.founder h2{color:#fff;font-size:1.5rem}
+.founder p{margin:0 0 8px;color:#cfdcf4}
+.founder small{color:var(--gold2)}
+
+details{background:#fff;border-radius:16px;border:1px solid rgba(8,40,88,.1);margin-bottom:10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:800;color:var(--royal);display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:1.4rem;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 18px 16px;color:var(--muted)}
+
+footer{background:var(--royal3);color:#aebbd6;padding:34px 0 46px;font-size:.88rem}
+footer .row{display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0}
+footer a{color:#dbe6fa}
+footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
+
+/* ---------- Guide (feuille du bas) ---------- */
+#sheetBg{position:fixed;inset:0;z-index:90;background:rgba(4,12,30,.66);opacity:0;visibility:hidden;transition:.3s}
+#sheetBg.open{opacity:1;visibility:visible}
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:95;max-height:92vh;overflow:auto;background:var(--bg);border-radius:28px 28px 0 0;transform:translateY(105%);visibility:hidden;transition:transform .4s cubic-bezier(.2,.9,.3,1),visibility 0s .4s;padding:12px 18px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -30px 80px rgba(0,0,0,.5)}
+#sheet.open{transform:none;visibility:visible;transition:transform .4s cubic-bezier(.2,.9,.3,1),visibility 0s}
+@media(min-width:700px){#sheet{left:50%;right:auto;width:560px;margin-left:-280px}}
+#sheet .grab{width:46px;height:5px;border-radius:5px;background:#c3cde0;margin:0 auto 12px}
+#sheet .head{display:flex;align-items:center;gap:10px}
+#sheet .head h3{flex:1;margin:0;font:700 1.2rem var(--serif);color:var(--royal)}
+#sheet .x{border:0;background:#e4eaf6;border-radius:50%;width:38px;height:38px;font-size:1.2rem;color:var(--royal)}
+.bar{height:8px;border-radius:8px;background:#dbe3f2;margin:14px 0 6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .4s}
+.bar-t{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:12px}
+.mock{position:relative;height:190px;border-radius:22px;background:linear-gradient(180deg,#0e2a5c,#071a3d);padding:16px;color:#fff;overflow:hidden;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.mock .card{width:100%;background:#fff;color:#1a2540;border-radius:16px;padding:14px;font-size:.86rem;line-height:1.35;box-shadow:0 14px 30px -14px rgba(0,0,0,.7);position:relative}
+.mock .card b{display:block}
+.mock .row{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.mock .btn{padding:7px 12px;border-radius:10px;font-weight:800;font-size:.82rem;background:#e7ecf6;color:#33425f;position:relative}
+.mock .btn.hot{background:#1a5fe0;color:#fff}
+.ring{position:relative}
+.ring::after{content:"";position:absolute;inset:-7px;border-radius:14px;border:3px solid var(--gold2);box-shadow:0 0 0 0 rgba(246,226,122,.7);animation:ping 1.4s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 14px rgba(246,226,122,0)}100%{box-shadow:0 0 0 0 rgba(246,226,122,0)}}
+.hand{position:absolute;right:14px;bottom:10px;font-size:2rem;animation:tap 1.2s infinite;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5));z-index:3}
+@keyframes tap{50%{transform:translate(-8px,-10px) scale(.92)}}
+.toggle{display:inline-block;width:42px;height:24px;border-radius:24px;background:#9aa7c2;position:relative;vertical-align:middle}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.3s;animation:tg 2.4s infinite}
+@keyframes tg{0%,35%{transform:none}55%,100%{transform:translateX(18px)}}
+.stepTitle{font:700 1.22rem/1.25 var(--serif);margin:16px 0 6px;color:var(--royal)}
+.stepTxt{margin:0 0 6px;color:#33425f}
+.note{font-size:.84rem;color:var(--muted);background:#eaf0fb;border-radius:12px;padding:10px 12px;margin:10px 0}
+.nav{display:flex;gap:10px;margin-top:14px}
+.nav button{flex:1;border:0;border-radius:16px;padding:15px;font-weight:800;font-size:1rem}
+.nav .prev{flex:0 0 36%;background:#e4eaf6;color:var(--royal)}
+.nav .next{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--royal);box-shadow:0 14px 28px -14px rgba(201,162,74,.9)}
+.sheetHelp{display:block;text-align:center;margin-top:14px;font-weight:700;color:var(--royal);font-size:.92rem}
+#sheet .videoBox{margin:0 0 14px}
+
+/* étincelles */
+.spark{position:fixed;z-index:120;width:9px;height:9px;border-radius:50%;pointer-events:none;background:var(--gold2);box-shadow:0 0 12px var(--gold);animation:sp 1s ease-out forwards}
+@keyframes sp{to{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
+#toast{position:fixed;left:50%;bottom:26px;z-index:130;transform:translate(-50%,120px);background:var(--royal);color:#fff;border:1px solid var(--gold);padding:13px 18px;border-radius:16px;font-weight:700;transition:transform .4s;max-width:92vw;text-align:center}
+#toast.on{transform:translate(-50%,0)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  #splash{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="splash" aria-hidden="true"><div class="in"><img src="ochou-store-img/logo.webp" alt=""><b>OCHOU STORE</b><i></i></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="ochou-store-img/logo.webp" alt="">
+    <b>OCHOU STORE</b>
+    <span class="sp"></span>
+    <a class="help" href="https://wa.me/2250161213169" rel="noopener">Besoin d'aide ?</a>
+  </div>
+</header>
+
+<main>
+<!-- ============ HÉROS ============ -->
+<div class="hero" id="haut">
+  <div class="wrap grid">
+    <div>
+      <span class="badge">Application juridique ivoirienne</span>
+      <h1 id="h1">Le droit ivoirien, <em>dans ta poche.</em></h1>
+      <p class="lead" id="lead">Cours, Codex, Mon juriste, actes à générer. Tout est en français, clair et rapide.</p>
+
+      <div class="who" role="group" aria-label="Tu es…">
+        <button type="button" data-w="etu" aria-pressed="true">🎓 Étudiant</button>
+        <button type="button" data-w="cit" aria-pressed="false">👤 Citoyen</button>
+        <button type="button" data-w="pro" aria-pressed="false">💼 Pro</button>
+      </div>
+
+      <div id="inapp"></div>
+
+      <div class="seg" id="seg" data-p="android" role="tablist" aria-label="Ton téléphone">
+        <span class="pill"></span>
+        <button type="button" role="tab" data-p="android" aria-selected="true">🤖 Android</button>
+        <button type="button" role="tab" data-p="iphone" aria-selected="false">🍎 iPhone</button>
+      </div>
+
+      <button class="cta" id="cta" type="button">
+        <span class="ic" id="ctaIc">⬇️</span>
+        <span><span id="ctaT">Télécharger LEGALO</span><small id="ctaS">Application Android · 20 Mo</small></span>
+      </button>
+
+      <div class="micro"><span>Gratuit pour commencer</span><span>Le droit en 2 minutes, chaque jour</span><span>En français</span></div>
+      <div id="count"></div>
+      <div id="desk">Tu es sur ordinateur ? Ouvre ce lien sur ton téléphone. <button type="button" id="copy">Copier le lien</button></div>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="phone"><div class="screen" id="screen"></div></div>
+      <div class="chip c1">📚 <b>Codex</b></div>
+      <div class="chip c2">⚖️ <b>Mon juriste</b></div>
+      <div class="chip c3">📝 <b>Actes</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIDÉO 1 (apparaît seulement si le fichier existe) ============ -->
+<section id="sectVid" style="display:none;padding-top:10px">
+  <div class="wrap reveal">
+    <span class="kicker">En 1 minute</span>
+    <h2>Pourquoi LEGALO ?</h2>
+    <p class="sub">Regarde, puis télécharge.</p>
+    <div class="videoBox" id="promoBox"><video id="promoVid" controls playsinline preload="none"></video></div>
+  </div>
+</section>
+
+<!-- ============ POUR QUI ============ -->
+<section id="pourqui">
+  <div class="wrap reveal">
+    <span class="kicker">Fait pour toi</span>
+    <h2>Ce que LEGALO t'apporte</h2>
+    <p class="sub">Choisis ton profil.</p>
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-w="etu" aria-selected="true">🎓 Étudiants</button>
+      <button role="tab" data-w="cit" aria-selected="false">👤 Citoyens</button>
+      <button role="tab" data-w="pro" aria-selected="false">💼 Professionnels</button>
+    </div>
+    <div class="panel" id="panel"></div>
+  </div>
+</section>
+
+<!-- ============ 3 GESTES ============ -->
+<section style="padding-top:8px">
+  <div class="wrap reveal">
+    <span class="kicker">Simple</span>
+    <h2>3 gestes, et c'est prêt</h2>
+    <p class="sub">Un guide pas à pas s'ouvre quand tu touches « Télécharger ».</p>
+    <div class="steps3">
+      <div><b>Télécharge</b><span>Un seul bouton. Rien à chercher.</span></div>
+      <div><b>Installe</b><span>On te montre chaque écran, étape par étape.</span></div>
+      <div><b>Ouvre LEGALO</b><span>Crée ton compte et commence à apprendre.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FONDATEUR ============ -->
+<section>
+  <div class="wrap reveal">
+    <div class="founder">
+      <img src="founder.jpg" alt="Chrys Armel Ochou" loading="lazy">
+      <div>
+        <span class="kicker">Qui est derrière LEGALO</span>
+        <h2>Créé par un étudiant en droit, pour les étudiants et les citoyens</h2>
+        <p>Je m'appelle Chrys Armel Ochou, étudiant en Master 2 de droit privé fondamental à Bouaké. J'ai créé LEGALO pour que le droit ivoirien soit clair, rapide et accessible à tous.</p>
+        <small>LEGALO est un outil pour apprendre et comprendre. Il ne remplace ni un avocat, ni un notaire, ni un huissier.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="padding-top:8px">
+  <div class="wrap reveal">
+    <h2>Questions fréquentes</h2>
+    <p class="sub">Les réponses avant que tu les poses.</p>
+    <details><summary>Pourquoi mon téléphone affiche un avertissement ?</summary><p>Sur Android, toute application installée en dehors du Play Store déclenche un message standard de sécurité. C'est normal. Le guide te montre exactement quoi toucher.</p></details>
+    <details><summary>C'est gratuit ?</summary><p>Tu peux commencer gratuitement, avec par exemple « Le droit en 2 minutes » chaque jour. Des formules Premium (semaine, mois, trimestre) donnent accès à plus de contenus.</p></details>
+    <details><summary>Le téléchargement est long, c'est normal ?</summary><p>Le fichier Android pèse environ 20 Mo. Avec une connexion correcte, compte 1 à 2 minutes. Reste sur la page jusqu'à la fin.</p></details>
+    <details><summary>Et sur iPhone ?</summary><p>Apple n'autorise pas l'installation hors de l'App Store. En attendant, tu ajoutes LEGALO à ton écran d'accueil depuis Safari : il s'ouvre comme une vraie application, et le guide t'explique les 5 gestes.</p></details>
+    <details><summary>Où va ma vie privée ?</summary><p>Tout est expliqué dans la <a href="https://legal.legalo-officiel.com/confidentialite.html" rel="noopener">politique de confidentialité</a> et dans les <a href="https://legal.legalo-officiel.com/cgu.html" rel="noopener">conditions d'utilisation</a>.</p></details>
+    <details><summary>Ça ne marche pas, je fais quoi ?</summary><p>Écris-nous sur <a href="https://wa.me/2250161213169" rel="noopener">WhatsApp</a>. On t'aide à finir l'installation.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b style="color:#fff;font:700 1.05rem var(--serif);letter-spacing:.2em">OCHOU STORE</b>
+    <div class="row">
+      <a href="https://legalo-officiel.com/">Site LEGALO</a>
+      <a href="https://legalo-officiel.com/#contact">Contact</a>
+      <a href="https://legal.legalo-officiel.com/cgu.html">Conditions d'utilisation</a>
+      <a href="https://legal.legalo-officiel.com/confidentialite.html">Confidentialité</a>
+    </div>
+    <small>Bouaké, Côte d'Ivoire. LEGALO est un outil d'information et d'apprentissage ; il ne remplace pas un professionnel du droit.</small>
+  </div>
+</footer>
+
+<!-- ============ GUIDE ============ -->
+<div id="sheetBg"></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT">
+  <div class="grab"></div>
+  <div class="head"><h3 id="shT">Guide d'installation</h3><button class="x" type="button" id="shX" aria-label="Fermer">✕</button></div>
+  <div class="bar"><i id="barI"></i></div>
+  <div class="bar-t" id="barT"></div>
+  <div class="videoBox" id="tutoBox"><video id="tutoVid" controls playsinline preload="none"></video></div>
+  <div class="mock" id="mock"></div>
+  <div class="stepTitle" id="stT"></div>
+  <p class="stepTxt" id="stP"></p>
+  <div class="note" id="stN"></div>
+  <div class="nav"><button class="prev" type="button" id="prev">Retour</button><button class="next" type="button" id="next">Suivant</button></div>
+  <a class="sheetHelp" href="https://wa.me/2250161213169" rel="noopener">Je suis bloqué : demander de l'aide sur WhatsApp</a>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var ls={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- appareil ---------- */
+  var ua=navigator.userAgent||'';
+  var isIOS=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var isAndroid=/Android/i.test(ua);
+  var inApp=/FBAN|FBAV|Instagram|TikTok|musical_ly|Snapchat|Line\/|Twitter|WhatsApp|; wv\)/i.test(ua);
+  var platform=isIOS?'iphone':'android';
+
+  /* ---------- contenu par profil ---------- */
+  var WHO={
+    etu:{h1:'Révise plus vite. <em>Comprends mieux.</em>',lead:'Exercices rapides, dictionnaire, glossaire, LEGALOPREPA et Codex : tout ce qu\'il faut pour gagner du temps avant tes examens.',
+      title:'Pour les étudiants en droit',imgs:['campus','glossaire','codex'],
+      items:[['⚡','LEGALO Exercices','Entraîne-toi vite et corrige-toi tout de suite.'],
+             ['📖','Dictionnaire et glossaire juridiques','Les termes expliqués simplement, au même endroit.'],
+             ['🎯','LEGALOPREPA','Prépare tes examens avec méthode.'],
+             ['📚','Codex : la documentation juridique','Textes et jurisprudence réunis, faciles à chercher.'],
+             ['⏱️','Plus de facilité, plus de temps','Moins de recherches, plus de révisions, de bonnes bases pour viser une bonne note.']]},
+    cit:{h1:'Connais tes droits. <em>Agis sans stress.</em>',lead:'Découvre les droits que personne ne t\'a expliqués, génère tes documents toi-même et pose tes questions à Mon juriste.',
+      title:'Pour les citoyens',imgs:['pepite','juriste','chat'],
+      items:[['🔎','Les droits méconnus','Chaque jour, une règle de droit expliquée en 2 minutes.'],
+             ['📄','Tes documents, toi-même','Génère rapidement une lettre ou un acte, sans te perdre.'],
+             ['⚖️','Mon juriste','Pose ta question et reçois une explication claire, en français.']]},
+    pro:{h1:'Travaille vite. <em>Sois sûr de toi.</em>',lead:'Scanne, calcule, rédige : les outils pour avancer plus vite sur tes dossiers.',
+      title:'Pour les professionnels',imgs:['actes','codex','juriste'],
+      items:[['📷','LEGALO Scan','Analyse tes documents rapidement.'],
+             ['🧮','LEGALO Calcul','Des calculs juridiques faits pour toi.'],
+             ['📝','Générateur d\'actes juridiques','Rédige tes actes plus vite, à partir de modèles.']]}
+  };
+  var who='etu';
+  var saved=ls.get('os_who'); if(saved&&WHO[saved])who=saved;
+
+  /* ---------- téléphone qui change d'écran ---------- */
+  var screenEl=$('#screen'),curImgs=[],idx=0,timer=null;
+  function buildScreen(list){
+    screenEl.innerHTML='';curImgs=list;idx=0;
+    list.forEach(function(n,i){
+      var im=new Image();im.src='ochou-store-img/'+n+'.webp';im.alt='';im.decoding='async';
+      if(i===0)im.className='on';screenEl.appendChild(im);
+    });
+    clearInterval(timer);
+    if(!reduce&&list.length>1)timer=setInterval(function(){
+      var ims=$$('img',screenEl);ims[idx].classList.remove('on');idx=(idx+1)%ims.length;ims[idx].classList.add('on');
+    },3200);
+  }
+
+  function renderWho(w,fromUser){
+    who=w;ls.set('os_who',w);var d=WHO[w];
+    $('#h1').innerHTML=d.h1;$('#lead').textContent=d.lead;
+    $$('.who button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.w===w)});
+    $$('#tabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.w===w)});
+    var html='<div><h3>'+d.title+'</h3><ul>'+d.items.map(function(it){return '<li><i>'+it[0]+'</i><div><b>'+it[1]+'</b><span>'+it[2]+'</span></div></li>'}).join('')+'</ul><button class="cta2" type="button" id="cta2">Télécharger LEGALO</button></div><div class="shot"><img src="ochou-store-img/'+d.imgs[0]+'.webp" alt="Aperçu de LEGALO" id="shotImg"></div>';
+    $('#panel').innerHTML=html;
+    $('#cta2').addEventListener('click',function(e){startDownload(e)});
+    var k=0;clearInterval(renderWho.t);
+    if(!reduce&&d.imgs.length>1)renderWho.t=setInterval(function(){k=(k+1)%d.imgs.length;var s=$('#shotImg');if(!s)return;var n=new Image();n.src='ochou-store-img/'+d.imgs[k]+'.webp';n.id='shotImg';n.alt='Aperçu de LEGALO';s.replaceWith(n)},3200);
+    buildScreen(d.imgs);
+  }
+  $$('.who button').forEach(function(b){b.addEventListener('click',function(){renderWho(b.dataset.w,true)})});
+  $$('#tabs button').forEach(function(b){b.addEventListener('click',function(){renderWho(b.dataset.w,true)})});
+
+  /* ---------- Android / iPhone ---------- */
+  function setPlatform(p){
+    platform=p;var seg=$('#seg');seg.dataset.p=p;
+    $$('button',seg).forEach(function(b){b.setAttribute('aria-selected',b.dataset.p===p)});
+    if(p==='android'){$('#ctaIc').textContent='⬇️';$('#ctaT').textContent='Télécharger LEGALO';$('#ctaS').textContent='Application Android · 20 Mo'}
+    else{$('#ctaIc').textContent='📲';$('#ctaT').textContent='Installer LEGALO';$('#ctaS').textContent='iPhone · depuis Safari, 5 gestes'}
+  }
+  $$('#seg button').forEach(function(b){b.addEventListener('click',function(){setPlatform(b.dataset.p)})});
+
+  /* ---------- navigateur intégré (TikTok, Facebook…) ---------- */
+  if(inApp){
+    var el=$('#inapp');el.style.display='block';
+    el.innerHTML='⚠️ <b>Tu es dans le navigateur d\'une autre appli.</b> Pour que ça marche, touche <b>⋮</b> ou <b>⋯</b> puis <b>« Ouvrir dans le navigateur »</b> ('+(isIOS?'Safari':'Chrome')+').';
+  }
+  if(!isIOS&&!isAndroid){
+    $('#desk').style.display='block';
+    $('#copy').addEventListener('click',function(){copyLink(this)});
+  }
+  function copyLink(btn){
+    var url=location.href.split('#')[0];
+    function ok(){toast('Lien copié. Colle-le dans ton téléphone.')}
+    try{navigator.clipboard.writeText(url).then(ok,function(){window.prompt('Copie ce lien :',url)})}catch(e){window.prompt('Copie ce lien :',url)}
+  }
+
+  /* ---------- compteur : seulement de vrais chiffres ---------- */
+  fetch('store-stats.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
+    if(!j)return;var n=(j.android||0)+(j.iphone||0);
+    if(n>=100){var c=$('#count');c.style.display='block';c.textContent='🔥 Déjà '+n.toLocaleString('fr-FR')+' téléchargements';}
+  }).catch(function(){});
+
+  /* ---------- vidéos : visibles seulement si le fichier existe ---------- */
+  function checkVideo(url,cb){fetch(url,{method:'HEAD',cache:'no-store'}).then(function(r){cb(r.ok&&/video|octet/.test(r.headers.get('content-type')||'video'))}).catch(function(){cb(false)})}
+  checkVideo('videos/promo.mp4',function(ok){if(!ok)return;$('#promoVid').src='videos/promo.mp4';$('#promoBox').style.display='block';$('#sectVid').style.display='block'});
+  var tutoOK={android:false,iphone:false};
+  checkVideo('videos/tuto-android.mp4',function(ok){tutoOK.android=ok});
+  checkVideo('videos/tuto-iphone.mp4',function(ok){tutoOK.iphone=ok});
+
+  /* ---------- guide ---------- */
+  var STEPS={
+    android:[
+      {t:'Le téléchargement démarre',p:'Ne ferme pas la page. Le fichier pèse environ 20 Mo : compte 1 à 2 minutes avec une bonne connexion.',n:'Tu verras une barre de téléchargement en haut de l\'écran.',
+       m:'<div class="card"><b>⬇ LEGALO.apk</b>Téléchargement en cours…<div class="bar" style="margin:10px 0 0"><i style="width:68%;animation:none"></i></div></div>'},
+      {t:'Touche le fichier téléchargé',p:'Quand c\'est terminé, touche la notification « LEGALO.apk ». Tu ne la vois pas ? Ouvre l\'appli « Fichiers », puis « Téléchargements », et touche LEGALO.apk.',n:'L\'écran peut être un peu différent selon ton téléphone.',
+       m:'<div class="card ring"><b>LEGALO.apk</b>Téléchargement terminé · Touchez pour ouvrir</div><span class="hand">👆</span>'},
+      {t:'Autorise l\'installation',p:'Si ton téléphone dit « Pour votre sécurité, l\'installation est bloquée », touche « Paramètres », puis active « Autoriser depuis cette source ». Reviens ensuite en arrière avec la flèche.',n:'Ce message est normal : l\'appli ne vient pas du Play Store. Tu ne le fais qu\'une seule fois.',
+       m:'<div class="card"><b>Autoriser depuis cette source</b><span style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><span>Installer des applis inconnues</span><span class="toggle ring"></span></span></div><span class="hand">👆</span>'},
+      {t:'Touche « Installer »',p:'Une fenêtre demande « Voulez-vous installer cette application ? ». Touche Installer et attends quelques secondes.',n:'Si un message de sécurité (Play Protect) apparaît, touche « Plus de détails » puis « Installer quand même ».',
+       m:'<div class="card"><b>Voulez-vous installer cette application ?</b>LEGALO<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Installer</span></div></div><span class="hand">👆</span>'},
+      {t:'Ouvre LEGALO',p:'Touche « Ouvrir ». Crée ton compte ou connecte-toi : tu es prêt. Tu retrouveras l\'icône LEGALO sur ton écran d\'accueil.',n:'Bienvenue ! 🎉',
+       m:'<div class="card"><b>Application installée</b>LEGALO est prête.<div class="row"><span class="btn">Terminé</span><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'}
+    ],
+    iphone:[
+      {t:'Ouvre cette page dans Safari',p:'Il faut utiliser Safari (la boussole bleue). Si tu es dans TikTok, Facebook ou WhatsApp, touche ⋯ puis « Ouvrir dans Safari ».',n:'Tu peux aussi copier le lien et le coller dans Safari.',
+       m:'<div class="card"><b>🧭 Safari</b>siteweb.legalo-officiel.com/store<div class="row"><span class="btn hot ring" id="cpl">Copier le lien</span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Partager »',p:'C\'est l\'icône carré avec une flèche vers le haut, en bas de l\'écran (ou en haut à droite sur iPad).',n:'',
+       m:'<div class="card" style="display:flex;justify-content:space-around;align-items:center;font-size:1.4rem"><span>‹</span><span>›</span><span class="ring" style="padding:0 8px">⬆️</span><span>📖</span><span>⧉</span></div><span class="hand">👆</span>'},
+      {t:'Choisis « Sur l\'écran d\'accueil »',p:'Fais glisser la liste vers le haut, puis touche « Sur l\'écran d\'accueil ».',n:'',
+       m:'<div class="card"><b style="padding:5px 0">Copier</b><b style="padding:5px 0">Ajouter aux favoris</b><b class="ring" style="padding:5px 8px;margin:4px 0">➕ Sur l\'écran d\'accueil</b></div><span class="hand">👆</span>'},
+      {t:'Touche « Ajouter »',p:'Le nom « LEGALO » est déjà écrit. Touche « Ajouter » en haut à droite.',n:'',
+       m:'<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><span>Annuler</span><b>Sur l\'écran d\'accueil</b><span class="btn hot ring">Ajouter</span></div><div style="margin-top:10px">LEGALO · app.legalo-officiel.com</div></div><span class="hand">👆</span>'},
+      {t:'Ouvre LEGALO depuis ton écran d\'accueil',p:'L\'icône LEGALO est maintenant sur ton téléphone. Touche-la : l\'appli s\'ouvre en plein écran. Crée ton compte ou connecte-toi.',n:'Bienvenue ! 🎉',
+       m:'<div class="card" style="display:flex;justify-content:center;gap:16px;align-items:center"><span style="font-size:1.8rem">📱</span><span class="ring" style="display:inline-block;width:56px;height:56px;border-radius:14px;background:#fff url(ochou-store-img/logo.webp) center/80% no-repeat"></span><span style="font-size:1.8rem">💬</span></div><span class="hand">👆</span>'}
+    ]
+  };
+  var cur=0,list=[];
+  var sheet=$('#sheet'),bg=$('#sheetBg');
+  function openGuide(p){
+    list=STEPS[p];cur=0;$('#shT').textContent=p==='android'?'Installer LEGALO sur Android':'Installer LEGALO sur iPhone';
+    var tb=$('#tutoBox'),tv=$('#tutoVid');
+    if(tutoOK[p]){tv.src='videos/tuto-'+p+'.mp4';tb.style.display='block'}else{tb.style.display='none';tv.removeAttribute('src')}
+    renderStep();sheet.classList.add('open');bg.classList.add('open');document.body.style.overflow='hidden';
+  }
+  function closeGuide(){sheet.classList.remove('open');bg.classList.remove('open');document.body.style.overflow='';try{$('#tutoVid').pause()}catch(e){}}
+  function renderStep(){
+    var s=list[cur];
+    $('#barI').style.width=((cur+1)/list.length*100)+'%';
+    $('#barT').textContent='Étape '+(cur+1)+' sur '+list.length;
+    $('#mock').innerHTML=s.m;$('#stT').textContent=s.t;$('#stP').textContent=s.p;
+    var n=$('#stN');n.textContent=s.n;n.style.display=s.n?'block':'none';
+    $('#prev').style.visibility=cur?'visible':'hidden';
+    $('#next').textContent=cur===list.length-1?'J\'ai terminé ✓':'Suivant';
+    var c=$('#cpl');if(c)c.addEventListener('click',function(){copyLink(c)});
+    sheet.scrollTop=0;
+  }
+  $('#next').addEventListener('click',function(e){
+    if(cur<list.length-1){cur++;renderStep()}
+    else{closeGuide();burst(e.clientX,e.clientY);toast('Bienvenue sur LEGALO ! 🎉');ls.set('os_done','1')}
+  });
+  $('#prev').addEventListener('click',function(){if(cur>0){cur--;renderStep()}});
+  $('#shX').addEventListener('click',closeGuide);bg.addEventListener('click',closeGuide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeGuide()});
+
+  /* ---------- téléchargement ---------- */
+  function startDownload(e){
+    if(e)burst(e.clientX,e.clientY);
+    if(platform==='android'){
+      var a=document.createElement('a');a.href='LEGALO.apk';a.download='LEGALO.apk';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+    }
+    setTimeout(function(){openGuide(platform)},reduce?0:350);
+  }
+  $('#cta').addEventListener('click',startDownload);
+
+  /* ---------- effets ---------- */
+  function burst(x,y){
+    if(reduce)return;x=x||innerWidth/2;y=y||innerHeight/2;
+    for(var i=0;i<16;i++){
+      var s=document.createElement('i');s.className='spark';
+      var a=Math.random()*Math.PI*2,d=40+Math.random()*90;
+      s.style.left=x+'px';s.style.top=y+'px';s.style.setProperty('--x',Math.cos(a)*d+'px');s.style.setProperty('--y',Math.sin(a)*d+'px');
+      document.body.appendChild(s);setTimeout(function(el){el.remove()}.bind(null,s),1000);
+    }
+  }
+  var tt;function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},3200)}
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+    $$('.reveal').forEach(function(el){io.observe(el)});
+  }else{$$('.reveal').forEach(function(el){el.classList.add('in')})}
+
+  /* ---------- départ ---------- */
+  setPlatform(platform);
+  renderWho(who,false);
+  setTimeout(function(){var s=$('#splash');if(s)s.remove()},2200);
+})();
+</script>
+</body>
+</html>
