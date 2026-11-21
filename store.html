@@ -461,16 +461,20 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
   /* ---------- guide ---------- */
   var STEPS={
     android:[
-      {t:'Le téléchargement démarre',p:'Ne ferme pas la page. Le fichier pèse environ 20 Mo : compte 1 à 2 minutes avec une bonne connexion.',n:'Tu verras une barre de téléchargement en haut de l\'écran.',
-       m:'<div class="card"><b>⬇ LEGALO.apk</b>Téléchargement en cours…<div class="bar" style="margin:10px 0 0"><i style="width:68%;animation:none"></i></div></div>'},
-      {t:'Touche le fichier téléchargé',p:'Quand c\'est terminé, touche la notification « LEGALO.apk ». Tu ne la vois pas ? Ouvre l\'appli « Fichiers », puis « Téléchargements », et touche LEGALO.apk.',n:'L\'écran peut être un peu différent selon ton téléphone.',
-       m:'<div class="card ring"><b>LEGALO.apk</b>Téléchargement terminé · Touchez pour ouvrir</div><span class="hand">👆</span>'},
-      {t:'Autorise l\'installation',p:'Si ton téléphone dit « Pour votre sécurité, l\'installation est bloquée », touche « Paramètres », puis active « Autoriser depuis cette source ». Reviens ensuite en arrière avec la flèche.',n:'Ce message est normal : l\'appli ne vient pas du Play Store. Tu ne le fais qu\'une seule fois.',
-       m:'<div class="card"><b>Autoriser depuis cette source</b><span style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><span>Installer des applis inconnues</span><span class="toggle ring"></span></span></div><span class="hand">👆</span>'},
-      {t:'Touche « Installer »',p:'Une fenêtre demande « Voulez-vous installer cette application ? ». Touche Installer et attends quelques secondes.',n:'Si un message de sécurité (Play Protect) apparaît, touche « Plus de détails » puis « Installer quand même ».',
-       m:'<div class="card"><b>Voulez-vous installer cette application ?</b>LEGALO<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Installer</span></div></div><span class="hand">👆</span>'},
-      {t:'Ouvre LEGALO',p:'Touche « Ouvrir ». Crée ton compte ou connecte-toi : tu es prêt. Tu retrouveras l\'icône LEGALO sur ton écran d\'accueil.',n:'Bienvenue ! 🎉',
-       m:'<div class="card"><b>Application installée</b>LEGALO est prête.<div class="row"><span class="btn">Terminé</span><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'}
+      {t:'Touche « Télécharger »',p:'Une fenêtre demande « Télécharger le fichier ? LEGALO.apk (20,67 Mo) ». Touche « Télécharger ».',n:'Ne ferme pas la page.',
+       m:'<div class="card"><b>Télécharger le fichier ?</b>LEGALO.apk (20,67 Mo)<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Télécharger</span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Télécharger quand même »',p:'Ton téléphone dit « Fichier potentiellement dangereux ». C\'est normal : LEGALO ne vient pas du Play Store. Touche « Télécharger quand même ».',n:'Tu ne le fais qu\'une seule fois.',
+       m:'<div class="card"><b>Fichier potentiellement dangereux</b><div class="row" style="flex-direction:column;align-items:stretch"><span class="btn hot ring" style="text-align:center">Télécharger quand même</span><span class="btn" style="text-align:center">Annuler</span></div></div><span class="hand">👆</span>'},
+      {t:'Attends la fin, puis touche « Ouvrir »',p:'Le fichier pèse environ 20 Mo : compte 1 à 2 minutes. Quand « Fichier téléchargé » apparaît en haut de l\'écran, touche « Ouvrir ».',n:'Tu ne le vois pas ? Ouvre l\'appli « Fichiers », puis « Téléchargements ».',
+       m:'<div class="card"><b>Fichier téléchargé</b>(20,67 Mo) siteweb.legalo-officiel.com<div class="row"><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'},
+      {t:'Choisis « Programme d\'installation »',p:'Une fenêtre « Ouvrir avec » s\'affiche. Touche « Programme d\'installation », puis « Une seule fois ».',n:'',
+       m:'<div class="card"><b>Ouvrir avec</b><div style="display:flex;gap:18px;margin-top:8px"><span class="ring" style="padding:6px 10px;border-radius:12px">📦<br><small>Programme d\'installation</small></span><span>📄<br><small>Autre appli</small></span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Installer »',p:'Une fenêtre demande « Voulez-vous installer cette appli ? ». Touche « Installer ».',n:'',
+       m:'<div class="card"><b>LEGALO</b>Voulez-vous installer cette appli ?<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Installer</span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Ne pas envoyer »',p:'Google Play Protect demande « Envoyer l\'appli pour un contrôle de sécurité ? ». C\'est un simple contrôle de Google. Touche « Ne pas envoyer ».',n:'Ce message n\'apparaît pas sur tous les téléphones.',
+       m:'<div class="card"><b>Envoyer l\'appli pour un contrôle ?</b><div class="row" style="flex-direction:column;align-items:stretch"><span class="btn" style="text-align:center">Envoyer cette fois-ci</span><span class="btn hot ring" style="text-align:center">Ne pas envoyer</span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Ouvrir »',p:'Attends quelques secondes : « Application installée ». Touche « Ouvrir ». Crée ton compte ou connecte-toi : tu es prêt.',n:'Tu retrouveras l\'icône LEGALO sur ton écran d\'accueil. Bienvenue ! 🎉',
+       m:'<div class="card"><b>Application installée</b>LEGALO est prête.<div class="row"><span class="btn">OK</span><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'}
     ],
     iphone:[
       {t:'Touche les 3 points « ··· »',p:'Dans Safari, regarde la barre en bas de l\'écran. Touche les 3 petits points « ··· » tout à droite.',n:'Tu vois plutôt une icône carré avec une flèche vers le haut ⬆ en bas au milieu ? Touche celle-là et passe à l\'étape 3.',
