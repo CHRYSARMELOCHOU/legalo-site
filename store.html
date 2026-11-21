@@ -236,6 +236,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
         <span class="ic" id="ctaIc">⬇️</span>
         <span><span id="ctaT">Télécharger LEGALO</span><small id="ctaS">Application Android · 20 Mo</small></span>
       </button>
+      <p id="seeSteps" style="display:none;text-align:center;margin-top:12px"><a href="#" id="seeStepsA" style="color:var(--gold2);font-weight:800;text-decoration:underline">Voir d'abord les 6 gestes</a></p>
 
       <div class="micro"><span>Gratuit pour commencer</span><span>Le droit en 2 minutes, chaque jour</span><span>En français</span></div>
       <div id="count"></div>
@@ -314,7 +315,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     <details><summary>Pourquoi mon téléphone affiche un avertissement ?</summary><p>Sur Android, toute application installée en dehors du Play Store déclenche un message standard de sécurité. C'est normal. Le guide te montre exactement quoi toucher.</p></details>
     <details><summary>C'est gratuit ?</summary><p>Tu peux commencer gratuitement, avec par exemple « Le droit en 2 minutes » chaque jour. Des formules Premium (semaine, mois, trimestre) donnent accès à plus de contenus.</p></details>
     <details><summary>Le téléchargement est long, c'est normal ?</summary><p>Le fichier Android pèse environ 20 Mo. Avec une connexion correcte, compte 1 à 2 minutes. Reste sur la page jusqu'à la fin.</p></details>
-    <details><summary>Et sur iPhone ?</summary><p>Apple n'autorise pas l'installation hors de l'App Store. En attendant, tu ajoutes LEGALO à ton écran d'accueil depuis Safari : il s'ouvre comme une vraie application, et le guide t'explique les 5 gestes.</p></details>
+    <details><summary>Et sur iPhone ?</summary><p>Tu touches « Télécharger » : LEGALO s'ouvre dans Safari et te montre les gestes pour l'ajouter à ton écran d'accueil. Il s'ouvre ensuite comme une vraie application.</p></details>
     <details><summary>Où va ma vie privée ?</summary><p>Tout est expliqué dans la <a href="https://legal.legalo-officiel.com/confidentialite.html" rel="noopener">politique de confidentialité</a> et dans les <a href="https://legal.legalo-officiel.com/cgu.html" rel="noopener">conditions d'utilisation</a>.</p></details>
     <details><summary>Ça ne marche pas, je fais quoi ?</summary><p>Écris-nous sur <a href="https://wa.me/2250161213169" rel="noopener">WhatsApp</a>. On t'aide à finir l'installation.</p></details>
   </div>
@@ -422,9 +423,11 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     platform=p;var seg=$('#seg');seg.dataset.p=p;
     $$('button',seg).forEach(function(b){b.setAttribute('aria-selected',b.dataset.p===p)});
     if(p==='android'){$('#ctaIc').textContent='⬇️';$('#ctaT').textContent='Télécharger LEGALO';$('#ctaS').textContent='Application Android · 20 Mo'}
-    else{$('#ctaIc').textContent='📲';$('#ctaT').textContent='Installer LEGALO';$('#ctaS').textContent='iPhone · depuis Safari, 5 gestes'}
+    else{$('#ctaIc').textContent='📲';$('#ctaT').textContent='Installer LEGALO';$('#ctaS').textContent='iPhone · gratuit · s\'ouvre en un geste'}
   }
-  $$('#seg button').forEach(function(b){b.addEventListener('click',function(){setPlatform(b.dataset.p)})});
+  $$('#seg button').forEach(function(b){b.addEventListener('click',function(){setPlatform(b.dataset.p);$('#seeSteps').style.display=(b.dataset.p==='iphone')?'block':'none'})});
+  $('#seeStepsA').addEventListener('click',function(e){e.preventDefault();openGuide('iphone')});
+  if(platform==='iphone')$('#seeSteps').style.display='block';
 
   /* ---------- navigateur intégré (TikTok, Facebook…) ---------- */
   if(inApp){
@@ -435,8 +438,9 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     $('#desk').style.display='block';
     $('#copy').addEventListener('click',function(){copyLink(this)});
   }
-  function copyLink(btn){
-    var url=location.href.split('#')[0];
+  var APP_IOS='https://app.legalo-officiel.com/?install=ios';
+  function copyLink(btn,u){
+    var url=u||location.href.split('#')[0];
     function ok(){toast('Lien copié. Colle-le dans ton téléphone.')}
     try{navigator.clipboard.writeText(url).then(ok,function(){window.prompt('Copie ce lien :',url)})}catch(e){window.prompt('Copie ce lien :',url)}
   }
@@ -469,24 +473,30 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
        m:'<div class="card"><b>Application installée</b>LEGALO est prête.<div class="row"><span class="btn">Terminé</span><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'}
     ],
     iphone:[
-      {t:'Ouvre cette page dans Safari',p:'Il faut utiliser Safari (la boussole bleue). Si tu es dans TikTok, Facebook ou WhatsApp, touche ⋯ puis « Ouvrir dans Safari ».',n:'Tu peux aussi copier le lien et le coller dans Safari.',
-       m:'<div class="card"><b>🧭 Safari</b>siteweb.legalo-officiel.com/store<div class="row"><span class="btn hot ring" id="cpl">Copier le lien</span></div></div><span class="hand">👆</span>'},
-      {t:'Touche « Partager »',p:'C\'est l\'icône carré avec une flèche vers le haut, en bas de l\'écran (ou en haut à droite sur iPad).',n:'',
-       m:'<div class="card" style="display:flex;justify-content:space-around;align-items:center;font-size:1.4rem"><span>‹</span><span>›</span><span class="ring" style="padding:0 8px">⬆️</span><span>📖</span><span>⧉</span></div><span class="hand">👆</span>'},
-      {t:'Choisis « Sur l\'écran d\'accueil »',p:'Fais glisser la liste vers le haut, puis touche « Sur l\'écran d\'accueil ».',n:'',
-       m:'<div class="card"><b style="padding:5px 0">Copier</b><b style="padding:5px 0">Ajouter aux favoris</b><b class="ring" style="padding:5px 8px;margin:4px 0">➕ Sur l\'écran d\'accueil</b></div><span class="hand">👆</span>'},
-      {t:'Touche « Ajouter »',p:'Le nom « LEGALO » est déjà écrit. Touche « Ajouter » en haut à droite.',n:'',
-       m:'<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><span>Annuler</span><b>Sur l\'écran d\'accueil</b><span class="btn hot ring">Ajouter</span></div><div style="margin-top:10px">LEGALO · app.legalo-officiel.com</div></div><span class="hand">👆</span>'},
-      {t:'Ouvre LEGALO depuis ton écran d\'accueil',p:'L\'icône LEGALO est maintenant sur ton téléphone. Touche-la : l\'appli s\'ouvre en plein écran. Crée ton compte ou connecte-toi.',n:'Bienvenue ! 🎉',
+      {t:'Touche les 3 points « ··· »',p:'Dans Safari, regarde la barre en bas de l\'écran. Touche les 3 petits points « ··· » tout à droite.',n:'Tu vois plutôt une icône carré avec une flèche vers le haut ⬆ en bas au milieu ? Touche celle-là et passe à l\'étape 3.',
+       m:'<div class="card" style="display:flex;align-items:center;gap:10px;border-radius:30px;padding:10px 14px"><span style="font-size:1.3rem">‹</span><span style="flex:1;text-align:center;background:#eef1f7;border-radius:20px;padding:8px">🔒 app.legalo-officiel.com</span><span class="ring" style="font-size:1.5rem;font-weight:900;padding:0 10px">···</span></div><span class="hand">👆</span>'},
+      {t:'Touche « Partager »',p:'Un petit menu s\'ouvre. Touche « Partager », tout en haut de la liste.',n:'',
+       m:'<div class="card"><b class="ring" style="padding:7px 8px;margin:3px 0">⬆ Partager</b><b style="padding:7px 8px;font-weight:600">🔖 Ajouter à Signets</b><b style="padding:7px 8px;font-weight:600">📖 Ajouter un signet à…</b></div><span class="hand">👆</span>'},
+      {t:'Touche « Plus » (les 3 points)',p:'Une grande fenêtre s\'ouvre avec plusieurs rangées. Dans la rangée du bas (Copier, Ajouter à Signets…), glisse vers la gauche puis touche « Plus » (3 points « ··· »).',n:'Tu vois directement « Sur l\'écran d\'accueil » dans la liste ? Passe à l\'étape 4.',
+       m:'<div class="card" style="display:flex;justify-content:space-between;text-align:center;font-size:.72rem"><span>📋<br>Copier</span><span>🔖<br>Signets</span><span>👓<br>Lecture</span><span class="ring" style="padding:0 8px;font-weight:900;font-size:1rem">···<br><small>Plus</small></span></div><span class="hand">👆</span>'},
+      {t:'Touche « Sur l\'écran d\'accueil »',p:'Une liste apparaît. Fais-la glisser vers le haut avec ton doigt, jusqu\'en bas, puis touche « Sur l\'écran d\'accueil ».',n:'',
+       m:'<div class="card"><b style="padding:5px 0;font-weight:600">⭐ Ajouter aux favoris</b><b style="padding:5px 0;font-weight:600">🔎 Rechercher dans la page</b><b class="ring" style="padding:6px 8px;margin:4px 0">➕ Sur l\'écran d\'accueil</b></div><span class="hand">👆</span>'},
+      {t:'Touche « Ajouter »',p:'Le nom « LEGALO » est déjà écrit. Laisse « Ouvrir comme app web » activé (le bouton vert), puis touche « Ajouter » en haut à droite.',n:'',
+       m:'<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><span>✕</span><b>Sur l\'écran d\'accueil</b><span class="btn hot ring">Ajouter</span></div><div style="margin-top:10px">LEGALO · app.legalo-officiel.com</div><div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center"><span>Ouvrir comme app web</span><span class="toggle" style="background:#34c759"></span></div></div><span class="hand">👆</span>'},
+      {t:'Ouvre LEGALO depuis ton écran d\'accueil',p:'L\'icône LEGALO est sur ton téléphone. Touche-la : l\'appli s\'ouvre en plein écran, comme une vraie application. Crée ton compte ou connecte-toi.',n:'La première ouverture peut prendre quelques secondes. Bienvenue ! 🎉',
        m:'<div class="card" style="display:flex;justify-content:center;gap:16px;align-items:center"><span style="font-size:1.8rem">📱</span><span class="ring" style="display:inline-block;width:56px;height:56px;border-radius:14px;background:#fff url(ochou-store-img/logo.webp) center/80% no-repeat"></span><span style="font-size:1.8rem">💬</span></div><span class="hand">👆</span>'}
+    ],
+    iphoneapp:[
+      {t:'Ouvre le lien dans Safari',p:'Pour installer LEGALO sur iPhone, il faut passer par Safari (la boussole bleue). Dans TikTok, Facebook ou WhatsApp, touche « ··· » puis « Ouvrir dans Safari ». Ou copie le lien ci-dessous et colle-le dans Safari.',n:'Dans Safari, LEGALO te montrera les gestes à faire, pas à pas.',
+       m:'<div class="card"><b>🧭 Safari</b>app.legalo-officiel.com<div class="row"><span class="btn hot ring" id="cpl">Copier le lien</span></div></div><span class="hand">👆</span>'}
     ]
   };
   var cur=0,list=[];
   var sheet=$('#sheet'),bg=$('#sheetBg');
   function openGuide(p){
-    list=STEPS[p];cur=0;$('#shT').textContent=p==='android'?'Installer LEGALO sur Android':'Installer LEGALO sur iPhone';
+    list=STEPS[p];cur=0;$('#shT').textContent=p==='android'?'Installer LEGALO sur Android':'Installer LEGALO sur iPhone';var tp=(p==='iphoneapp')?'iphone':p;
     var tb=$('#tutoBox'),tv=$('#tutoVid');
-    if(tutoOK[p]){tv.src='videos/tuto-'+p+'.mp4';tb.style.display='block'}else{tb.style.display='none';tv.removeAttribute('src')}
+    if(tutoOK[tp]){tv.src='videos/tuto-'+tp+'.mp4';tb.style.display='block'}else{tb.style.display='none';tv.removeAttribute('src')}
     renderStep();sheet.classList.add('open');bg.classList.add('open');document.body.style.overflow='hidden';
   }
   function closeGuide(){sheet.classList.remove('open');bg.classList.remove('open');document.body.style.overflow='';try{$('#tutoVid').pause()}catch(e){}}
@@ -498,7 +508,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     var n=$('#stN');n.textContent=s.n;n.style.display=s.n?'block':'none';
     $('#prev').style.visibility=cur?'visible':'hidden';
     $('#next').textContent=cur===list.length-1?'J\'ai terminé ✓':'Suivant';
-    var c=$('#cpl');if(c)c.addEventListener('click',function(){copyLink(c)});
+    var c=$('#cpl');if(c)c.addEventListener('click',function(){copyLink(c,APP_IOS)});
     sheet.scrollTop=0;
   }
   $('#next').addEventListener('click',function(e){
@@ -514,6 +524,11 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     if(e)burst(e.clientX,e.clientY);
     if(platform==='android'){
       var a=document.createElement('a');a.href='LEGALO.apk';a.download='LEGALO.apk';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+    }
+    if(platform==='iphone'){
+      if(inApp){setTimeout(function(){openGuide('iphoneapp')},reduce?0:350)}
+      else{setTimeout(function(){location.href=APP_IOS},reduce?0:450)}
+      return;
     }
     setTimeout(function(){openGuide(platform)},reduce?0:350);
   }
