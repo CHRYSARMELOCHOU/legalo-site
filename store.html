@@ -468,11 +468,27 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     try{navigator.clipboard.writeText(url).then(ok,function(){window.prompt('Copie ce lien :',url)})}catch(e){window.prompt('Copie ce lien :',url)}
   }
 
-  /* ---------- compteur : seulement de vrais chiffres ---------- */
-  fetch('store-stats.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
-    if(!j)return;var n=(j.android||0)+(j.iphone||0);
-    if(n>=100){var c=$('#count');c.style.display='block';c.textContent='🔥 Déjà '+n.toLocaleString('fr-FR')+' téléchargements';}
-  }).catch(function(){});
+  /* ---------- compteur en temps réel : seulement de vrais chiffres ---------- */
+  var SB='https://rhekotzzmectxtppivqq.supabase.co/rest/v1/rpc/',SBK='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoZWtvdHp6bWVjdHh0cHBpdnFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcyNjIyMDEsImV4cCI6MjEwMjgzODIwMX0.eU5q7g0aBEon5a80ge93fjUl2HUe9AKp3dwjJXCAP7o';
+  function sb(fn,body){return fetch(SB+fn,{method:'POST',headers:{'apikey':SBK,'Authorization':'Bearer '+SBK,'Content-Type':'application/json'},body:JSON.stringify(body||{})}).then(function(r){return r.ok?r.json():null})}
+  var shownN=-1,seenRecent={};
+  function ago(d){var m=Math.max(1,Math.round((Date.now()-new Date(d).getTime())/60000));return m<60?'il y a '+m+' min':(m<1440?'il y a '+Math.round(m/60)+' h':'il y a '+Math.round(m/1440)+' j')}
+  function paint(n){
+    var c=$('#count');c.style.display='block';
+    if(n<10){c.textContent='🚀 Rejoins les premiers utilisateurs de LEGALO';return}
+    var from=shownN<0?0:shownN,t0=Date.now();shownN=n;
+    (function tick(){var k=Math.min(1,(Date.now()-t0)/900);c.textContent='🔥 Déjà '+Math.round(from+(n-from)*k).toLocaleString('fr-FR')+' personnes ont téléchargé LEGALO';if(k<1&&!reduce)requestAnimationFrame(tick)})();
+  }
+  function loadStats(first){
+    sb('store_download_stats').then(function(j){
+      if(!j)return;paint(j.total||0);
+      var r=(j.recent||[]).filter(function(x){return Date.now()-new Date(x.at).getTime()<86400000});
+      if(first){r.forEach(function(x){seenRecent[x.at]=1});if(r.length&&j.total>=10){var x=r[0];setTimeout(function(){toast('👥 Quelqu\'un vient de télécharger LEGALO sur '+(x.platform==='iphone'?'iPhone':'Android')+' · '+ago(x.at))},4000)}}
+      else r.forEach(function(x){if(!seenRecent[x.at]){seenRecent[x.at]=1;toast('👥 Quelqu\'un vient de télécharger LEGALO sur '+(x.platform==='iphone'?'iPhone':'Android')+' · à l\'instant')}});
+    }).catch(function(){});
+  }
+  loadStats(true);setInterval(function(){if(!document.hidden)loadStats(false)},20000);
+  function countDownload(pf){try{if(ls.get('os_counted_'+pf))return;ls.set('os_counted_'+pf,'1')}catch(e){}sb('record_store_download',{p_platform:pf}).then(function(){setTimeout(function(){loadStats(false)},800)}).catch(function(){})}
 
   /* ---------- vidéos : visibles seulement si le fichier existe ---------- */
   function checkVideo(url,cb){fetch(url,{method:'HEAD',cache:'no-store'}).then(function(r){cb(r.ok&&/video|octet/.test(r.headers.get('content-type')||'video'))}).catch(function(){cb(false)})}
@@ -562,6 +578,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
   /* ---------- téléchargement ---------- */
   function startDownload(e){
     if(e)burst(e.clientX,e.clientY);
+    if(platform==='android'||platform==='iphone')countDownload(platform);
     if(platform==='android'){
       var a=document.createElement('a');a.href='LEGALO.apk';a.download='LEGALO.apk';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
     }
