@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /app/
-Sitemap: https://legalo-officiel.com/sitemap.xml
+Sitemap: https://siteweb.legalo-officiel.com/sitemap.xml
