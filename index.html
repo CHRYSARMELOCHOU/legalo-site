@@ -1,341 +1,297 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta name="google-site-verification" content="ot5FtHfjiLNEqQ1wKT_jJayAnWeWUENEh_Ol0bAP-TQ" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#082858">
-<meta name="description" content="LEGALO, l'application juridique de Côte d'Ivoire : plus de 350 sources du droit ivoirien et OHADA, Campus étudiant, Mon juriste et outils premium.">
-<meta property="og:title" content="LEGALO, l'application juridique de Côte d'Ivoire">
-<meta property="og:description" content="Sources du droit vérifiées, campus étudiant, Mon juriste et outils premium dans une seule application.">
+<meta name="google-site-verification" content="ot5FtHfjiLNEqQ1wKT_jJayAnWeWUENEh_Ol0bAP-TQ" />
+<title>LEGALO, l'application juridique de Côte d'Ivoire</title>
+<meta name="description" content="LEGALO : le droit ivoirien, clair et accessible. Codex de plus de 350 sources, Mon juriste, le droit en 2 minutes, générateur d'actes. Pour étudiants, citoyens et experts. Essai gratuit.">
 <link rel="canonical" href="https://siteweb.legalo-officiel.com/">
+<meta property="og:title" content="LEGALO, le droit ivoirien, clair et accessible">
+<meta property="og:description" content="Codex, Mon juriste, le droit en 2 minutes, générateur d'actes. Essaie gratuitement.">
 <meta property="og:url" content="https://siteweb.legalo-officiel.com/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://legalo-officiel.com/logo.webp">
+<meta property="og:image" content="https://siteweb.legalo-officiel.com/img/og.jpg">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/webp" href="logo.webp">
 <link rel="apple-touch-icon" href="logo.webp">
-<title>LEGALO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img,svg{max-width:100%}
-
-/* Concept : un cabinet moderne en verre givré. Fond bleu glacé, panneaux bleu roi profond, filets et reflets or. Une seule scène de bravoure : les trois téléphones flottants du hero. */
 :root{
   color-scheme:light;
-  --bg:#EAF0F9;
-  --bg-2:#DFE8F6;
-  --paper:#F5F8FD;
-  --royal:#082858;
-  --royal-2:#123B86;
-  --royal-3:#1B4FB0;
-  --gold:#C9A24A;
-  --gold-light:#EBD6A0;
-  --gold-deep:#97762B;
-  --ink:#0A1B3C;
-  --muted:#506283;
-  --line:rgba(8,40,88,.12);
-  --glass:rgba(255,255,255,.62);
+  --bg:#EAF0F9;--bg-2:#DFE8F6;--paper:#F5F8FD;--royal:#082858;--royal-2:#123B86;--royal-3:#1B4FB0;
+  --gold:#C9A24A;--gold-light:#EBD6A0;--gold-deep:#97762B;--ink:#0A1B3C;--muted:#4A5C7E;--line:rgba(8,40,88,.14);
+  --glass:rgba(255,255,255,.66);
   --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --body:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
-*{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{
-  margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(60vw 50vh at 85% 0%,rgba(27,79,176,.14),transparent 70%),
-    radial-gradient(50vw 45vh at 0% 35%,rgba(201,162,74,.13),transparent 70%),
-    radial-gradient(60vw 60vh at 70% 100%,rgba(18,59,134,.10),transparent 70%),
-    var(--bg);
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-h1,h2,h3,p{margin:0}
-h1,h2,h3{text-wrap:balance}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
-.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.gold{
-  background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold-light) 38%,var(--gold) 55%,var(--gold-deep) 100%);
-  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:shimmer 6s linear infinite;
-}
-@keyframes shimmer{to{background-position:-220% 0}}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);
-}
-.eyebrow::before{content:"";width:34px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
-.h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.08;letter-spacing:-.01em;color:var(--royal)}
-.h2 em{font-style:italic}
-.lead{font-size:1.1rem;color:var(--muted);max-width:60ch}
-section{position:relative}
-.sec{padding-block:clamp(64px,10vw,120px)}
-
-/* progression */
-#bar{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold-deep),var(--gold-light),var(--gold));z-index:100}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60vw 50vh at 85% 0%,rgba(27,79,176,.14),transparent 70%),radial-gradient(50vw 45vh at 0% 35%,rgba(201,162,74,.14),transparent 70%),radial-gradient(60vw 60vh at 70% 100%,rgba(18,59,134,.10),transparent 70%),var(--bg)}
+a{color:inherit;text-decoration:none}img{display:block}
+.wrap{width:min(1200px,100% - 40px);margin:0 auto;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;line-height:1.08;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,5.4vw,3.9rem)}
+h2 em,h1 em{font-style:italic;font-weight:500;background:linear-gradient(180deg,#E9C766 0%,#C9A24A 55%,#97762B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:800 .74rem var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow::before{content:"";width:34px;height:1.5px;background:var(--gold)}
+.lead{font-size:clamp(1.05rem,2.2vw,1.22rem);color:var(--muted);max-width:60ch;margin:18px 0 0}
+section{position:relative;padding:clamp(70px,10vw,130px) 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:99px;font:800 1rem var(--body);cursor:pointer;border:0;transition:transform .25s var(--ease),box-shadow .3s,background .3s;will-change:transform}
+.btn.gold{color:#2a1c00;background:linear-gradient(135deg,#F3DC96 0%,#D9B352 45%,#B88E32 100%);box-shadow:0 14px 34px -12px rgba(151,118,43,.7),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn.gold:hover{box-shadow:0 20px 44px -12px rgba(151,118,43,.85),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn.ghost{color:var(--royal);background:var(--glass);box-shadow:inset 0 0 0 1.5px rgba(8,40,88,.25)}
+.btn.ghost:hover{background:#fff}
+.btn.sheen{position:relative;overflow:hidden}
+.btn.sheen::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:sheen 3.6s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-80px}100%{left:130%}}
+:focus-visible{outline:3px solid var(--royal-3);outline-offset:3px}
+.js .rv{opacity:.001;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+#bar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:900;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold-deep),var(--gold-light),var(--gold))}
+#cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid var(--gold);z-index:950;pointer-events:none;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
+#cur.on{opacity:.9}#cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,162,74,.14)}
 
 /* nav */
-nav{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:90;transition:background .4s,box-shadow .4s,padding .4s;padding-block:16px}
-nav.s{background:rgba(234,240,249,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line);padding-block:8px}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:.06em;color:var(--royal)}
-.brand img{width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--gold),0 6px 18px rgba(8,40,88,.18);padding:2px;object-fit:contain}
-.links{display:flex;gap:28px;font-size:.92rem;font-weight:600;color:var(--royal)}
-.links a{position:relative;padding-block:6px}
+#nav{position:fixed;left:0;right:0;top:0;z-index:800;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+#nav.sc{background:rgba(234,240,249,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;font:700 1.3rem var(--display);letter-spacing:.12em;color:var(--royal)}
+.brand img{width:42px;height:42px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 0 0 1.5px var(--gold)}
+.links{display:flex;gap:28px;font:700 .92rem var(--body)}
+.links a{position:relative;color:var(--royal);padding:6px 0}
 .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 .links a:hover::after{transform:scaleX(1)}
-.btn{
-  position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;border:0;
-  padding:14px 26px;border-radius:999px;font:700 .95rem var(--body);letter-spacing:.01em;transition:transform .3s var(--ease),box-shadow .3s;
-}
-.btn-gold{color:var(--royal);background:linear-gradient(135deg,#E9D49C,#C9A24A 55%,#AD8434);box-shadow:0 10px 26px rgba(151,118,43,.32),inset 0 1px 0 rgba(255,255,255,.6)}
-.btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:60%;left:-80%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:sweep 3.8s ease-in-out infinite}
-@keyframes sweep{0%,55%{left:-80%}100%{left:150%}}
-.btn-line{color:var(--royal);background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1.5px rgba(8,40,88,.25)}
-.btn:hover{transform:translateY(-3px)}
-.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--gold-deep),0 10px 24px rgba(8,40,88,.12)}
-.nav-cta{padding:10px 20px;font-size:.88rem}
+.nav-cta{padding:11px 20px;font-size:.9rem}
+@media(max-width:860px){.links{display:none}}
 
 /* hero */
-.hero{padding-top:clamp(120px,14vw,160px);padding-bottom:clamp(56px,8vw,96px);overflow:hidden}
-#sparks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:32px}
-.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:var(--glass);box-shadow:inset 0 0 0 1px rgba(201,162,74,.55);font-size:.82rem;font-weight:700;color:var(--royal);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(201,162,74,.7);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(201,162,74,0)}100%{box-shadow:0 0 0 0 rgba(201,162,74,0)}}
-h1.title{font-family:var(--display);font-weight:700;font-size:clamp(2.5rem,5vw,4.3rem);line-height:1.04;letter-spacing:-.02em;color:var(--royal);margin-top:22px}
-h1.title em{font-style:italic;white-space:nowrap}
-.w>span.g{padding-right:.08em;background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold-light) 38%,var(--gold) 55%,var(--gold-deep) 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up 1s var(--ease) forwards,shimmer 6s linear infinite;animation-delay:calc(var(--i)*.09s + .15s),0s}
-.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
-.w>span{display:inline-block;transform:translateY(110%);animation:up 1s var(--ease) forwards;animation-delay:calc(var(--i)*.09s + .15s)}
-@keyframes up{to{transform:none}}
-.hero p.sub{margin-top:24px;font-size:1.15rem;color:var(--muted);max-width:46ch;animation:fade 1s .9s both}
-@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.cta-row{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;animation:fade 1s 1.1s both}
-.mini{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 28px;animation:fade 1s 1.3s both}
-.mini div{display:flex;flex-direction:column;font-size:.8rem;color:var(--muted);font-weight:600}
-.mini b{font-family:var(--display);font-size:1.7rem;color:var(--royal);line-height:1.1}
-.mini div+div{padding-left:28px;border-left:1px solid var(--line)}
+.hero{position:relative;padding:130px 0 70px;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,7.6vw,5.9rem);margin:22px 0 0;color:var(--royal)}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .12em;margin-bottom:-.12em}
+.hero h1 .w>span{display:inline-block;animation:wup 1s var(--ease) both;animation-delay:calc(var(--i)*.09s + .1s)}
+@keyframes wup{from{transform:translateY(110%) rotate(4deg);opacity:0}to{transform:none;opacity:1}}
+.hero p.sub{font-size:clamp(1.08rem,2.3vw,1.3rem);color:var(--muted);max-width:50ch;margin:26px 0 0;animation:fup 1s .75s var(--ease) both}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;animation:fup 1s .9s var(--ease) both}
+.mini{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;animation:fup 1s 1.05s var(--ease) both}
+.mini span{font:700 .85rem var(--body);padding:8px 14px;border-radius:99px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--line);color:var(--royal)}
+@keyframes fup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.stage{position:relative;height:min(76vh,640px);min-height:480px;perspective:1200px}
+.bal{position:absolute;left:50%;top:50%;width:min(560px,118%);transform:translate(-50%,-50%);opacity:.9;pointer-events:none}
+.bal *{vector-effect:non-scaling-stroke}
+.ph{position:absolute;border-radius:34px;padding:8px;background:linear-gradient(160deg,#16356f,#06183b);box-shadow:0 40px 80px -24px rgba(8,40,88,.65),0 0 0 1.5px rgba(201,162,74,.55);transform-style:preserve-3d;transition:transform .2s ease-out}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:27px;background:#fff}
+.ph.c{left:50%;top:50%;width:min(250px,44%);aspect-ratio:620/1352;margin:-0 0 0 0;transform:translate(-50%,-50%) rotateY(calc(var(--mx,0)*10deg)) rotateX(calc(var(--my,0)*-8deg));z-index:3;animation:fl 6s ease-in-out infinite}
+.ph.l{left:2%;top:50%;width:min(190px,34%);aspect-ratio:620/1352;transform:translateY(-44%) rotate(-9deg) translateX(calc(var(--mx,0)*-16px));z-index:2;animation:fl2 7s ease-in-out infinite}
+.ph.r{right:2%;top:50%;width:min(190px,34%);aspect-ratio:620/1352;transform:translateY(-56%) rotate(9deg) translateX(calc(var(--mx,0)*16px));z-index:2;animation:fl2 7.5s -2s ease-in-out infinite}
+@keyframes fl{50%{margin-top:-14px}}
+@keyframes fl2{50%{margin-top:12px}}
+.seal{position:absolute;right:-6px;bottom:2%;width:clamp(96px,16vw,142px);z-index:4;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-ind{position:absolute;left:50%;bottom:20px;width:26px;height:44px;border-radius:14px;border:1.5px solid rgba(8,40,88,.35);transform:translateX(-50%)}
+.scroll-ind::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;border-radius:3px;background:var(--gold);transform:translateX(-50%);animation:sc 1.8s infinite}
+@keyframes sc{0%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,16px)}}
+@media(max-width:900px){.hero{padding-top:104px}.hero .wrap{grid-template-columns:1fr}.stage{height:480px;min-height:0}.scroll-ind{display:none}}
 
-/* téléphones */
-.stage{position:relative;height:clamp(440px,52vw,640px);--s:1;perspective:1400px}
-.ring{position:absolute;left:50%;top:50%;width:min(100%,560px);aspect-ratio:1;transform:translate(-50%,-50%);animation:spin 40s linear infinite}
-@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.glow{position:absolute;left:50%;top:52%;width:70%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,.38),rgba(27,79,176,.14) 55%,transparent 70%);filter:blur(24px)}
-.rig{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .25s ease-out}
-.phone{
-  --w:270px;width:var(--w);aspect-ratio:1/1.59;border-radius:calc(var(--w)*.15);padding:calc(var(--w)*.03);position:absolute;
-  background:linear-gradient(145deg,#2A4C94,#061838 60%,#0b2a5e);
-  box-shadow:0 0 0 1.5px rgba(201,162,74,.8),0 40px 70px -20px rgba(8,40,88,.55),inset 0 0 0 2px rgba(255,255,255,.08);
-}
-.phone::before{content:"";position:absolute;left:50%;top:calc(var(--w)*.045);width:22%;height:calc(var(--w)*.03);border-radius:99px;transform:translateX(-50%);background:#030c20;z-index:2}
-.scr{width:100%;height:100%;border-radius:calc(var(--w)*.12);overflow:hidden;background:#fff;position:relative}
-.scr img{width:100%;height:100%;object-fit:cover;object-position:top}
-.scr::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.22),transparent 38%);pointer-events:none}
-.p-c{left:50%;top:50%;--w:300px;margin:calc(var(--w)*-.795) 0 0 calc(var(--w)*-.5);z-index:3;animation:float1 7s ease-in-out infinite}
-.p-l{left:50%;top:50%;--w:250px;margin:calc(var(--w)*-.7) 0 0 calc(var(--w)*-1.08);transform:rotate(-9deg);z-index:2;animation:float2 8s ease-in-out infinite}
-.p-r{left:50%;top:50%;--w:250px;margin:calc(var(--w)*-.88) 0 0 calc(var(--w)*.18);transform:rotate(8deg);z-index:2;animation:float3 9s ease-in-out infinite}
-@keyframes float1{50%{translate:0 -16px}}
-@keyframes float2{50%{translate:-6px 14px}}
-@keyframes float3{50%{translate:8px -12px}}
-.chip{position:absolute;z-index:5;border-radius:18px;box-shadow:0 18px 40px -12px rgba(8,40,88,.5),0 0 0 1.5px rgba(201,162,74,.7);overflow:hidden;background:var(--royal)}
-.chip img{width:100%}
-.chip-a{width:230px;left:-2%;bottom:3%;animation:float3 6.5s ease-in-out infinite}
-.badge{
-  position:absolute;z-index:5;right:-1%;top:8%;display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:18px;
-  background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 40px -14px rgba(8,40,88,.4),0 0 0 1px rgba(201,162,74,.5);animation:float2 7.5s ease-in-out infinite;
-}
-.badge .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--royal);color:var(--gold-light)}
-.badge b{display:block;font-family:var(--display);font-size:1.35rem;color:var(--royal);line-height:1.1}
-.badge span{font-size:.74rem;font-weight:600;color:var(--muted)}
-
-/* marquee */
-.marq{background:var(--royal);color:var(--gold-light);overflow:hidden;border-block:1px solid rgba(201,162,74,.5);padding-block:18px;transform:rotate(-1.2deg);margin-block:20px}
-.track{display:flex;width:max-content;animation:marq 38s linear infinite}
-.marq:hover .track{animation-play-state:paused}
-.track span{font-family:var(--display);font-style:italic;font-size:1.35rem;padding-inline:26px;white-space:nowrap;display:flex;align-items:center;gap:52px}
-.track span::after{content:"\2726";font-style:normal;font-size:.9rem;color:var(--gold)}
-@keyframes marq{to{transform:translateX(-50%)}}
-
-/* chiffres */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
-.stat{padding:30px 24px;border-radius:24px;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 0 0 1px var(--line),0 24px 50px -30px rgba(8,40,88,.35);position:relative;overflow:hidden}
-.stat::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,.32),transparent 70%)}
-.stat b{display:block;font-family:var(--display);font-size:clamp(2.4rem,4.2vw,3.5rem);line-height:1;color:var(--royal);font-variant-numeric:tabular-nums}
-.stat p{margin-top:10px;font-weight:600;color:var(--muted);font-size:.95rem}
-
-/* publics */
-.aud{background:linear-gradient(160deg,var(--royal) 0%,#0B3478 60%,#123B86 100%);color:#fff;border-radius:clamp(28px,4vw,56px);position:relative;overflow:hidden;box-shadow:0 50px 90px -40px rgba(8,40,88,.7)}
-.aud::before{content:"";position:absolute;inset:0;background:radial-gradient(40% 50% at 100% 0%,rgba(201,162,74,.28),transparent 70%),radial-gradient(30% 40% at 0% 100%,rgba(27,79,176,.5),transparent 70%)}
-.aud-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:clamp(28px,5vw,64px);align-items:center}
-.aud .h2{color:#fff}
-.aud .eyebrow{color:var(--gold-light)}
-.tabs{display:flex;gap:8px;margin-top:30px;padding:6px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);width:fit-content;max-width:100%;flex-wrap:wrap}
-.tab{border:0;cursor:pointer;background:transparent;color:rgba(255,255,255,.8);font:700 .92rem var(--body);padding:11px 22px;border-radius:999px;transition:all .35s var(--ease)}
-.tab[aria-selected=true]{background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal);box-shadow:0 8px 20px rgba(0,0,0,.25)}
-.panel{margin-top:30px;min-height:290px}
-.panel[hidden]{display:none}
-.panel h3{font-family:var(--display);font-size:1.75rem;line-height:1.2;color:var(--gold-light)}
-.panel ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
-.panel li{display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,.88);opacity:0;transform:translateX(-14px);animation:li .6s var(--ease) forwards;animation-delay:calc(var(--i)*.09s + .05s)}
-@keyframes li{to{opacity:1;transform:none}}
-.tick{flex:none;width:24px;height:24px;border-radius:50%;margin-top:2px;background:linear-gradient(135deg,#EBD6A0,#C9A24A);display:grid;place-items:center;color:var(--royal)}
-.aud-phone{position:relative;height:clamp(420px,46vw,560px);display:grid;place-items:center}
-.aud-phone .phone{position:relative;--w:min(290px,70vw);transform:rotate(3deg);animation:float1 7s ease-in-out infinite}
-.aud-phone .scr img{position:absolute;inset:0;opacity:0;transition:opacity .6s}
-.aud-phone .scr img.on{opacity:1}
-.aud-phone .halo{position:absolute;width:80%;aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(201,162,74,.55);animation:spin2 30s linear infinite}
-@keyframes spin2{to{transform:rotate(360deg)}}
-
-/* rubriques */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:48px}
-.card{
-  --mx:50%;--my:50%;position:relative;overflow:hidden;border-radius:28px;padding:30px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:0 0 0 1px var(--line),0 30px 60px -36px rgba(8,40,88,.4);transition:transform .45s var(--ease),box-shadow .45s;min-width:0;
-}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(201,162,74,.28),transparent 60%);opacity:0;transition:opacity .4s}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 0 1.5px rgba(201,162,74,.8),0 40px 70px -34px rgba(8,40,88,.5)}
-.card:hover::before{opacity:1}
-.card>*{position:relative}
-.c1{grid-column:span 3}.c2{grid-column:span 3}.c3{grid-column:span 2}.c4{grid-column:span 2}.c5{grid-column:span 2}
-.card.dark{background:linear-gradient(150deg,var(--royal),#0F3478);color:#fff;box-shadow:0 0 0 1px rgba(201,162,74,.5),0 30px 60px -30px rgba(8,40,88,.7)}
-.card.dark p{color:rgba(255,255,255,.82)}
-.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--royal);color:var(--gold-light);box-shadow:0 0 0 1.5px var(--gold)}
-.dark .ico{background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal);box-shadow:none}
-.card h3{font-family:var(--display);font-size:1.55rem;line-height:1.15;margin-top:20px;color:var(--royal)}
-.card.dark h3{color:var(--gold-light)}
-.card p{margin-top:10px;color:var(--muted);font-size:.98rem}
-.num{font-family:var(--display);font-size:3.2rem;line-height:1;margin-top:18px;display:block}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.tags span{padding:6px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:rgba(8,40,88,.07);color:var(--royal)}
-.dark .tags span{background:rgba(255,255,255,.1);color:var(--gold-light)}
-
-/* étudiants */
-.stu{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.mods{display:grid;gap:14px;margin-top:32px}
-.mod{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:20px;background:var(--glass);box-shadow:0 0 0 1px var(--line);transition:transform .4s var(--ease),box-shadow .4s}
-.mod:hover{transform:translateX(8px);box-shadow:0 0 0 1.5px var(--gold)}
-.mod .ico{width:46px;height:46px;border-radius:14px;flex:none}
-.mod b{display:block;color:var(--royal)}
-.mod span{font-size:.92rem;color:var(--muted)}
-.more{display:inline-flex;margin-top:16px;padding:8px 16px;border-radius:99px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.85rem}
-.lab{position:relative;display:grid;place-items:center;min-height:560px}
-.quiz{width:min(100%,400px);margin-top:110px;border-radius:28px;padding:26px;background:linear-gradient(155deg,var(--royal),#0F3478);color:#fff;box-shadow:0 0 0 1.5px rgba(201,162,74,.7),0 50px 80px -34px rgba(8,40,88,.7);position:relative;z-index:2}
-.quiz small{font-size:.72rem;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:var(--gold-light)}
-.quiz h4{font-family:var(--display);font-size:1.35rem;margin:10px 0 18px;line-height:1.25}
-.opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;margin-top:10px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:.93rem;transition:all .5s var(--ease)}
-.opt i{flex:none;width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4);transition:all .4s}
-.opt.ok{background:rgba(201,162,74,.22);box-shadow:inset 0 0 0 1.5px var(--gold)}
-.opt.ok i{background:var(--gold);box-shadow:none}
-.prog{margin-top:20px;height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
-.prog b{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));transition:width 1.2s var(--ease)}
-.prog-l{display:flex;justify-content:space-between;margin-top:10px;font-size:.8rem;color:rgba(255,255,255,.75);font-weight:600}
-.lab .chip-b{width:min(70%,250px);right:0;top:0;position:absolute;z-index:3;animation:float2 7s ease-in-out infinite;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -12px rgba(8,40,88,.5),0 0 0 1.5px rgba(201,162,74,.7)}
-
-/* pros */
-.pro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.scan{position:relative;width:min(100%,380px);margin-inline:auto;aspect-ratio:3/4;border-radius:22px;background:#fff;box-shadow:0 0 0 1px var(--line),0 50px 80px -34px rgba(8,40,88,.55);padding:34px 30px;overflow:hidden}
-.scan .hd{height:16px;width:55%;border-radius:6px;background:var(--royal)}
-.ln{height:10px;border-radius:5px;background:#D7E1F1;margin-top:14px;position:relative}
-.ln.f{background:rgba(201,162,74,.45);animation:flag 4.5s infinite;animation-delay:var(--d)}
-.ln.f::after{content:"\00C0  v\00E9rifier";position:absolute;right:0;top:-24px;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--royal);background:var(--gold-light);padding:3px 8px;border-radius:6px;opacity:0;animation:tag 4.5s infinite;animation-delay:var(--d)}
-@keyframes flag{0%,20%{box-shadow:none}30%,70%{box-shadow:0 0 0 3px rgba(201,162,74,.7)}85%,100%{box-shadow:none}}
-@keyframes tag{0%,20%{opacity:0;transform:translateY(6px)}30%,70%{opacity:1;transform:none}85%,100%{opacity:0}}
-.beam{position:absolute;left:0;right:0;height:70px;top:-70px;background:linear-gradient(180deg,transparent,rgba(201,162,74,.35) 70%,rgba(201,162,74,.9));border-bottom:2px solid var(--gold);animation:beam 4.5s ease-in-out infinite}
-@keyframes beam{0%{top:-70px}85%,100%{top:100%}}
-.scan .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 22px;background:var(--royal);color:var(--gold-light);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between}
-.flow{display:flex;align-items:center;gap:0;margin-top:26px}
-.node{flex:1;text-align:center;padding:14px 8px;border-radius:16px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.82rem;position:relative}
-.node.g{background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal)}
-.pipe{flex:0 0 28px;height:3px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px);animation:dash 1s linear infinite;background-size:12px 3px}
-@keyframes dash{to{background-position:12px 0}}
-.rub{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.rub div{padding:16px;border-radius:18px;background:var(--glass);box-shadow:0 0 0 1px var(--line);font-weight:700;color:var(--royal);font-size:.92rem;display:flex;gap:10px;align-items:flex-start;transition:transform .4s var(--ease),box-shadow .4s;min-width:0}
-.rub div:hover{transform:translateY(-4px);box-shadow:0 0 0 1.5px var(--gold)}
-.rub svg{flex:none;color:var(--gold-deep);margin-top:2px}
-
-/* citoyens */
-.cit{background:linear-gradient(180deg,transparent,rgba(8,40,88,.05) 50%,transparent)}
-.cit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.search{margin-top:32px;display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:999px;background:#fff;box-shadow:0 0 0 1.5px rgba(201,162,74,.7),0 24px 50px -24px rgba(8,40,88,.45);font-size:1.05rem;min-height:64px}
-.search svg{flex:none;color:var(--gold-deep)}
-#typed{font-weight:600;color:var(--royal)}
-.caret{display:inline-block;width:2px;height:1.2em;background:var(--gold);margin-left:2px;vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.sugg{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.sugg span,.acts span,.pcard .main,.claim,.card[data-go]{cursor:pointer}
-.sugg span{padding:8px 16px;border-radius:99px;background:rgba(8,40,88,.07);font-weight:600;font-size:.88rem;color:var(--royal);transition:all .3s}
-.sugg span:hover{background:var(--royal);color:var(--gold-light);transform:translateY(-3px)}
-.pcard{border-radius:28px;background:#fff;padding:26px;box-shadow:0 0 0 1px var(--line),0 50px 80px -40px rgba(8,40,88,.5);max-width:420px;margin-inline:auto;transform:rotate(-2deg);transition:transform .5s var(--ease)}
-.pcard:hover{transform:rotate(0) translateY(-6px)}
-.pcard .t{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:99px;background:#E8EFFB;color:var(--royal-2);font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.pcard .who{display:flex;gap:16px;align-items:center;margin-top:18px}
-.av{width:64px;height:64px;border-radius:18px;background:var(--royal);color:var(--gold-light);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.3rem;flex:none;box-shadow:0 0 0 2px var(--gold)}
-.pcard h4{margin:0;font-size:1.1rem;color:var(--royal)}
-.pcard .who span{font-size:.88rem;color:var(--muted)}
-.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
-.acts span{padding:10px 6px;border-radius:12px;background:#EEF3FB;text-align:center;font-weight:700;font-size:.8rem;color:var(--royal);transition:transform .3s}
-.acts span:nth-child(3){background:#E5F6EC;color:#16794A}
-.pcard:hover .acts span{transform:translateY(-3px)}
-.pcard .main{margin-top:10px;padding:14px;border-radius:14px;text-align:center;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.92rem}
-.pcard .claim{margin-top:16px;text-align:center;font-size:.78rem;color:var(--muted);font-weight:600}
+/* stats */
+.stats{padding:0;margin-top:-1px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--royal);border-radius:26px;box-shadow:0 30px 60px -30px rgba(8,40,88,.7),inset 0 0 0 1px rgba(201,162,74,.35);overflow:hidden}
+.stat{padding:30px 22px;text-align:center;color:#fff;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:rgba(235,214,160,.3)}
+.stat b{display:block;font:700 clamp(2rem,4.4vw,3rem)/1 var(--display);background:linear-gradient(180deg,#FFF6D6,#C9A24A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;font:600 .9rem var(--body);color:#C9D6EE}
+@media(max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3)::before{display:none}.stat:nth-child(n+3){border-top:1px solid rgba(235,214,160,.2)}}
 
 /* adages */
-.adg{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.scales{width:min(100%,360px);margin-inline:auto}
-.beamsvg{transform-origin:200px 86px;animation:rock 6s ease-in-out infinite}
-@keyframes rock{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-.pan{transform-origin:center top;animation:pan 6s ease-in-out infinite}
-@keyframes pan{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}}
-.deck{position:relative;height:250px;margin-top:30px}
-.ad{position:absolute;inset:0;padding:34px;border-radius:30px;background:linear-gradient(150deg,var(--royal),#0F3478);color:#fff;box-shadow:0 0 0 1.5px rgba(201,162,74,.7),0 40px 70px -34px rgba(8,40,88,.7);opacity:0;transform:translateY(24px) scale(.96) rotate(1deg);transition:all .7s var(--ease);pointer-events:none;overflow:hidden}
-.ad.on{opacity:1;transform:none;pointer-events:auto}
-.ad::after{content:"\201C";position:absolute;right:20px;top:-26px;font-family:var(--display);font-size:11rem;color:rgba(201,162,74,.22);line-height:1}
-.ad small{font-size:.72rem;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--gold-light)}
-.ad h4{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin:16px 0 14px;color:var(--gold-light);position:relative}
-.ad p{color:rgba(255,255,255,.9);font-size:1.02rem;position:relative}
-.dots{display:flex;gap:8px;margin-top:20px}
-.dots button{width:10px;height:10px;border-radius:99px;border:0;padding:0;cursor:pointer;background:rgba(8,40,88,.2);transition:all .4s var(--ease)}
-.dots button.on{width:34px;background:var(--gold)}
+.adages{padding:34px 0;overflow:hidden;white-space:nowrap}
+.adages .row{display:inline-flex;gap:46px;animation:mq 60s linear infinite;padding-right:46px}
+.adages:hover .row{animation-play-state:paused}
+.adages span{font:italic 500 clamp(1.3rem,3vw,2rem) var(--display);color:var(--royal);opacity:.82}
+.adages span::after{content:"⚖";font-style:normal;color:var(--gold);margin-left:46px;font-size:.8em}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* equipe */
-.team{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px);align-items:center}
-.arch{position:relative;width:min(100%,380px);margin-inline:auto}
-.arch::before{content:"";position:absolute;inset:-14px;border-radius:999px 999px 36px 36px;border:1.5px dashed rgba(201,162,74,.8);animation:breathe 5s ease-in-out infinite}
-@keyframes breathe{50%{transform:scale(1.03)}}
-.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:999px 999px 28px 28px;box-shadow:0 0 0 3px var(--gold),0 50px 80px -34px rgba(8,40,88,.6);background:#fff}
-.arch .tag{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);padding:10px 22px;border-radius:99px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.85rem;white-space:nowrap;box-shadow:0 0 0 1.5px var(--gold)}
+/* temple */
+.temple-sec{background:linear-gradient(180deg,transparent,rgba(255,255,255,.55) 20%,rgba(255,255,255,.55) 80%,transparent)}
+.temple-head{text-align:center;margin-bottom:34px}
+.temple-head .lead{margin-left:auto;margin-right:auto}
+.temple{max-width:760px;margin:0 auto}
+.ped{display:block;width:100%;height:auto;opacity:0;transform:translateY(-30px);transition:all 1s var(--ease)}
+.temple.in .ped{opacity:1;transform:none}
+.ent{height:16px;background:linear-gradient(180deg,#F4E3AE,#C9A24A 55%,#97762B);border-radius:3px;box-shadow:0 8px 18px -8px rgba(151,118,43,.7);transform:scaleX(0);transition:transform 1s .1s var(--ease)}
+.temple.in .ent{transform:none}
+.cols{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(6px,2vw,22px);padding:0 clamp(4px,2vw,24px)}
+.col{display:flex;flex-direction:column;align-items:center;cursor:pointer;background:none;border:0;padding:0;font:inherit;color:inherit;text-align:center}
+.cap{width:118%;height:14px;border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,#F5F8FD,#CBD8EE);box-shadow:0 2px 0 rgba(8,40,88,.12);opacity:0;transition:opacity .5s calc(var(--i)*.12s + .5s)}
+.shaft{width:100%;height:clamp(150px,26vw,230px);transform:scaleY(0);transform-origin:bottom;transition:transform 1.1s calc(var(--i)*.12s + .2s) var(--ease),box-shadow .4s,background .4s;
+  background:repeating-linear-gradient(90deg,rgba(8,40,88,.10) 0 2px,transparent 2px 9px),linear-gradient(90deg,#CFDBEF,#F8FBFF 40%,#F8FBFF 60%,#C3D2EA);
+  box-shadow:inset 0 0 0 1px rgba(8,40,88,.12);position:relative}
+.temple.in .shaft{transform:none}.temple.in .cap{opacity:1}
+.shaft i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-style:normal;font-size:clamp(1.3rem,3.6vw,2.2rem);filter:grayscale(.2)}
+.base{width:118%;height:16px;border-radius:2px 2px 4px 4px;background:linear-gradient(180deg,#CBD8EE,#F5F8FD);box-shadow:0 3px 0 rgba(8,40,88,.14)}
+.col b{margin-top:12px;font:800 clamp(.72rem,1.9vw,.95rem) var(--body);color:var(--royal);letter-spacing:.02em}
+.col:hover .shaft{box-shadow:inset 0 0 0 1px rgba(201,162,74,.8),0 14px 30px -14px rgba(8,40,88,.5)}
+.col.on .shaft{background:repeating-linear-gradient(90deg,rgba(90,60,0,.16) 0 2px,transparent 2px 9px),linear-gradient(90deg,#B88E32,#F6E3A4 40%,#F6E3A4 60%,#A6802B);box-shadow:0 0 0 2px var(--gold),0 20px 40px -14px rgba(151,118,43,.8)}
+.col.on b{color:var(--gold-deep)}
+.stylobate{height:12px;margin-top:0;background:linear-gradient(180deg,#DFE8F6,#C3D2EA);border-radius:3px}
+.detail{margin-top:clamp(40px,6vw,70px);display:grid;grid-template-columns:1fr auto;gap:clamp(24px,5vw,70px);align-items:center;max-width:960px;margin-left:auto;margin-right:auto}
+.dt{min-width:0}
+.dt .num{font:italic 500 4rem/1 var(--display);color:rgba(201,162,74,.55)}
+.dt h3{font-size:clamp(1.9rem,4.4vw,2.9rem);color:var(--royal);margin:6px 0 12px}
+.dt p{color:var(--muted);margin:0 0 16px;font-size:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tags i{font:700 .8rem var(--body);font-style:normal;padding:6px 12px;border-radius:99px;background:#fff;box-shadow:inset 0 0 0 1px rgba(201,162,74,.6);color:var(--gold-deep)}
+.dt.sw{animation:swap .5s var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+.phone{position:relative;width:min(250px,60vw);aspect-ratio:620/1352;border-radius:36px;padding:9px;background:linear-gradient(160deg,#16356f,#06183b);box-shadow:0 50px 90px -30px rgba(8,40,88,.7),0 0 0 1.5px rgba(201,162,74,.6);justify-self:center}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:#fff}
+.phone .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.06);transition:opacity .6s,transform .8s var(--ease)}
+.phone .scr img.on{opacity:1;transform:none}
+@media(max-width:760px){.detail{grid-template-columns:1fr}.phone{order:-1}}
 
-/* final */
-.final{position:relative;overflow:hidden;border-radius:clamp(28px,4vw,56px);background:linear-gradient(150deg,var(--royal),#0D3070 55%,#16408F);color:#fff;text-align:center;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px);box-shadow:0 50px 90px -40px rgba(8,40,88,.75)}
-.final::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 70%,rgba(201,162,74,.16) 80%,transparent 90%);animation:spin2 18s linear infinite}
-.final>*{position:relative}
-.final .logo{width:112px;height:112px;margin:0 auto 24px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 0 0 3px var(--gold),0 0 60px rgba(201,162,74,.55);object-fit:contain;animation:float1 5s ease-in-out infinite}
-.final .h2{color:#fff;max-width:18ch;margin-inline:auto}
-.final p.l{margin:18px auto 0;color:rgba(255,255,255,.82);max-width:54ch}
-.stores{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-.store{display:flex;align-items:center;gap:12px;padding:12px 24px;border-radius:16px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);color:#fff;text-align:left}
-.store small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
-.store b{font-size:1.02rem}
-.note{margin-top:18px;font-size:.9rem;color:var(--gold-light);min-height:1.4em}
-footer{padding-block:48px 56px;color:var(--muted);font-size:.88rem}
-.foot{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
-.foot .brand{font-size:1.15rem}
-.foot .brand img{width:38px;height:38px}
-.legal{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);max-width:80ch}
+/* mon juriste */
+.jur{background:radial-gradient(70% 90% at 80% 20%,#123B86 0%,#082858 55%,#04122B 100%);color:#fff;overflow:hidden}
+.jur::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='26'%3E%3Cpath d='M22 2L38 13 22 24 6 13z' fill='none' stroke='%23C9A24A' stroke-opacity='.18'/%3E%3C/svg%3E");-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%)}
+.jur .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.jur h2{margin:18px 0 0}.jur .eyebrow{color:var(--gold-light)}
+.jur .lead{color:#C9D6EE}
+.scn{display:flex;flex-direction:column;gap:10px;margin:26px 0 0}
+.scn button{font:700 .98rem var(--body);text-align:left;color:#fff;background:rgba(255,255,255,.07);border:0;border-radius:16px;padding:14px 18px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(235,214,160,.28);transition:background .3s,transform .3s var(--ease),box-shadow .3s;display:flex;gap:12px;align-items:center}
+.scn button:hover{background:rgba(255,255,255,.14);transform:translateX(6px)}
+.scn button.on{background:linear-gradient(135deg,rgba(243,220,150,.28),rgba(201,162,74,.14));box-shadow:inset 0 0 0 1.5px var(--gold)}
+.scn button span{font-size:1.3rem}
+.chat{background:#F5F8FD;color:var(--ink);border-radius:28px;box-shadow:0 50px 90px -30px #000,0 0 0 1.5px rgba(201,162,74,.7);overflow:hidden;min-width:0}
+.chat .bar{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#123B86,#082858);color:#fff;font-weight:800}
+.chat .bar i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--gold-light);font-style:normal}
+.chat .bar em{margin-left:auto;font:700 .72rem var(--body);font-style:normal;color:var(--gold-light);letter-spacing:.06em}
+.msgs{padding:22px 18px;min-height:340px;display:flex;flex-direction:column;gap:12px}
+.m{max-width:86%;padding:12px 16px;border-radius:18px;font-size:.98rem;line-height:1.5;animation:pop .45s var(--ease) both}
+.m.u{align-self:flex-end;background:linear-gradient(135deg,#1B4FB0,#123B86);color:#fff;border-bottom-right-radius:5px}
+.m.j{align-self:flex-start;background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-bottom-left-radius:5px}
+.m.j b{color:var(--royal)}
+.typing{display:inline-flex;gap:5px;padding:14px 16px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--gold-deep);animation:tp 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,60%,100%{transform:none;opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+.chat small{display:block;padding:12px 18px 16px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line)}
+@media(max-width:860px){.jur .wrap{grid-template-columns:1fr}}
 
-/* révélations */
-.js .rv{opacity:.4;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
-.js .rv.in{opacity:1;transform:none}
+/* vrai faux */
+.vf-head{text-align:center;margin-bottom:40px}.vf-head .lead{margin-left:auto;margin-right:auto}
+.vf{max-width:760px;margin:0 auto;position:relative}
+.vf-prog{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.vf-prog i{width:42px;height:6px;border-radius:4px;background:rgba(8,40,88,.15);transition:background .4s}
+.vf-prog i.ok{background:var(--gold)}.vf-prog i.ko{background:var(--royal-3)}
+.vf-card{position:relative;background:#fff;border-radius:30px;padding:clamp(28px,5vw,52px);text-align:center;box-shadow:0 40px 80px -36px rgba(8,40,88,.55),0 0 0 1.5px rgba(201,162,74,.55);overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:center}
+.vf-card .q{font:700 clamp(1.4rem,3.6vw,2.2rem)/1.25 var(--display);color:var(--royal);text-wrap:balance}
+.vf-btns{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.vf-btns button{min-width:140px}
+.vf-res{display:none;margin-top:6px}
+.vf-card.done .vf-res{display:block;animation:pop .5s var(--ease) both}
+.vf-card.done .vf-btns{display:none}
+.vf-res p{color:var(--muted);margin:14px auto 22px;max-width:52ch}
+.stamp{display:inline-block;font:700 clamp(2.2rem,7vw,3.6rem)/1 var(--display);letter-spacing:.12em;padding:6px 26px;border:5px double currentColor;border-radius:10px;transform:rotate(-6deg);animation:stamp .55s var(--ease) both}
+.stamp.v{color:#1a7f4b}.stamp.f{color:#B3261E}
+@keyframes stamp{0%{transform:rotate(-6deg) scale(3);opacity:0}60%{transform:rotate(-6deg) scale(.92);opacity:1}100%{transform:rotate(-6deg) scale(1);opacity:1}}
+.vf-card.hit{animation:shake .4s}
+@keyframes shake{20%{transform:translate(-6px,3px)}40%{transform:translate(6px,-3px)}60%{transform:translate(-4px,2px)}80%{transform:translate(3px,-1px)}}
+.vf-end{text-align:center}.vf-end .score{font:700 clamp(3rem,12vw,6rem)/1 var(--display);background:linear-gradient(180deg,#F3DC96,#B88E32);-webkit-background-clip:text;background-clip:text;color:transparent}
+.spark{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);pointer-events:none;animation:sp 1.1s ease-out forwards}
+@keyframes sp{to{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
 
+/* codex */
+.codex{background:linear-gradient(180deg,#fff0,rgba(8,40,88,.05))}
+.codex .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.search{background:#fff;border-radius:26px;padding:22px;box-shadow:0 40px 80px -36px rgba(8,40,88,.5),0 0 0 1.5px rgba(201,162,74,.5);min-width:0}
+.search .in{display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:16px;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.search input{flex:1;min-width:0;border:0;background:none;font:600 1.05rem var(--body);color:var(--ink);outline:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chips button{font:700 .84rem var(--body);padding:8px 14px;border-radius:99px;border:0;background:#fff;color:var(--royal);box-shadow:inset 0 0 0 1px rgba(8,40,88,.25);cursor:pointer;transition:all .25s}
+.chips button:hover{background:var(--royal);color:#fff}
+.res{display:flex;flex-direction:column;gap:10px;min-height:250px}
+.res a{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:16px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);animation:pop .45s var(--ease) both;color:var(--ink)}
+.res a:hover{background:#fff;box-shadow:inset 0 0 0 1.5px var(--gold)}
+.res a b{display:block;font-size:.98rem;line-height:1.35}.res a span{font-size:.8rem;color:var(--muted)}
+.res .ic{font-size:1.4rem}
+.res mark{background:rgba(201,162,74,.35);color:inherit;border-radius:4px;padding:0 2px}
+.res .none{padding:30px 10px;text-align:center;color:var(--muted)}
+.search small{display:block;margin-top:14px;font-size:.78rem;color:var(--muted)}
+@media(max-width:860px){.codex .wrap{grid-template-columns:1fr}}
+
+/* pour qui */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.card{position:relative;padding:34px 28px;border-radius:26px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;transition:transform .5s var(--ease),box-shadow .4s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 200px at var(--px,50%) var(--py,0%),rgba(201,162,74,.28),transparent 70%);opacity:0;transition:opacity .4s}
+.card:hover::before{opacity:1}.card:hover{box-shadow:inset 0 0 0 1.5px var(--gold),0 30px 60px -30px rgba(8,40,88,.5)}
+.card .ic{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:1.8rem;background:linear-gradient(135deg,#123B86,#082858);box-shadow:0 12px 24px -10px rgba(8,40,88,.6);margin-bottom:20px}
+.card h3{font-size:1.7rem;color:var(--royal)}
+.card p{color:var(--muted);margin:10px 0 16px}
+.card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-weight:600}
+.card li{display:flex;gap:10px}.card li::before{content:"✦";color:var(--gold)}
+@media(max-width:900px){.cards{grid-template-columns:1fr}}
+
+/* premium */
+.prem{background:linear-gradient(180deg,rgba(8,40,88,.05),transparent)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.tile{padding:26px;border-radius:22px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s}
+.tile:hover{transform:translateY(-6px);box-shadow:inset 0 0 0 1.5px var(--gold),0 26px 50px -26px rgba(8,40,88,.5)}
+.tile .ic{font-size:1.9rem}.tile b{display:block;font:700 1.35rem var(--display);color:var(--royal);margin:10px 0 6px}
+.tile p{margin:0;color:var(--muted);font-size:.98rem}
+.tile .free{position:absolute;right:16px;top:16px;font:800 .7rem var(--body);letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:var(--gold-light);color:#5a4210}
+.note{margin-top:30px;padding:20px 24px;border-radius:20px;background:linear-gradient(135deg,rgba(243,220,150,.5),rgba(255,255,255,.7));box-shadow:inset 0 0 0 1.5px rgba(201,162,74,.7);font-weight:600;color:#3a2c08}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}@media(max-width:560px){.tiles{grid-template-columns:1fr}}
+
+/* experts */
+.exp{padding:clamp(40px,6vw,70px) 0}
+.exp .box{display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:clamp(26px,4vw,40px);border-radius:28px;background:#fff;box-shadow:inset 0 0 0 1.5px rgba(201,162,74,.65),0 30px 60px -36px rgba(8,40,88,.5)}
+.exp h3{font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--royal)}.exp p{margin:8px 0 0;color:var(--muted);max-width:56ch}
+.exp .ic{font-size:2.6rem}
+
+/* telechargement */
+.dl{background:radial-gradient(70% 90% at 15% 20%,#123B86 0%,#082858 55%,#04122B 100%);color:#fff;overflow:hidden}
+.dl .eyebrow{color:var(--gold-light)}.dl h2{margin-top:16px}
+.dl .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,80px);margin-top:44px;align-items:start}
+.tabs{display:inline-flex;gap:6px;padding:6px;border-radius:99px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(235,214,160,.3)}
+.tabs button{font:800 .95rem var(--body);padding:11px 22px;border-radius:99px;border:0;background:none;color:#C9D6EE;cursor:pointer;transition:all .3s}
+.tabs button.on{background:linear-gradient(135deg,#F3DC96,#C9A24A);color:#2a1c00}
+.panel{display:none;margin-top:26px;position:relative}.panel.on{display:block}
+.panel::before{content:"";position:absolute;left:25px;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,var(--gold),rgba(201,162,74,.1))}
+.stp{display:flex;gap:18px;padding:14px 0;position:relative;animation:pop .6s var(--ease) both}
+.stp:nth-child(2){animation-delay:.12s}.stp:nth-child(3){animation-delay:.24s}
+.stp .n{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 1.4rem var(--display);background:linear-gradient(135deg,#F3DC96,#B88E32);color:#2a1c00;box-shadow:0 0 0 6px rgba(201,162,74,.18);z-index:1}
+.stp b{display:block;font-size:1.1rem}.stp span{color:#C9D6EE;font-size:.98rem}
+.qr{text-align:center;background:rgba(255,255,255,.07);border-radius:28px;padding:26px;box-shadow:inset 0 0 0 1.5px rgba(235,214,160,.4)}
+.qr img{width:min(200px,60%);margin:0 auto 14px;border-radius:18px;background:#fff;padding:10px}
+.qr p{margin:4px 0 16px;color:#C9D6EE}
+.qr video{width:100%;max-height:260px;border-radius:16px;background:#000;object-fit:contain}
+.qr small{display:block;margin-top:8px;color:#C9D6EE}
+@media(max-width:860px){.dl .grid{grid-template-columns:1fr}}
+
+/* fondateur / faq / final */
+.fd .box{display:flex;gap:30px;align-items:center;padding:clamp(24px,4vw,40px);border-radius:28px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.fd img{width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--gold),0 0 0 10px rgba(201,162,74,.2);flex:none}
+.fd h3{font-size:1.9rem;color:var(--royal);margin:10px 0}.fd p{margin:8px 0;color:var(--muted)}
+@media(max-width:700px){.fd .box{flex-direction:column;text-align:center}}
+.faq .wrap{max-width:900px}
+details{background:#fff;border-radius:18px;margin-bottom:12px;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s}
+details[open]{box-shadow:inset 0 0 0 1.5px var(--gold)}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font:700 1.08rem var(--body);color:var(--royal);display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font:500 1.6rem/1 var(--display);color:var(--gold-deep);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 24px 22px;color:var(--muted)}
+.final{background:radial-gradient(60% 100% at 50% 0%,#1B4FB0 0%,#082858 55%,#04122B 100%);color:#fff;text-align:center;overflow:hidden}
+.final h2{font-size:clamp(2.8rem,9vw,6.4rem)}.final .lead{margin:20px auto 34px;color:#C9D6EE}
+footer{background:#04122B;color:#C9D6EE;padding:44px 0;font-size:.92rem}
+footer .wrap{display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap}
+footer b{font:700 1.5rem var(--display);letter-spacing:.14em;color:var(--gold-light)}
+footer p{max-width:46ch;margin:8px 0 0}footer nav{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}footer nav a:hover{color:var(--gold-light)}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js .rv{opacity:1;transform:none}}
 
 /* ===== intro ===== */
 html.intro,html.intro body{overflow:hidden}
@@ -408,220 +364,10 @@ html.intro .ov{display:block}
 .ov-skip{position:absolute;z-index:5;border:0;cursor:pointer;color:#EBD6A0;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(235,214,160,.5);border-radius:99px;font:700 .8rem var(--body);letter-spacing:.06em;transition:background .3s,opacity .5s}
 .ov-skip{right:max(16px,env(safe-area-inset-right,0px));bottom:max(54px,calc(env(safe-area-inset-bottom,0px) + 40px));padding:10px 18px}
 .ov-skip:hover{background:rgba(235,214,160,.2)}
-.ov-skip,.ov.s1 .ov-skip,.ov.s1 .ov.out .ov-skip,.ov.out 
 html.intro .w>span,html.intro .hero p.sub,html.intro .cta-row,html.intro .mini{animation-play-state:paused}
 
-/* ===== menu mobile ===== */
-.nav-r{display:flex;align-items:center;gap:10px}
-.burger{display:none;width:46px;height:46px;border-radius:14px;border:0;cursor:pointer;background:var(--glass);box-shadow:inset 0 0 0 1px var(--line);align-items:center;justify-content:center;color:var(--royal)}
-.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .3s,background .3s,top .3s}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0}
-.burger span::before{top:-6px}.burger span::after{top:6px}
-.burger[aria-expanded=true] span{background:transparent}
-.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
-.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
-.mmenu{position:absolute;left:0;right:0;top:100%;padding:10px max(16px,env(safe-area-inset-right,0px)) 18px max(16px,env(safe-area-inset-left,0px));background:rgba(234,240,249,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 24px 40px -24px rgba(8,40,88,.45);display:grid;animation:menu .3s var(--ease)}
-.mmenu[hidden]{display:none}
-.mmenu a:not(.btn){padding:14px 8px;font-weight:700;color:var(--royal);border-bottom:1px solid var(--line)}
-.mmenu .btn{margin-top:14px}
-@keyframes menu{from{opacity:0;transform:translateY(-8px)}}
-
-/* ===== fenêtre de téléchargement ===== */
-body.lock{overflow:hidden}
-.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.modal[hidden]{display:none}
-.m-back{position:absolute;inset:0;background:rgba(6,26,61,.64);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:fadein .3s}
-@keyframes fadein{from{opacity:0}}
-.m-card{position:relative;width:min(100%,470px);max-height:100%;overflow:auto;border-radius:30px;padding:32px 26px 26px;background:linear-gradient(160deg,#0D3070,#082858);color:#fff;box-shadow:0 0 0 1.5px rgba(201,162,74,.85),0 60px 100px -30px rgba(0,0,0,.6);animation:pop .45s var(--ease);text-align:center}
-@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.95)}}
-.m-x{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center}
-.m-x:hover{background:rgba(255,255,255,.2)}
-.m-logo{width:76px;height:76px;margin:0 auto 14px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 0 0 2px var(--gold),0 0 40px rgba(201,162,74,.5);object-fit:contain}
-.m-card h3{font-family:var(--display);font-size:1.75rem;line-height:1.15;color:var(--gold-light)}
-.m-card p{margin-top:10px;color:rgba(255,255,255,.82)}
-.m-btns{display:grid;gap:12px;margin-top:24px}
-.dl{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:18px;border:0;cursor:pointer;text-align:left;font-family:var(--body);color:#fff;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);transition:transform .3s var(--ease),box-shadow .3s,background .3s}
-.dl:hover{transform:translateY(-3px);background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1.5px var(--gold)}
-.dl svg{flex:none;color:var(--gold-light)}
-.dl small{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
-.dl b{font-size:1.25rem}
-.m-view[hidden]{display:none}
-.steps{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;text-align:left}
-.steps li{display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);animation:li .6s var(--ease) both;animation-delay:calc(var(--i)*.12s + .1s)}
-.steps .si{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal)}
-.steps b{display:block;font-size:.95rem}
-.steps span{font-size:.84rem;color:rgba(255,255,255,.75);line-height:1.45;display:block}
-.m-qr{display:flex;align-items:center;gap:16px;margin-top:16px;padding:12px;border-radius:18px;background:#fff;color:var(--royal);text-align:left}
-.m-qr img{width:92px;height:92px;flex:none;border-radius:8px}
-.m-qr span{font-size:.85rem;font-weight:700;line-height:1.4}
-.m-back-btn{display:inline-flex;gap:6px;align-items:center;margin-bottom:10px;border:0;background:transparent;color:var(--gold-light);font:700 .88rem var(--body);cursor:pointer;padding:6px 4px}
-#open-pwa{margin-top:16px;width:100%}
-#toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:400;padding:12px 22px;border-radius:99px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.9rem;box-shadow:0 0 0 1.5px var(--gold),0 20px 40px -10px rgba(8,40,88,.6);transition:all .4s var(--ease);pointer-events:none;max-width:calc(100vw - 32px);text-align:center}
-#toast.on{opacity:1;transform:translate(-50%,0)}
-
-/* ===== rubriques ===== */
-.bento .k{grid-column:span 3}
-[hidden]{display:none!important}
-.deck{height:230px}
-.card .num{font-size:3.4rem}
-
-/* ===== premium étudiants ===== */
-.px{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;margin-top:44px;align-items:stretch}
-.px-list{display:grid;gap:10px;align-content:start;min-width:0}
-.px-b{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;border-radius:18px;border:0;cursor:pointer;font:700 .98rem var(--body);color:var(--royal);background:var(--glass);box-shadow:0 0 0 1px var(--line);transition:transform .35s var(--ease),box-shadow .35s,background .35s,color .35s;min-width:0}
-.px-b .ico{width:42px;height:42px;border-radius:13px;flex:none}
-.px-b:hover{transform:translateX(6px)}
-.px-b[aria-selected=true]{background:var(--royal);color:var(--gold-light);box-shadow:0 0 0 1.5px var(--gold),0 18px 36px -18px rgba(8,40,88,.7);transform:translateX(10px)}
-.px-b[aria-selected=true] .ico{background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal);box-shadow:none}
-.px-panel{position:relative;min-width:0;overflow:hidden;border-radius:30px;padding:clamp(24px,3.4vw,40px);background:linear-gradient(155deg,var(--royal),#0F3478);color:#fff;box-shadow:0 0 0 1.5px rgba(201,162,74,.7),0 50px 80px -40px rgba(8,40,88,.7);display:flex;flex-direction:column}
-.px-panel::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,.35),transparent 68%)}
-.px-in{position:relative;display:flex;flex-direction:column;gap:22px;flex:1;animation:pxin .6s var(--ease)}
-@keyframes pxin{from{opacity:0;transform:translateY(14px)}}
-.px-top{display:flex;gap:16px;align-items:flex-start}
-.px-top .ico{width:58px;height:58px;border-radius:18px;flex:none;background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal);box-shadow:none}
-.px-top h3{font-family:var(--display);font-size:1.7rem;line-height:1.15;color:var(--gold-light);margin:0}
-.px-top p{margin-top:8px;color:rgba(255,255,255,.86)}
-.px-ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
-.ba{border-radius:20px;padding:20px;min-width:0}
-.ba small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
-.ba p{font-size:1.05rem;line-height:1.55;margin:0}
-.ba.bad{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);color:rgba(255,255,255,.74)}
-.ba.bad small{color:rgba(255,255,255,.55)}
-.ba.good{background:rgba(201,162,74,.18);box-shadow:inset 0 0 0 1.5px var(--gold);color:#fff}
-.ba.good small{color:var(--gold-light)}
-.px-gain{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:auto}
-.px-gain span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:800}
-.px-gain b{padding:9px 18px;border-radius:99px;background:linear-gradient(135deg,#EBD6A0,#C9A24A);color:var(--royal);font-size:.95rem}
-.px-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--gold-deep),var(--gold-light))}
-.px-bar.run{animation:bar 6.5s linear forwards}
-@keyframes bar{to{transform:scaleX(1)}}
-.px-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.px-cta p{color:var(--muted);font-weight:600}
-
-/* ===== outils pros ===== */
-.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.tool{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:20px;background:var(--glass);box-shadow:0 0 0 1px var(--line);transition:transform .4s var(--ease),box-shadow .4s;min-width:0}
-.tool:hover{transform:translateY(-4px);box-shadow:0 0 0 1.5px var(--gold)}
-.tool:last-child{grid-column:span 2}
-.tool .ico{width:44px;height:44px;border-radius:14px;flex:none}
-.tool b{display:block;color:var(--royal);margin-bottom:4px}
-.tool span{font-size:.9rem;color:var(--muted);line-height:1.5;display:block}
-.gainline{margin-top:22px;display:inline-flex;gap:10px;align-items:center;padding:12px 20px;border-radius:99px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.92rem;box-shadow:0 0 0 1.5px var(--gold)}
-
-/* ===== à propos ===== */
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center}
-.about p{margin-top:16px;color:var(--muted);max-width:60ch}
-.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.val{padding:18px;border-radius:20px;background:var(--glass);box-shadow:0 0 0 1px var(--line);transition:transform .4s var(--ease),box-shadow .4s;min-width:0}
-.val:hover{transform:translateY(-5px);box-shadow:0 0 0 1.5px var(--gold)}
-.val b{display:block;font-family:var(--display);font-size:1.3rem;color:var(--royal)}
-.val span{font-size:.88rem;color:var(--muted);line-height:1.5;display:block;margin-top:6px}
-.med{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:440px;margin-inline:auto;width:100%}
-.med .o1,.med .o2{position:absolute;border-radius:50%}
-.med .o1{inset:0;border:1.5px dashed rgba(201,162,74,.8);animation:spin2 50s linear infinite}
-.med .o2{inset:12%;border:1px solid var(--line);background:radial-gradient(circle,rgba(201,162,74,.22),transparent 70%)}
-.med .lg2{position:relative;width:52%;aspect-ratio:1;border-radius:50%;background:#fff;padding:8px;box-shadow:0 0 0 3px var(--gold),0 40px 80px -30px rgba(8,40,88,.6);animation:float1 7s ease-in-out infinite}
-.med .lg2 img{width:100%;height:100%;object-fit:contain;border-radius:50%}
-.med .tg{position:absolute;padding:9px 16px;border-radius:99px;background:var(--royal);color:var(--gold-light);font-weight:700;font-size:.82rem;box-shadow:0 0 0 1.5px var(--gold),0 14px 30px -10px rgba(8,40,88,.5)}
-.tg1{left:0;top:16%;animation:float2 6s ease-in-out infinite}
-.tg2{right:-2%;top:38%;animation:float3 7s ease-in-out infinite}
-.tg3{left:8%;bottom:10%;animation:float3 8s ease-in-out infinite}
-
-/* ===== contact ===== */
-.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,80px);align-items:center}
-.cname{margin-top:24px}
-.cname b{display:block;font-family:var(--display);font-size:1.9rem;color:var(--royal);line-height:1.15}
-.cname .role{display:block;color:var(--gold-deep);font-weight:800;letter-spacing:.03em;margin-top:6px}
-.cname .study{display:block;color:var(--muted);font-weight:600}
-.cbox{margin-top:24px;display:grid;gap:12px}
-.crow{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:18px 20px;border-radius:22px;background:var(--glass);box-shadow:0 0 0 1px var(--line);transition:box-shadow .4s,transform .4s var(--ease)}
-.crow:hover{box-shadow:0 0 0 1.5px var(--gold);transform:translateY(-3px)}
-.crow .ico{width:48px;height:48px;border-radius:15px;flex:none}
-.cinfo{flex:1 1 220px;min-width:0}
-.cinfo small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--gold-deep)}
-.cinfo b{display:block;color:var(--royal);font-size:1.05rem;overflow-wrap:anywhere}
-.cact{display:flex;gap:8px;flex-wrap:wrap}
-.sm{padding:9px 16px;font-size:.82rem}
-.btn-wa{color:#fff;background:#1C9E50;box-shadow:0 10px 24px -8px rgba(28,158,80,.55)}
-.btn-dark{color:var(--gold-light);background:var(--royal);box-shadow:inset 0 0 0 1.5px var(--gold)}
-
-/* ===== téléchargement ===== */
-.final .h2{max-width:20ch}
-.qr-wrap{margin-top:30px;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center}
-.qr{display:flex;align-items:center;gap:18px;padding:16px 22px 16px 16px;border-radius:24px;background:#fff;color:var(--royal);text-align:left;box-shadow:0 0 0 2px var(--gold),0 30px 60px -20px rgba(0,0,0,.5)}
-.qr img{width:124px;height:124px;border-radius:10px;flex:none}
-.qr b{display:block;font-family:var(--display);font-size:1.15rem;line-height:1.2}
-.qr span{display:block;margin-top:6px;font-size:.82rem;color:var(--muted);font-weight:600;max-width:22ch}
-.store{transition:transform .3s var(--ease),box-shadow .3s}
-a.store:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--gold)}
-.store.soon{opacity:.78;cursor:default}
-.store.soon small{color:#fff}
-.btn-ghost{color:#fff;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
-.flinks{display:flex;gap:10px 22px;flex-wrap:wrap;font-weight:600;color:var(--royal)}
-.flinks a:hover{color:var(--gold-deep)}
-
-/* responsive */
-@media(max-width:980px){
-  .links{display:none}
-  .hero-grid,.aud-in,.stu,.pro,.cit-grid,.adg,.team{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .bento{grid-template-columns:repeat(2,1fr)}
-  .c1,.c2{grid-column:span 2}.c3,.c4{grid-column:span 1}.c5{grid-column:span 2}
-  .stage{height:520px;margin-top:20px}
-  .lab{order:-1}
-  .scan{order:-1}
-}
-@media(max-width:560px){
-  .stage{height:430px}
-  .rig{transform:scale(.72)!important;transform-origin:50% 40%}
-  .chip-a{display:none}
-  .badge{right:0;top:2%;transform:scale(.85);transform-origin:right top}
-  .bento{grid-template-columns:1fr}.c1,.c2,.c3,.c4,.c5{grid-column:span 1}
-  .stats{gap:12px}.stat{padding:22px 16px}
-  .rub{grid-template-columns:1fr}
-  .mini div+div{padding-left:18px}
-  .deck{height:330px}
-  .ad{padding:26px}
-  nav .brand span{display:none}
-  .lab .chip-b{right:0}
-  .tab{padding:10px 16px}
-}
-
-@media(max-width:980px){
-  .burger{display:inline-flex}
-  .px,.about,.contact{grid-template-columns:1fr}
-  .px-list{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:8px;padding:4px 2px 10px;margin-inline:-2px}
-  .px-b{flex:0 0 auto;scroll-snap-align:start;transform:none!important;white-space:nowrap}
-  .bento .k{grid-column:span 1}
-  .med{max-width:360px}
-}
-@media(max-width:560px){
-  .px-ba{grid-template-columns:1fr}
-  .vals{grid-template-columns:1fr}
-  .tools{grid-template-columns:1fr}
-  .tool:last-child{grid-column:span 1}
-  .nav-cta{padding:10px 14px;font-size:.82rem}
-  .deck{height:250px}
-  .qr{flex-direction:column;text-align:center;padding:18px}
-  .qr span{max-width:none}
-  .m-card{padding:30px 18px 20px}
-  .crow{padding:16px}
-  .i-title{width:100%}
-}
-@media(prefers-reduced-motion:reduce){
-  .ov{display:none!important}
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .w>span{transform:none}
-  .js .rv{opacity:1;transform:none}
-  .panel li{opacity:1;transform:none}
-  .ad:first-child{opacity:1;transform:none}
-}
 </style>
-
-<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('intro')}catch(e){}</script>
+<script>try{R=document.documentElement;R.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)R.classList.add('intro')}catch(e){}</script>
 </head>
 <body>
 <div id="ov" class="ov" role="dialog" aria-label="Introduction LEGALO">
@@ -646,616 +392,415 @@ a.store:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--gold
   
   <button class="ov-skip" type="button">Passer l'intro</button>
 </div>
-
-<div id="bar"></div>
+<div id="bar"></div><div id="cur" aria-hidden="true"></div>
 
 <nav id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="LEGALO, accueil"><img src="logo.webp" alt="Logo LEGALO"><span>LEGALO</span></a>
-    <div class="links">
-      <a href="#publics">Pour qui</a>
-      <a href="#rubriques">Rubriques</a>
-      <a href="#etudiants">Étudiants</a>
-      <a href="#pros">Professionnels</a>
-      <a href="#citoyens">Citoyens</a>
-      <a href="#apropos">À propos</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-r">
-      <a class="btn btn-gold nav-cta" href="#telecharger" data-app>Découvrez l'appli</a>
-      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><span></span></button>
-    </div>
-  </div>
-  <div class="mmenu" id="mmenu" hidden>
-    <a href="#publics">Pour qui</a><a href="#rubriques">Rubriques</a><a href="#etudiants">Étudiants</a><a href="#pros">Professionnels</a><a href="#citoyens">Citoyens</a><a href="#apropos">À propos</a><a href="#contact">Contact</a>
-    <a class="btn btn-gold" href="#telecharger" data-app>Découvrez l'appli</a>
+    <div class="links"><a href="#piliers">L'appli</a><a href="#juriste">Mon juriste</a><a href="#verdict">Vrai ou faux</a><a href="#telecharger">Télécharger</a><a href="#faq">Questions</a></div>
+    <a class="btn gold nav-cta" href="/store" data-mag>Télécharger</a>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <canvas id="sparks" aria-hidden="true"></canvas>
-  <div class="wrap hero-grid">
+  <div class="wrap">
     <div>
-      <span class="pill"><i></i><span data-live-txt="Disponible sur Play Store et App Store" data-soon-txt="Bientôt sur Play Store et App Store">Bientôt sur Play Store et App Store</span></span>
-      <h1 class="title" aria-label="Le droit ivoirien, clair et accessible.">
-        <span class="w"><span style="--i:0">Le</span></span>
-        <span class="w"><span style="--i:1">droit</span></span>
-        <span class="w"><span style="--i:2">ivoirien,</span></span><br>
-        <em><span class="w"><span class="g" style="--i:3">clair</span></span>
-        <span class="w"><span class="g" style="--i:4">et</span></span>
-        <span class="w"><span class="g" style="--i:5">accessible.</span></span></em>
+      <span class="eyebrow">Application juridique · Côte d'Ivoire</span>
+      <h1 aria-label="Le droit ivoirien, clair et accessible.">
+        <span class="w" style="--i:0"><span>Le</span></span> <span class="w" style="--i:1"><span>droit</span></span> <span class="w" style="--i:2"><span>ivoirien,</span></span><br>
+        <span class="w" style="--i:3"><span><em>clair</em></span></span> <span class="w" style="--i:4"><span>et</span></span> <span class="w" style="--i:5"><span>accessible.</span></span>
       </h1>
-      <p class="sub">Cours, exercices corrigés, sources du droit vérifiées, Mon juriste et intelligence artificielle juridique. Tout le droit ivoirien et OHADA réuni dans une seule application.</p>
+      <p class="sub">Les textes de loi, un juriste qui t'explique avec tes mots, des cours, des outils. Tout dans une seule application, en français simple.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#telecharger" data-app>Découvrez l'appli
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-line" href="#publics">Voir ce qu'elle fait</a>
+        <a class="btn gold sheen" href="/store" data-mag>⬇ Télécharger l'appli</a>
+        <a class="btn ghost" href="#piliers" data-mag>Découvrir ce qu'il y a dedans</a>
       </div>
-      <div class="mini">
-        <div><b>350+</b>sources du droit</div>
-        <div><b>12</b>domaines du droit</div>
-        <div><b>300+</b>adages juridiques</div>
-      </div>
+      <div class="mini"><span>350+ sources du droit</span><span>Mon juriste</span><span>Essai gratuit</span></div>
     </div>
-
     <div class="stage" id="stage">
-      <div class="glow"></div>
-      <svg class="ring" viewBox="0 0 400 400" aria-hidden="true">
-        <circle cx="200" cy="200" r="196" fill="none" stroke="#C9A24A" stroke-width="1.5" stroke-dasharray="3 9" opacity=".8"/>
-        <circle cx="200" cy="200" r="168" fill="none" stroke="#C9A24A" stroke-width="1" opacity=".4"/>
-        <circle cx="200" cy="4" r="6" fill="#C9A24A"/><circle cx="32" cy="200" r="4" fill="#123B86"/><circle cx="368" cy="200" r="4" fill="#C9A24A"/>
+      <svg class="bal" viewBox="0 0 400 420" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M200 96V360M150 372h100M168 360h64" stroke-width="3"/>
+        <circle cx="200" cy="92" r="9" fill="#C9A24A"/>
+        <line id="bm" x1="50" y1="120" x2="350" y2="120" stroke-width="4"/>
+        <polyline id="cl" points="" /><polyline id="cr" points=""/>
+        <g id="pl"><path d="M-62 0h124a62 34 0 0 1-124 0z" fill="rgba(201,162,74,.22)"/></g>
+        <g id="pr"><path d="M-62 0h124a62 34 0 0 1-124 0z" fill="rgba(201,162,74,.22)"/></g>
       </svg>
-      <div class="rig" id="rig">
-        <div class="phone p-l"><div class="scr"><img src="campus.webp" alt="LEGALO Campus, l'espace des étudiants en droit"></div></div>
-        <div class="phone p-r"><div class="scr"><img src="annuaire.webp" alt="Annuaire des professionnels du droit"></div></div>
-        <div class="phone p-c"><div class="scr"><img src="accueil.webp" alt="Accueil de l'application LEGALO"></div></div>
-        <div class="chip chip-a"><img src="chip.webp" alt="Correction exhaustive d'un exercice"></div>
-        <div class="badge">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <div><b>150+</b><span>sources vérifiées<br>Côte d'Ivoire et OHADA</span></div>
-        </div>
-      </div>
+      <div class="ph l"><img src="img/s-codex.webp" alt="Le Codex de LEGALO" width="300" height="654"></div>
+      <div class="ph r"><img src="img/s-accueil.webp" alt="L'accueil de LEGALO" width="300" height="654"></div>
+      <div class="ph c"><img src="img/s-juriste.webp" alt="Mon juriste dans LEGALO" width="300" height="654"></div>
+      <svg class="seal" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="58" fill="#082858" stroke="#C9A24A" stroke-width="2"/><circle cx="60" cy="60" r="31" fill="none" stroke="#C9A24A" stroke-opacity=".6"/><text font-family="Plus Jakarta Sans,sans-serif" font-size="10.4" font-weight="800" letter-spacing="3.2" fill="#EBD6A0"><textPath href="#cp">DROIT IVOIRIEN · OHADA · LEGALO · </textPath></text><text x="60" y="71" text-anchor="middle" font-size="32">⚖️</text></svg>
     </div>
   </div>
+  <div class="scroll-ind" aria-hidden="true"></div>
 </header>
 
-<div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
-
-<section class="sec" id="chiffres">
+<section class="stats" aria-label="LEGALO en chiffres">
   <div class="wrap">
-    <div class="rv"><span class="eyebrow">LEGALO en chiffres</span>
-    <h2 class="h2" style="margin-top:16px;max-width:20ch">Déjà une base <em class="gold">solide</em> avant le lancement.</h2></div>
-    <div class="stats">
-      <div class="stat rv" style="--d:.0s"><b data-n="350" data-s="+">350+</b><p>sources du droit ivoirien et OHADA à consulter</p></div>
-      <div class="stat rv" style="--d:.1s"><b data-n="12" data-s="">12</b><p>domaines du droit couverts, du civil au pénal</p></div>
-      <div class="stat rv" style="--d:.2s"><b data-n="300" data-s="+">300+</b><p>adages et maximes juridiques dans le glossaire</p></div>
-      <div class="stat rv" style="--d:.3s"><b data-n="7" data-s="">7</b><p>modules premium pensés pour les étudiants</p></div>
+    <div class="stat"><b data-n="350" data-s="+">0</b><span>sources du droit ivoirien et OHADA</span></div>
+    <div class="stat"><b data-n="500" data-s="+">0</b><span>notions juridiques définies</span></div>
+    <div class="stat"><b data-n="2" data-s=" min">0</b><span>pour une règle de droit par jour</span></div>
+    <div class="stat"><b data-n="3" data-s="">0</b><span>profils : étudiant, citoyen, expert</span></div>
+  </div>
+</section>
+
+<div class="adages" aria-hidden="true"><div class="row" id="adg"></div></div>
+
+<section class="temple-sec" id="piliers">
+  <div class="wrap">
+    <div class="temple-head"><span class="eyebrow rv">Les piliers de LEGALO</span><h2 class="rv" style="--d:.1s;margin-top:16px">Cinq colonnes,<br><em>un seul édifice</em></h2><p class="lead rv" style="--d:.2s">Touche une colonne pour entrer dans l'appli.</p></div>
+    <div class="temple" id="temple">
+      <svg class="ped" viewBox="0 0 760 120" aria-hidden="true"><polygon points="20,116 380,10 740,116" fill="#F5F8FD" stroke="#C9A24A" stroke-width="3"/><polygon points="80,108 380,28 680,108" fill="none" stroke="#C9A24A" stroke-opacity=".5"/><circle cx="380" cy="76" r="22" fill="#082858" stroke="#C9A24A" stroke-width="2"/><text x="380" y="85" text-anchor="middle" font-size="24">⚖️</text></svg>
+      <div class="ent"></div>
+      <div class="cols" role="tablist" aria-label="Fonctions de LEGALO">
+        <button class="col on" role="tab" aria-selected="true" style="--i:0" data-i="0"><span class="cap"></span><span class="shaft"><i>📚</i></span><span class="base"></span><b>Codex</b></button>
+        <button class="col" role="tab" aria-selected="false" style="--i:1" data-i="1"><span class="cap"></span><span class="shaft"><i>⚖️</i></span><span class="base"></span><b>Mon juriste</b></button>
+        <button class="col" role="tab" aria-selected="false" style="--i:2" data-i="2"><span class="cap"></span><span class="shaft"><i>⏱️</i></span><span class="base"></span><b>2 minutes</b></button>
+        <button class="col" role="tab" aria-selected="false" style="--i:3" data-i="3"><span class="cap"></span><span class="shaft"><i>🎓</i></span><span class="base"></span><b>Campus</b></button>
+        <button class="col" role="tab" aria-selected="false" style="--i:4" data-i="4"><span class="cap"></span><span class="shaft"><i>📝</i></span><span class="base"></span><b>Actes</b></button>
+      </div>
+      <div class="stylobate"></div>
+    </div>
+    <div class="detail" aria-live="polite">
+      <div class="dt" id="dt"></div>
+      <div class="phone"><div class="scr" id="scr">
+        <img class="on" src="img/s-codex.webp" alt="Le Codex" loading="lazy">
+        <img src="img/s-juriste.webp" alt="Mon juriste" loading="lazy">
+        <img src="img/s-accueil.webp" alt="Le droit en 2 minutes" loading="lazy">
+        <img src="img/s-campus.webp" alt="Le Campus" loading="lazy">
+        <img src="img/s-generateur.webp" alt="Le générateur d'actes" loading="lazy">
+      </div></div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="publics" style="padding-top:0">
+<section class="jur" id="juriste">
   <div class="wrap">
-    <div class="aud rv">
-      <div class="aud-in">
-        <div>
-          <span class="eyebrow">Une seule application</span>
-          <h2 class="h2" style="margin-top:16px">Trois publics, <em>un même</em> point d'entrée.</h2>
-          <div class="tabs" role="tablist" aria-label="Choisir un profil">
-            <button class="tab" role="tab" id="t0" aria-selected="true" aria-controls="p0">Étudiants</button>
-            <button class="tab" role="tab" id="t1" aria-selected="false" aria-controls="p1">Professionnels</button>
-            <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2">Citoyens</button>
-          </div>
-          <div id="panels">
-            <div class="panel" role="tabpanel" id="p0" aria-labelledby="t0">
-              <h3>Apprendre, s'exercer, réussir.</h3>
-              <ul>
-                <li style="--i:0"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Des cours et des exercices adaptés à votre niveau, dans toutes les matières de la filière.</li>
-                <li style="--i:1"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Traitez n'importe quel exercice et voyez comment on le résout, étape par étape.</li>
-                <li style="--i:2"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Toute la documentation des sources juridiques, au même endroit.</li>
-              </ul>
-            </div>
-            <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
-              <h3>Plus de visibilité, plus de temps.</h3>
-              <ul>
-                <li style="--i:0"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Une rubrique Experts qui explique chaque profession du droit et renvoie vers les sources officielles.</li>
-                <li style="--i:1"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Cinq outils pour gagner du temps, dont une IA juridique et une aide à la rédaction d'actes.</li>
-                <li style="--i:2"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Un orienteur de litiges, un scanner de failles et l'actualité juridique en temps réel.</li>
-              </ul>
-            </div>
-            <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
-              <h3>Le droit à portée de main.</h3>
-              <ul>
-                <li style="--i:0"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Trouvez un professionnel du droit et contactez-le par appel, e-mail ou WhatsApp.</li>
-                <li style="--i:1"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Consultez les textes de loi ivoiriens et les sources du droit, sans jargon inutile.</li>
-                <li style="--i:2"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Des simulateurs pour chiffrer vos droits avant de consulter un avocat.</li>
-              </ul>
-            </div>
-          </div>
+    <div>
+      <span class="eyebrow">Mon juriste</span>
+      <h2 class="rv">Un doute ?<br><em>Demande d'abord</em><br>à Mon juriste.</h2>
+      <p class="lead rv" style="--d:.1s">Tu écris comme tu parles. Il t'explique ce que dit la loi, simplement, et te dit quoi faire. Choisis une situation et regarde.</p>
+      <div class="scn" id="scn">
+        <button class="on" data-s="0" data-mag><span>🏠</span>Mon propriétaire veut me mettre dehors</button>
+        <button data-s="1" data-mag><span>📱</span>Ma vidéo a été postée sans mon accord</button>
+        <button data-s="2" data-mag><span>💼</span>Mon patron ne me donne pas de bulletin de paie</button>
+      </div>
+    </div>
+    <div class="chat rv" style="--d:.15s">
+      <div class="bar"><i>⚖️</i>Mon juriste<em>EXEMPLE ILLUSTRATIF</em></div>
+      <div class="msgs" id="msgs" aria-live="polite"></div>
+      <small>Mon juriste peut se tromper. Il aide à comprendre et ne remplace ni un avocat, ni un notaire, ni un huissier.</small>
+    </div>
+  </div>
+</section>
+
+<section id="verdict">
+  <div class="wrap">
+    <div class="vf-head"><span class="eyebrow rv">Au tribunal</span><h2 class="rv" style="--d:.1s;margin-top:16px">Vrai ou faux ?<br><em>Tu connais tes droits ?</em></h2><p class="lead rv" style="--d:.2s">Quatre affirmations. Le maillet tranche. Informations générales, pas un conseil juridique.</p></div>
+    <div class="vf rv" id="vf">
+      <div class="vf-prog" id="vfp"></div>
+      <div class="vf-card" id="vfc"></div>
+    </div>
+  </div>
+</section>
+
+<section class="codex" id="codex">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">Le Codex</span>
+      <h2 class="rv" style="--d:.1s;margin-top:16px">Les textes,<br><em>à portée de pouce</em></h2>
+      <p class="lead rv" style="--d:.2s">Le droit ivoirien et OHADA, classé par domaine. Tu cherches, tu trouves. Essaie : tape un mot ou touche une idée.</p>
+    </div>
+    <div class="search rv" style="--d:.15s">
+      <div class="in"><span aria-hidden="true">🔎</span><input id="q" type="search" placeholder="Ex : travail, société, données…" autocomplete="off" aria-label="Chercher un texte"></div>
+      <div class="chips" id="chips"><button>travail</button><button>société</button><button>données</button><button>pénal</button><button>commerce</button></div>
+      <div class="res" id="res"></div>
+      <small>Exemples de textes du droit ivoirien et OHADA. L'appli en contient plus de 350.</small>
+    </div>
+  </div>
+</section>
+
+<section class="who" id="pourqui">
+  <div class="wrap">
+    <span class="eyebrow rv">Pour qui ?</span>
+    <h2 class="rv" style="--d:.1s;margin-top:16px">LEGALO est fait<br><em>pour toi</em></h2>
+    <div class="cards">
+      <div class="card rv"><div class="ic">🎓</div><h3>Étudiants en droit</h3><p>Gagne du temps sur tes recherches et tes révisions.</p><ul><li>Codex et mini-cours</li><li>Exercices et cas pratiques</li><li>LEXIA pour comprendre</li></ul></div>
+      <div class="card rv" style="--d:.1s"><div class="ic">👤</div><h3>Citoyens</h3><p>Connais tes droits et sache quoi faire au quotidien.</p><ul><li>Mon juriste</li><li>Le droit en 2 minutes</li><li>Actes à générer</li></ul></div>
+      <div class="card rv" style="--d:.2s"><div class="ic">💼</div><h3>Experts du droit</h3><p>Gagne en rapidité sur tes recherches et tes rédactions.</p><ul><li>Codex et sources</li><li>Calculs juridiques</li><li>Générateur d'actes</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="prem" id="premium">
+  <div class="wrap">
+    <span class="eyebrow rv">Essaie, puis choisis</span>
+    <h2 class="rv" style="--d:.1s;margin:16px 0 0">Des outils <em>Premium</em><br>pour aller plus vite</h2>
+    <p class="lead rv" style="--d:.2s">Tu commences gratuitement. Quand tu veux aller plus loin, tu passes Premium.</p>
+    <div class="tiles">
+      <div class="tile rv"><div class="ic">🤖</div><b>LEXIA</b><p>L'intelligence artificielle juridique de LEGALO. Pose ta question de droit, à toute heure.</p></div>
+      <div class="tile rv" style="--d:.08s"><div class="ic">📷</div><b>LEGALO Scan</b><p>Tu scannes un document pour mieux le comprendre.</p></div>
+      <div class="tile rv" style="--d:.16s"><span class="free">Gratuit</span><div class="ic">🧮</div><b>LEGALO Calcul</b><p>Indemnités, délais, frais : les calculs juridiques, faits pour toi.</p></div>
+      <div class="tile rv"><div class="ic">📝</div><b>Exercices</b><p>Cas pratiques, dissertations, fiches d'arrêts avec une méthode claire.</p></div>
+      <div class="tile rv" style="--d:.08s"><div class="ic">🧩</div><b>Simulateur de litiges</b><p>Tu qualifies une situation dans les grands domaines du droit.</p></div>
+      <div class="tile rv" style="--d:.16s"><div class="ic">📰</div><b>Actualités juridiques</b><p>Reste au courant de ce qui change dans le droit.</p></div>
+    </div>
+    <div class="note rv">💡 Tu veux voir avant de payer ? Crée ton compte : un essai gratuit te laisse goûter aux outils. Le Codex et LEGALO Calcul restent gratuits.</div>
+  </div>
+</section>
+
+<section class="exp" id="experts">
+  <div class="wrap">
+    <div class="box rv">
+      <div class="ic" aria-hidden="true">🏛️</div>
+      <div style="flex:1;min-width:240px"><span class="eyebrow">Le coin des experts</span><h3 style="margin-top:10px">Tu es juriste, avocat, notaire, enseignant ?</h3><p>LEGALO ouvre un coin pour les experts du droit : partage ton savoir avec les étudiants et les citoyens. Écris-nous, on en discute.</p></div>
+      <a class="btn gold" data-mag href="https://wa.me/2250161213169?text=Bonjour%2C%20je%20suis%20expert%20du%20droit%20et%20je%20veux%20rejoindre%20le%20coin%20des%20experts%20de%20LEGALO." rel="noopener">Rejoindre le coin</a>
+    </div>
+  </div>
+</section>
+
+<section class="dl" id="telecharger">
+  <div class="wrap">
+    <span class="eyebrow rv">Installer LEGALO</span>
+    <h2 class="rv" style="--d:.1s">3 gestes,<br><em>et c'est prêt</em></h2>
+    <div class="grid">
+      <div>
+        <div class="tabs rv"><button class="on" data-t="a">🤖 Android</button><button data-t="i">🍎 iPhone</button></div>
+        <div class="panel on" id="p-a">
+          <div class="stp"><div class="n">1</div><div><b>Touche « Télécharger »</b><span>Sur la page de téléchargement, le fichier fait environ 20 Mo.</span></div></div>
+          <div class="stp"><div class="n">2</div><div><b>Ouvre le fichier et autorise l'installation</b><span>Android affiche un message de sécurité standard. C'est normal, le guide te montre quoi toucher.</span></div></div>
+          <div class="stp"><div class="n">3</div><div><b>Ouvre LEGALO</b><span>Crée ton compte et commence.</span></div></div>
         </div>
-        <div class="aud-phone">
-          <div class="halo"></div>
-          <div class="phone"><div class="scr" id="audscr">
-            <img class="on" src="campus.webp" alt="Espace étudiants LEGALO Campus">
-            <img src="annuaire.webp" alt="Fiche d'un professionnel du droit">
-            <img src="accueil.webp" alt="Accueil pour les citoyens">
-          </div></div>
+        <div class="panel" id="p-i">
+          <div class="stp"><div class="n">1</div><div><b>Touche « Télécharger »</b><span>LEGALO s'ouvre dans Safari.</span></div></div>
+          <div class="stp"><div class="n">2</div><div><b>Ajoute-la à l'écran d'accueil</b><span>Touche le bouton Partager, puis « Sur l'écran d'accueil ».</span></div></div>
+          <div class="stp"><div class="n">3</div><div><b>Ouvre LEGALO comme une vraie appli</b><span>Crée ton compte et commence.</span></div></div>
         </div>
+        <a class="btn gold sheen" data-mag href="/store" style="margin-top:22px">⬇ Aller au téléchargement</a>
+      </div>
+      <div class="qr rv" style="--d:.1s">
+        <img src="img/qr-store.png" alt="Code QR vers la page de téléchargement de LEGALO" loading="lazy">
+        <b>Sur ordinateur ?</b>
+        <p>Scanne ce code avec ton téléphone.</p>
+        <video id="tuto" controls preload="none" playsinline poster="img/s-accueil.webp" src="videos/tuto-android.mp4"></video>
+        <small>Tuto vidéo : regarde, puis fais pareil.</small>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="rubriques" style="padding-top:0">
+<section class="fd">
   <div class="wrap">
-    <div class="rv"><span class="eyebrow">Les rubriques</span>
-    <h2 class="h2" style="margin-top:16px;max-width:22ch">Quatre piliers pour <em class="gold">tout le droit</em> ivoirien.</h2></div>
-    <div class="bento">
-      <article data-go="#citoyens" role="link" tabindex="0" class="card dark k rv">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 21V5M9 8h6M9 12h6"/></svg></div>
-        <span class="num gold">350+</span>
-        <h3>Codex, la base des sources du droit</h3>
-        <p>Plus de 350 sources du droit ivoirien et OHADA, vérifiées. Lois, décrets, textes et jurisprudence, consultables en quelques secondes.</p>
-        <div class="tags"><span>Droit ivoirien</span><span>OHADA</span><span>Vérifié</span></div>
-      </article>
-      <article data-go="#pros" role="link" tabindex="0" class="card k rv" style="--d:.1s">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.6"/><path d="M17 14.2c2.6 0 4.5 1.8 4.5 4.8"/></svg></div>
-        <span class="num gold">Pro</span>
-        <h3>Experts du droit</h3>
-        <p>Découvrez le rôle de chaque profession du droit (avocat, notaire, huissier, magistrat…) et retrouvez les sources officielles pour les identifier.</p>
-        <div class="tags"><span>Avocats</span><span>Notaires</span><span>Huissiers</span><span>Conseils juridiques</span></div>
-      </article>
-      <article data-go="#etudiants" role="link" tabindex="0" class="card k rv" style="--d:.05s">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></div>
-        <span class="num gold">135</span>
-        <h3>Campus, l'espace des étudiants</h3>
-        <p>La plateforme universitaire des étudiants en droit : mini-cours gratuits, quiz d'auto-évaluation et suivi de progression, en système LMD.</p>
-        <div class="tags"><span>Accès libre</span><span>Système LMD</span><span>Quiz</span></div>
-      </article>
-      <article data-go="#etudiants" role="link" tabindex="0" class="card dark k rv" style="--d:.15s">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
-        <span class="num gold">7 + 5</span>
-        <h3>Premium, pour aller plus loin</h3>
-        <p>7 modules pour que les étudiants excellent et valident leurs années. 5 outils pour que les professionnels gagnent du temps.</p>
-        <div class="tags"><span>Étudiants</span><span>Professionnels</span></div>
-      </article>
+    <div class="box rv">
+      <img src="founder.jpg" alt="Chrys Armel Ochou, fondateur de LEGALO" loading="lazy">
+      <div>
+        <span class="eyebrow">Qui est derrière LEGALO</span>
+        <h3>Créé par un étudiant en droit</h3>
+        <p>Je m'appelle Chrys Armel Ochou, étudiant en Master 2 de droit privé fondamental à Bouaké. J'ai créé LEGALO pour que le droit ivoirien soit clair, rapide et accessible à tous.</p>
+        <p>LEGALO est un outil pour apprendre et comprendre. Il ne remplace ni un avocat, ni un notaire, ni un huissier.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="etudiants" style="padding-top:0">
+<section class="faq" id="faq">
   <div class="wrap">
-    <div class="rv">
-      <span class="eyebrow">Premium Étudiants</span>
-      <h2 class="h2" style="margin-top:16px;max-width:20ch">7 modules pour <em class="gold">exceller</em> et valider chaque année.</h2>
-      <p class="lead" style="margin-top:18px">Le Campus est gratuit pour apprendre. Le Premium est fait pour aller plus loin : mieux comprendre, mieux s'entraîner, mieux réussir. Voyez ce que chaque module change pour vous.</p>
-    </div>
-    <div class="px rv" id="px">
-      <div class="px-list" id="pxl" role="tablist" aria-label="Modules Premium Étudiants"></div>
-      <div class="px-panel" id="pxp" role="tabpanel" aria-live="polite"><div class="px-bar" id="pxbar"></div></div>
-    </div>
-    <div class="px-cta rv">
-      <a class="btn btn-gold" href="#telecharger" data-app>Découvrez l'appli</a>
-      <p>Le Campus gratuit pour commencer, le Premium pour exceller.</p>
-    </div>
+    <h2 class="rv" style="margin-bottom:36px">Questions <em>fréquentes</em></h2>
+    <details class="rv"><summary>C'est gratuit ?</summary><p>Tu peux commencer gratuitement : le Codex, LEGALO Calcul et « Le droit en 2 minutes » sont gratuits, et un essai te permet de goûter aux outils Premium. Les formules Premium donnent accès à plus de contenus.</p></details>
+    <details class="rv"><summary>Pourquoi mon téléphone affiche un avertissement ?</summary><p>Sur Android, toute application installée en dehors du Play Store déclenche un message standard de sécurité. C'est normal. Le guide d'installation te montre exactement quoi toucher.</p></details>
+    <details class="rv"><summary>Et sur iPhone ?</summary><p>Tu touches « Télécharger » : LEGALO s'ouvre dans Safari et te montre les gestes pour l'ajouter à ton écran d'accueil. Elle s'ouvre ensuite comme une vraie application.</p></details>
+    <details class="rv"><summary>Mon juriste remplace un avocat ?</summary><p>Non. Mon juriste t'aide à comprendre et à savoir quoi faire. Pour une décision importante, consulte toujours un avocat, un notaire ou un huissier.</p></details>
+    <details class="rv"><summary>Ça ne marche pas, je fais quoi ?</summary><p>Écris-nous sur WhatsApp, on t'aide à finir l'installation ou à te connecter.</p></details>
   </div>
 </section>
 
-<section class="sec" id="pros" style="padding-top:0">
-  <div class="wrap pro">
-    <div class="rv">
-      <div class="scan" aria-label="Illustration du scanner de failles">
-        <div class="hd"></div>
-        <div class="ln" style="width:92%"></div><div class="ln" style="width:100%"></div><div class="ln f" style="width:84%;--d:.2s"></div>
-        <div class="ln" style="width:96%"></div><div class="ln" style="width:70%"></div>
-        <div class="ln" style="width:100%;margin-top:30px"></div><div class="ln" style="width:88%"></div><div class="ln f" style="width:94%;--d:1.4s"></div>
-        <div class="ln" style="width:100%"></div><div class="ln" style="width:62%"></div>
-        <div class="ln" style="width:98%;margin-top:30px"></div><div class="ln f" style="width:90%;--d:2.6s"></div><div class="ln" style="width:76%"></div>
-        <div class="beam"></div>
-        <div class="cap"><span>Scanner de failles</span><span>Illustration</span></div>
-      </div>
-    </div>
-    <div class="rv" style="--d:.15s">
-      <span class="eyebrow">Pour les professionnels du droit</span>
-      <h2 class="h2" style="margin-top:16px">Du temps gagné sur <em class="gold">chaque dossier.</em></h2>
-      <p class="lead" style="margin-top:18px">Cinq outils vous rendent plus rapide, dossier après dossier.</p>
-      <div class="tools">
-        <div class="tool"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><div><b>Scanner de failles</b><span>Repérez en quelques secondes ce qui peut fragiliser un acte ou un dossier, avant que la partie adverse ne le fasse.</span></div></div>
-        <div class="tool"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><div><b>Aide à la rédaction d'actes</b><span>Générez la base de vos actes juridiques au lieu de repartir d'une page blanche, puis relisez et ajustez.</span></div></div>
-        <div class="tool"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div><div><b>Orienteur de litiges</b><span>Identifiez la bonne voie et la bonne juridiction sans perdre une heure de recherche.</span></div></div>
-        <div class="tool"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div><div><b>IA juridique personnalisée</b><span>Un assistant qui travaille à votre façon, pour des recherches qui prennent des minutes.</span></div></div>
-        <div class="tool"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><b>Actualités juridiques en temps réel</b><span>Réformes, textes nouveaux : l'information vient à vous, sans veille manuelle.</span></div></div>
-      </div>
-      <span class="gainline">Résultat : plus de dossiers traités, plus de temps pour vos clients.</span>
-      <div class="flow" aria-label="Illustration de l'orienteur de litiges">
-        <div class="node">Votre litige</div><div class="pipe"></div><div class="node g">LEGALO</div><div class="pipe"></div><div class="node">La bonne voie</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec cit" id="citoyens">
-  <div class="wrap cit-grid">
-    <div class="rv">
-      <span class="eyebrow">Pour les citoyens</span>
-      <h2 class="h2" style="margin-top:16px">Une question de droit&nbsp;? <em class="gold">Cherchez, trouvez.</em></h2>
-      <p class="lead" style="margin-top:18px">Recherchez une loi, un décret, un article, ou le professionnel qu'il vous faut. Tout se trouve au même endroit.</p>
-      <div class="search" aria-label="Exemple de recherche">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        <span><span id="typed">Caution loyer</span><span class="caret"></span></span>
-      </div>
-      <div class="sugg"><span role="button" tabindex="0">Caution loyer</span><span role="button" tabindex="0">Calcul préavis</span><span role="button" tabindex="0">Arrêt CCJA</span><span role="button" tabindex="0">Avocat à Abidjan</span></div>
-    </div>
-    <div class="rv" style="--d:.15s">
-      <div class="pcard">
-        <span class="t"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Conseil juridique &amp; fiscal</span>
-        <div class="who"><div class="av">AC</div><div><h4>Abidjan, Côte d'Ivoire</h4><span>Conseil juridique &amp; fiscal agréé</span></div></div>
-        <div class="acts"><span data-app role="button" tabindex="0">Appel</span><span data-app role="button" tabindex="0">E-mail</span><span data-app role="button" tabindex="0">WhatsApp</span></div>
-        <div class="main" data-app role="button" tabindex="0">Demande de consultation</div>
-        <div class="claim" data-app role="button" tabindex="0">Exemple illustratif de présentation d'un professionnel du droit</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap adg">
-    <div class="rv">
-      <svg class="scales" viewBox="0 0 400 380" aria-hidden="true">
-        <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#97762B"/><stop offset=".5" stop-color="#EBD6A0"/><stop offset="1" stop-color="#C9A24A"/></linearGradient></defs>
-        <rect x="150" y="338" width="100" height="14" rx="7" fill="#082858"/>
-        <rect x="190" y="90" width="20" height="252" rx="6" fill="url(#gg)"/>
-        <circle cx="200" cy="86" r="16" fill="#082858" stroke="url(#gg)" stroke-width="4"/>
-        <g class="beamsvg">
-          <rect x="40" y="80" width="320" height="12" rx="6" fill="url(#gg)"/>
-          <g class="pan" style="transform-origin:60px 92px"><path d="M60 92L22 190M60 92L98 190" stroke="#C9A24A" stroke-width="3"/><path d="M14 190h92c0 30-20 48-46 48s-46-18-46-48z" fill="#082858" stroke="url(#gg)" stroke-width="3"/></g>
-          <g class="pan" style="transform-origin:340px 92px"><path d="M340 92L302 190M340 92L378 190" stroke="#C9A24A" stroke-width="3"/><path d="M294 190h92c0 30-20 48-46 48s-46-18-46-48z" fill="#082858" stroke="url(#gg)" stroke-width="3"/></g>
-        </g>
-      </svg>
-    </div>
-    <div class="rv" style="--d:.15s">
-      <span class="eyebrow">Le glossaire</span>
-      <h2 class="h2" style="margin-top:16px">Plus de <em class="gold">300 adages</em> et maximes.</h2>
-      <div class="deck" id="deck">
-        <article class="ad on"><small>Adage du jour</small><h4>Nemo censetur ignorare legem</h4><p>Nul n'est censé ignorer la loi.</p></article>
-        <article class="ad"><small>Adage du jour</small><h4>Pacta sunt servanda</h4><p>Les conventions doivent être respectées.</p></article>
-        <article class="ad"><small>Adage du jour</small><h4>Dura lex, sed lex</h4><p>La loi est dure, mais c'est la loi.</p></article>
-        <article class="ad"><small>Adage du jour</small><h4>In dubio pro reo</h4><p>Le doute profite à l'accusé.</p></article>
-        <article class="ad"><small>Adage du jour</small><h4>Actori incumbit probatio</h4><p>La preuve incombe au demandeur.</p></article>
-        <article class="ad"><small>Adage du jour</small><h4>Error communis facit jus</h4><p>L'erreur commune fait le droit.</p></article>
-      </div>
-      <div class="dots" id="dots"></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="apropos" style="padding-top:0">
-  <div class="wrap about">
-    <div class="rv">
-      <span class="eyebrow">À propos</span>
-      <h2 class="h2" style="margin-top:16px">Le droit ivoirien, enfin <em class="gold">à la portée de tous.</em></h2>
-      <p>LEGALO est une application juridique pensée en Côte d'Ivoire, pour la Côte d'Ivoire. Elle part d'un constat simple : le droit existe, mais il est dispersé, difficile à trouver et souvent difficile à comprendre.</p>
-      <p>Alors LEGALO le rassemble. Une base de plus de 350 sources du droit ivoirien et OHADA, vérifiées. Une rubrique Experts qui présente chaque profession du droit. Mon juriste, pour comprendre ses droits simplement. Un Campus gratuit pour les étudiants, et un espace Premium pour ceux qui veulent aller plus loin.</p>
-      <p>Chacun y trouve ce dont il a besoin : l'étudiant apprend et s'entraîne, le professionnel gagne du temps, le citoyen comprend ses droits et s'oriente.</p>
-      <div class="vals">
-        <div class="val"><b>Clair</b><span>Des explications en français simple, avec la rigueur du juriste.</span></div>
-        <div class="val"><b>Vérifié</b><span>Des sources contrôlées : droit ivoirien et OHADA.</span></div>
-        <div class="val"><b>Accessible</b><span>Un Campus gratuit, dans une application qui tient dans la poche.</span></div>
-      </div>
-    </div>
-    <div class="rv" style="--d:.15s">
-      <div class="med">
-        <div class="o1"></div><div class="o2"></div>
-        <div class="lg2"><img src="logo.webp" alt="Logo LEGALO"></div>
-        <span class="tg tg1">Droit ivoirien</span><span class="tg tg2">OHADA</span><span class="tg tg3">Sources vérifiées</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="contact" style="padding-top:0">
-  <div class="wrap contact">
-    <div class="rv">
-      <div class="arch"><img src="founder.jpg" alt="Chrys Armel Ochou, fondateur et concepteur de LEGALO"><div class="tag">Fondateur de LEGALO</div></div>
-    </div>
-    <div class="rv" style="--d:.15s">
-      <span class="eyebrow">Contact</span>
-      <h2 class="h2" style="margin-top:16px">Parlons de <em class="gold">LEGALO.</em></h2>
-      <p class="lead" style="margin-top:18px">Une question, un partenariat, une idée pour l'application ? Écrivez-moi directement.</p>
-      <div class="cname">
-        <b>Chrys Armel Ochou</b>
-        <span class="role">Fondateur et concepteur de LEGALO</span>
-        <span class="study">Étudiant en Master 2 de droit privé fondamental</span>
-      </div>
-      <div class="cbox">
-        <div class="crow">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-          <div class="cinfo"><small>E-mail</small><b id="c-mail">legaloofficiel@gmail.com</b></div>
-          <div class="cact"><button class="btn btn-dark sm" type="button" data-copy="legaloofficiel@gmail.com" data-target="c-mail">Copier</button><a class="btn btn-gold sm" href="mailto:legaloofficiel@gmail.com">Écrire</a></div>
-        </div>
-        <div class="crow">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
-          <div class="cinfo"><small>WhatsApp</small><b id="c-tel">WhatsApp</b></div>
-          <div class="cact"><a class="btn btn-wa sm" href="https://wa.me/2250161213169" target="_blank" rel="noopener">WhatsApp</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="telecharger" style="padding-top:0">
+<section class="final">
   <div class="wrap">
-    <div class="final rv">
-      <img class="logo" src="logo.webp" alt="Logo LEGALO">
-      <h2 class="h2"><span data-live-txt="Disponible sur" data-soon-txt="Bientôt sur">Bientôt sur</span> <em class="gold">Play Store et App Store.</em></h2>
-      <p class="l" data-live-txt="Téléchargez LEGALO sur votre téléphone, Android ou iPhone. Le plus rapide : scannez le code QR." data-soon-txt="LEGALO arrive très bientôt sur Android et iPhone. Le code QR ouvrira directement la bonne boutique dès la sortie.">LEGALO arrive très bientôt sur Android et iPhone. Le code QR ouvrira directement la bonne boutique dès la sortie.</p>
-      <div class="stores">
-        <a class="store" data-store-ok href="/store" aria-label="Télécharger LEGALO sur Ochou Store"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.4c0-.9 1-1.4 1.7-1l13.1 7.6c.7.4.7 1.4 0 1.8L6.7 20.4c-.7.4-1.7-.1-1.7-1z"/><path d="M5 3.4L13.6 12 5 20.6" fill="none" stroke="#082858" stroke-width=".9" opacity=".45"/></svg><div><small>Télécharger sur</small><b>Ochou Store · Android</b></div></a>
-        <a class="store" data-store-ok href="/store" aria-label="Télécharger LEGALO sur Ochou Store"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><div><small>Télécharger sur</small><b>Ochou Store · iPhone</b></div></a>
-      </div>
-      <div class="qr-wrap">
-        <div class="qr"><img src="qr.svg" alt="Code QR pour télécharger LEGALO sur Play Store ou App Store"><div><b>Un seul code, deux boutiques</b><span>Scannez avec votre téléphone : le code ouvre le Play Store sur Android et l'App Store sur iPhone.</span></div></div>
-      </div>
-    </div>
+    <h2 class="rv">Connais<br><em>tes droits.</em></h2>
+    <p class="lead rv" style="--d:.1s">Télécharge LEGALO et commence gratuitement.</p>
+    <a class="btn gold sheen rv" style="--d:.2s" data-mag href="/store">⬇ Télécharger LEGALO</a>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <a class="brand" href="#top"><img src="logo.webp" alt="Logo LEGALO"><span>LEGALO</span></a>
-      <div class="flinks"><a href="#rubriques">Rubriques</a><a href="#etudiants">Étudiants</a><a href="#pros">Professionnels</a><a href="#citoyens">Citoyens</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></div>
-      <span>© 2026 LEGALO · Côte d'Ivoire</span>
-    </div>
-    <p class="legal">LEGALO fournit de l'information juridique à titre général. Elle ne remplace pas la consultation d'un avocat ou d'un autre professionnel du droit.</p>
-  </div>
-</footer>
-
-
-
-
-<div id="app-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="mt" hidden>
-  <div class="m-back" data-close></div>
-  <div class="m-card">
-    <button class="m-x" type="button" data-close aria-label="Fermer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <img class="m-logo" src="logo.webp" alt="">
-    <h3 id="mt" data-live-txt="Téléchargez LEGALO" data-soon-txt="LEGALO arrive bientôt">LEGALO arrive bientôt</h3>
-    <p data-live-txt="Choisissez votre téléphone." data-soon-txt="Disponible très prochainement sur Android et iPhone.">Disponible très prochainement sur Android et iPhone.</p>
-    <div class="m-btns">
-      <a class="dl" data-store-ok href="/store" aria-label="Télécharger LEGALO sur Ochou Store"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.4c0-.9 1-1.4 1.7-1l13.1 7.6c.7.4.7 1.4 0 1.8L6.7 20.4c-.7.4-1.7-.1-1.7-1z"/><path d="M5 3.4L13.6 12 5 20.6" fill="none" stroke="#082858" stroke-width=".9" opacity=".45"/></svg><span><small>Télécharger sur</small><b>Ochou Store · Android</b></span></a>
-      <a class="dl" data-store-ok href="/store" aria-label="Télécharger LEGALO sur Ochou Store"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Télécharger sur</small><b>Ochou Store · iPhone</b></span></a>
-    </div>
-    <div class="m-qr"><img src="qr.svg" alt="Code QR pour télécharger LEGALO"><span>Ce code QR ouvrira la bonne boutique dès la sortie de l'appli.</span></div>
-  </div>
-</div>
-<div id="toast" role="status" aria-live="polite"></div>
-
+<footer><div class="wrap">
+  <div><b>LEGALO</b><p>Bouaké, Côte d'Ivoire. LEGALO est un outil d'information et d'apprentissage ; il ne remplace pas un professionnel du droit.</p></div>
+  <nav><a href="/store">Télécharger</a><a href="https://legal.legalo-officiel.com/cgu.html">Conditions</a><a href="https://legal.legalo-officiel.com/confidentialite.html">Confidentialité</a><a href="https://wa.me/2250161213169">WhatsApp</a></nav>
+</div></footer>
 <script>
 (function(){
-  var D=document,R=D.documentElement;
-  R.classList.add('js');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* ticker */
-  var words=["Droit ivoirien","OHADA","CCJA","Droit du travail","Droit des sociétés","Droit civil","Procédure civile","Droit pénal","Droit commercial","Droit foncier","Droit administratif","Droit fiscal"];
-  var tr=D.getElementById('track'),h='';
-  for(var k=0;k<2;k++)words.forEach(function(w){h+='<span>'+w+'</span>'});
-  tr.innerHTML=h+h;
+var D=document,R=D.documentElement,M={hidden:true};
+var $=function(s,r){return (r||D).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s))};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-  /* progression + nav */
-  var bar=D.getElementById('bar'),nav=D.getElementById('nav');
-  function onScroll(){
-    var m=R.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?scrollY/m:0)+')';
-    nav.classList.toggle('s',scrollY>20);
+/* barre de progression + nav */
+var bar=$('#bar'),nav=$('#nav');
+function onScroll(){var h=D.body.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';nav.classList.toggle('sc',scrollY>30)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* apparitions */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$$('.rv,.temple').forEach(function(el){io.observe(el)});
+
+/* adages */
+var AD=['Dura lex, sed lex','Pacta sunt servanda','Audi alteram partem','In dubio pro reo','Nulla poena sine lege','Actori incumbit probatio','Error communis facit jus','Nemo censetur ignorare legem','Fraus omnia corrumpit','Ubi societas, ibi jus'];
+$('#adg').innerHTML=AD.concat(AD).map(function(t){return '<span>'+t+'</span>'}).join('');
+
+/* chiffres */
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);var n=+e.target.dataset.n,s=e.target.dataset.s||'',t0=performance.now(),d=1400;
+  (function f(t){var p=Math.min(1,(t-t0)/d),v=Math.round(n*(1-Math.pow(1-p,3)));e.target.textContent=v+s;if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+$$('[data-n]').forEach(function(el){if(reduce){el.textContent=el.dataset.n+(el.dataset.s||'')}else cio.observe(el)});
+
+/* balance de la justice : penche vers le curseur / le défilement */
+(function(){
+  var bm=$('#bm'),cl=$('#cl'),cr=$('#cr'),pl=$('#pl'),pr=$('#pr'),stage=$('#stage');
+  var cx=200,cy=120,L=150,H=120,cur=0,tgt=0;
+  function draw(a){
+    var r=a*Math.PI/180,dx=Math.cos(r)*L,dy=Math.sin(r)*L;
+    var lx=cx-dx,ly=cy-dy,rx=cx+dx,ry=cy+dy;
+    bm.setAttribute('x1',lx);bm.setAttribute('y1',ly);bm.setAttribute('x2',rx);bm.setAttribute('y2',ry);
+    cl.setAttribute('points',(lx-52)+','+(ly+H)+' '+lx+','+ly+' '+(lx+52)+','+(ly+H));
+    cr.setAttribute('points',(rx-52)+','+(ry+H)+' '+rx+','+ry+' '+(rx+52)+','+(ry+H));
+    pl.setAttribute('transform','translate('+lx+','+(ly+H)+')');pr.setAttribute('transform','translate('+rx+','+(ry+H)+')');
   }
-  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  draw(0);
+  if(reduce)return;
+  addEventListener('pointermove',function(e){tgt=((e.clientX/innerWidth)-.5)*-18},{passive:true});
+  addEventListener('scroll',function(){if(!fine)tgt=Math.sin(scrollY/220)*9},{passive:true});
+  (function loop(){cur+=(tgt-cur)*.06;draw(cur+Math.sin(performance.now()/1400)*1.4);requestAnimationFrame(loop)})();
+  /* inclinaison 3D des téléphones */
+  if(fine)stage.addEventListener('pointermove',function(e){var b=stage.getBoundingClientRect();stage.style.setProperty('--mx',((e.clientX-b.left)/b.width-.5).toFixed(3));stage.style.setProperty('--my',((e.clientY-b.top)/b.height-.5).toFixed(3))});
+})();
 
-  /* révélations */
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  D.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-
-  /* compteurs */
-  function fr(n){return n.toLocaleString('fr-FR')}
-  var cio=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(!e.isIntersecting)return;cio.unobserve(e.target);
-    var el=e.target,t=+el.dataset.n,s=el.dataset.s||'';
-    if(reduce)return;
-    var t0=performance.now(),d=1800;
-    (function step(now){var p=Math.min(1,(now-t0)/d),v=1-Math.pow(1-p,4);el.textContent=fr(Math.round(t*v))+(p>=1?s:'');if(p<1)requestAnimationFrame(step)})(t0);
-  })},{threshold:.6});
-  D.querySelectorAll('[data-n]').forEach(function(el){cio.observe(el)});
-
-  /* onglets */
-  var tabs=[].slice.call(D.querySelectorAll('.tab')),imgs=[].slice.call(D.querySelectorAll('#audscr img')),cur=0,timer=null,touched=false;
-  function show(i){
-    cur=i;
-    tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i);D.getElementById('p'+j).hidden=j!==i});
-    imgs.forEach(function(im,j){im.classList.toggle('on',j===i)});
-  }
-  tabs.forEach(function(t,i){t.addEventListener('click',function(){touched=true;clearInterval(timer);show(i)})});
-  var aud=D.getElementById('publics');
-  new IntersectionObserver(function(es){
-    if(es[0].isIntersecting&&!touched&&!reduce){clearInterval(timer);timer=setInterval(function(){show((cur+1)%3)},6500)}else clearInterval(timer);
-  },{threshold:.4}).observe(aud);
-
-  /* lueur des cartes */
-  D.querySelectorAll('.card').forEach(function(c){
-    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+/* curseur doré + boutons magnétiques */
+if(fine&&!reduce){
+  var c=$('#cur'),x=0,y=0,tx=0,ty=0;
+  addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;c.classList.add('on')},{passive:true});
+  (function lp(){x+=(tx-x)*.18;y+=(ty-y)*.18;c.style.transform='translate('+x+'px,'+y+'px)';requestAnimationFrame(lp)})();
+  D.addEventListener('pointerover',function(e){c.classList.toggle('big',!!e.target.closest('a,button,summary,.col,input'))});
+  $$('[data-mag]').forEach(function(b){
+    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.25)+'px)'});
+    b.addEventListener('pointerleave',function(){b.style.transform=''});
   });
+  $$('.card').forEach(function(k){k.addEventListener('pointermove',function(e){var r=k.getBoundingClientRect();k.style.setProperty('--px',(e.clientX-r.left)+'px');k.style.setProperty('--py',(e.clientY-r.top)+'px')})});
+}
 
-  /* parallaxe du hero */
-  var stage=D.getElementById('stage'),rig=D.getElementById('rig');
-  if(!reduce&&matchMedia('(pointer:fine)').matches){
-    stage.addEventListener('pointermove',function(e){
-      var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      rig.style.transform='rotateY('+(x*12)+'deg) rotateX('+(-y*10)+'deg)';
-    });
-    stage.addEventListener('pointerleave',function(){rig.style.transform=''});
-  }
-
-  /* recherche animée */
-  var phrases=["Caution loyer","Calcul préavis","Arrêt CCJA","Avocat à Abidjan"],typed=D.getElementById('typed'),pi=0,ci=0,del=false;
-  var frozen=false;
-  if(!reduce){
-    (function tick(){
-      if(frozen)return;
-      var w=phrases[pi];
-      if(!del){ci++;typed.textContent=w.slice(0,ci);if(ci===w.length){del=true;return setTimeout(tick,1500)}}
-      else{ci--;typed.textContent=w.slice(0,ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}
-      setTimeout(tick,del?38:85);
-    })();
-  }
-
-  D.querySelectorAll('.sugg span').forEach(function(b){
-    b.addEventListener('click',function(){frozen=true;typed.textContent=b.textContent;toast('Disponible dans l\u2019appli, découvrez-la en bas de page')});
-  });
-  D.querySelectorAll('[data-go]').forEach(function(c){
-    function go(){var t=D.querySelector(c.getAttribute('data-go'));if(t)t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}
-    c.addEventListener('click',go);
-  });
-  D.addEventListener('keydown',function(e){
-    if((e.key==='Enter'||e.key===' ')&&e.target.getAttribute&&e.target.getAttribute('role')&&e.target.tagName!=='A'&&e.target.tagName!=='BUTTON'){e.preventDefault();e.target.click()}
-  });
-
-  /* adages */
-  var ads=[].slice.call(D.querySelectorAll('.ad')),dots=D.getElementById('dots'),ai=0,at=null;
-  ads.forEach(function(_,i){var b=D.createElement('button');b.setAttribute('aria-label','Adage '+(i+1));b.onclick=function(){go(i,true)};dots.appendChild(b)});
-  function go(i,user){
-    ai=i;ads.forEach(function(a,j){a.classList.toggle('on',j===i)});
-    [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i)});
-    if(user){clearInterval(at);at=setInterval(function(){go((ai+1)%ads.length)},5200)}
-  }
-  go(0);
-  if(!reduce)at=setInterval(function(){go((ai+1)%ads.length)},5200);
-
-  /* poussières d'or */
-  var cv=D.getElementById('sparks');
-  if(cv&&!reduce){
-    var cx=cv.getContext('2d'),W,H,P=[],dpr=Math.min(devicePixelRatio||1,2),run=true;
-    function size(){var b=cv.parentElement.getBoundingClientRect();W=b.width;H=b.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
-    size();addEventListener('resize',size);
-    for(var i=0;i<(innerWidth<600?32:70);i++)P.push({x:Math.random()*2000,y:Math.random()*1200,r:Math.random()*2.2+.6,v:Math.random()*.35+.12,p:Math.random()*6.28,a:Math.random()*.5+.3});
-    new IntersectionObserver(function(es){run=es[0].isIntersecting;if(run)draw()}).observe(cv);
-    (function(){draw.t=0})();
-    function draw(){
-      if(!run)return;cx.clearRect(0,0,W,H);draw.t=(draw.t||0)+.016;
-      P.forEach(function(q){
-        q.y-=q.v;q.x+=Math.sin(draw.t+q.p)*.25;if(q.y<-10){q.y=H+10;q.x=Math.random()*W}
-        var x=q.x%W,al=q.a*(.55+.45*Math.sin(draw.t*2+q.p));
-        var g=cx.createRadialGradient(x,q.y,0,x,q.y,q.r*4);
-        g.addColorStop(0,'rgba(201,162,74,'+al+')');g.addColorStop(1,'rgba(201,162,74,0)');
-        cx.fillStyle=g;cx.beginPath();cx.arc(x,q.y,q.r*4,0,6.28);cx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-    draw();
-  }
-
-  /* ===== Liens à renseigner ===== */
-  var LINKS={
-    android:"https://play.google.com/store/search?q=LEGALO&c=apps", /* remplacer par le lien direct de la fiche Play Store */
-    ios:"https://www.apple.com/app-store/" /* remplacer par le lien direct de la fiche App Store */
-  };
-  /* ===== INTERRUPTEUR : false = "Bientôt disponible" ; true = "Disponible / Télécharger" avec les vrais liens ===== */
-  var LIVE=false;
-  D.querySelectorAll('[data-live-txt]').forEach(function(n){n.textContent=n.getAttribute(LIVE?'data-live-txt':'data-soon-txt')});
-  D.querySelectorAll('[data-android]').forEach(function(a){a.href=LIVE?LINKS.android:'#telecharger'});
-  D.querySelectorAll('[data-ios-store]').forEach(function(a){a.href=LIVE?LINKS.ios:'#telecharger'});
-  if(!LIVE)D.querySelectorAll('.store:not([data-store-ok]),.dl:not([data-store-ok])').forEach(function(a){a.removeAttribute('target');a.addEventListener('click',function(e){e.preventDefault();toast('Bientôt disponible. Revenez très vite !')})});
-
-  /* ===== toast ===== */
-  var toastEl=D.getElementById('toast'),toastT=null;
-  function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('on')},2400)}
-
-  /* ===== menu mobile ===== */
-  var burger=D.getElementById('burger'),mm=D.getElementById('mmenu');
-  function menu(open){mm.hidden=!open;burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu')}
-  burger.addEventListener('click',function(){menu(mm.hidden)});
-  mm.addEventListener('click',function(e){if(e.target.closest('a'))menu(false)});
-  addEventListener('resize',function(){if(innerWidth>980)menu(false)});
-
-  /* ===== fenêtre de téléchargement ===== */
-  var M=D.getElementById('app-modal'),lastFocus=null;
-  function openM(){
-    lastFocus=D.activeElement;M.hidden=false;D.body.classList.add('lock');
-    setTimeout(function(){var f=M.querySelector('.dl');if(f)f.focus()},50);
-  }
-  function closeM(){M.hidden=true;D.body.classList.remove('lock');if(lastFocus&&lastFocus.focus)lastFocus.focus()}
-  D.addEventListener('click',function(e){
-    var t=e.target;
-    if(t.closest('[data-app]')){e.preventDefault();menu(false);openM();return}
-    if(t.closest('[data-close]'))closeM();
-  });
-  D.addEventListener('keydown',function(e){
-    if(M.hidden)return;
-    if(e.key==='Escape'){closeM();return}
-    if(e.key==='Tab'){
-      var f=[].slice.call(M.querySelectorAll('a[href],button')).filter(function(x){return x.offsetParent!==null});
-      if(!f.length)return;var a=f[0],z=f[f.length-1];
-      if(e.shiftKey&&D.activeElement===a){e.preventDefault();z.focus()}
-      else if(!e.shiftKey&&D.activeElement===z){e.preventDefault();a.focus()}
-    }
-  });
-
-  /* ===== copier ===== */
-  D.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click',function(){
-      var txt=b.getAttribute('data-copy');
-      function fb(){
-        var tg=D.getElementById(b.getAttribute('data-target'));
-        if(tg){var r=D.createRange();r.selectNodeContents(tg);var sel=getSelection();sel.removeAllRanges();sel.addRange(r)}
-        toast('Sélectionné : copiez avec Ctrl+C');
-      }
-      try{navigator.clipboard.writeText(txt).then(function(){toast('Copié : '+txt)},fb)}catch(e){fb()}
-    });
-  });
-
-  /* ===== Premium étudiants ===== */
-  var IC={
-    ia:'<path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>',
-    ex:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
-    co:'<circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/>',
-    di:'<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 21V5M9 8h6M9 12h6"/>',
-    gl:'<path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M9 9h6M9 13h4"/>',
-    ac:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',
-    si:'<path d="M12 3v18M5 7h14"/><path d="M5 7l-3 7a3 3 0 006 0zM19 7l-3 7a3 3 0 006 0z"/>'
-  };
-  var PX=[
-    {k:'ia',s:'IA juridique',t:'IA juridique',d:'Un assistant de droit disponible à toute heure, pour comprendre une notion, un article ou un arrêt.',a:'Vous relisez trois fois le même article sans être sûr de l\'avoir compris.',b:'Vous obtenez une explication claire en quelques secondes et vous passez à la suite.',g:'Comprenez plus vite'},
-    {k:'ex',s:'Traiteur d\'exercices',t:'Traiteur d\'exercices',d:'Cas pratiques, dissertations, commentaires : déposez n\'importe quel exercice, LEGALO le traite et montre comment le résoudre.',a:'Vous bloquez devant un cas pratique et ne savez pas par où commencer.',b:'Vous voyez la méthode étape par étape, puis vous refaites l\'exercice seul.',g:'Maîtrisez la méthode'},
-    {k:'co',s:'Prépa concours',t:'Espace prépa concours',d:'Un espace dédié pour préparer les concours du droit dans les meilleures conditions.',a:'Vous révisez sans savoir si vous êtes au niveau.',b:'Vous vous entraînez régulièrement et vous arrivez à l\'épreuve préparé.',g:'Arrivez prêt'},
-    {k:'di',s:'Dictionnaire',t:'Dictionnaire juridique',d:'Les termes du droit expliqués simplement, à portée de main pendant que vous révisez.',a:'Un mot du cours reste flou et fragilise toute votre copie.',b:'Vous employez le terme exact, sans hésiter, en TD comme à l\'examen.',g:'Employez le mot juste'},
-    {k:'gl',s:'Glossaire',t:'Glossaire juridique',d:'Plus de 300 adages et maximes juridiques, avec leur sens et leur usage.',a:'Vous reconnaissez l\'adage mais vous ne l\'avez plus au moment de rédiger.',b:'Vous citez le bon adage au bon endroit, et vos copies gagnent en poids.',g:'Citez au bon moment'},
-    {k:'ac',s:'Actualités',t:'Actualités juridiques en temps réel',d:'Textes nouveaux, réformes, évolutions : l\'actualité du droit arrive jusqu\'à vous.',a:'Vous apprenez une réforme trop tard, après le cours ou après l\'examen.',b:'Vous intégrez les évolutions récentes dans vos copies et vos exposés.',g:'Restez à jour'},
-    {k:'si',s:'Simulateur de litiges',t:'Simulateur de litiges',d:'Entraînez-vous sur un litige comme s\'il s\'agissait d\'un vrai dossier.',a:'Vous connaissez la théorie mais le passage à la pratique vous fait hésiter.',b:'Vous qualifiez les faits, cherchez le bon fondement et construisez votre raisonnement.',g:'Passez à la pratique'}
+/* les piliers */
+(function(){
+  var DATA=[
+    ['01','Le Codex','Les textes du droit ivoirien et OHADA, classés par domaine. Tu cherches un article, tu le trouves.',['350+ sources','Recherche rapide','Gratuit']],
+    ['02','Mon juriste','Tu racontes ta situation avec tes mots. Tu reçois une explication simple et les bons réflexes.',['Comme à un ami','En français clair']],
+    ['03','Le droit en 2 minutes','Chaque jour, une règle de droit expliquée simplement, avec une petite question pour vérifier ce que tu as retenu.',['Une règle par jour','Gratuit']],
+    ['04','Le Campus','Des mini-cours en langage simple et des exercices, pour comprendre avant de réviser.',['Étudiants','Mini-cours','Exercices']],
+    ['05','Le générateur d\'actes','Tu réponds à des questions, étape par étape. L\'acte est rédigé pour toi, prêt à être exporté.',['Documents civils simples','Export']]
   ];
-  function ico(k,w){return '<svg width="'+w+'" height="'+w+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+IC[k]+'</svg>'}
-  var pxl=D.getElementById('pxl'),pxp=D.getElementById('pxp'),pxbar=D.getElementById('pxbar'),pi=0,pt=null,pUser=false;
-  PX.forEach(function(m,i){
-    var b=D.createElement('button');b.type='button';b.className='px-b';b.setAttribute('role','tab');b.id='pxb'+i;
-    b.innerHTML='<span class="ico">'+ico(m.k,22)+'</span><span>'+m.s+'</span>';
-    b.addEventListener('click',function(){pUser=true;clearInterval(pt);pxbar.classList.remove('run');showPx(i)});
-    pxl.appendChild(b);
-  });
-  function showPx(i){
-    pi=i;var m=PX[i];
-    [].forEach.call(pxl.children,function(b,j){b.setAttribute('aria-selected',j===i)});
-    var old=pxp.querySelector('.px-in');if(old)old.remove();
-    var el=D.createElement('div');el.className='px-in';
-    el.innerHTML='<div class="px-top"><div class="ico">'+ico(m.k,28)+'</div><div><h3>'+m.t+'</h3><p>'+m.d+'</p></div></div>'+
-      '<div class="px-ba"><div class="ba bad"><small>Avant</small><p>'+m.a+'</p></div><div class="ba good"><small>Avec LEGALO</small><p>'+m.b+'</p></div></div>'+
-      '<div class="px-gain"><span>Votre gain</span><b>'+m.g+'</b></div>';
-    pxp.insertBefore(el,pxbar);
-    if(!pUser){pxbar.classList.remove('run');void pxbar.offsetWidth;pxbar.classList.add('run')}
+  var cols=$$('.col'),imgs=$$('#scr img'),dt=$('#dt'),cur=-1,auto=null;
+  function show(i,manual){
+    if(i===cur)return;cur=i;
+    cols.forEach(function(c,k){c.classList.toggle('on',k===i);c.setAttribute('aria-selected',k===i)});
+    imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});
+    var d=DATA[i];dt.innerHTML='<div class="num">'+d[0]+'</div><h3>'+d[1]+'</h3><p>'+d[2]+'</p><div class="tags">'+d[3].map(function(t){return '<i>'+t+'</i>'}).join('')+'</div>';
+    dt.classList.remove('sw');void dt.offsetWidth;dt.classList.add('sw');
+    if(manual){clearInterval(auto);auto=null}
   }
-  showPx(0);
-  new IntersectionObserver(function(es){
-    clearInterval(pt);
-    if(es[0].isIntersecting&&!pUser&&!reduce){
-      pxbar.classList.remove('run');void pxbar.offsetWidth;pxbar.classList.add('run');
-      pt=setInterval(function(){showPx((pi+1)%PX.length)},6500);
-    }
-  },{threshold:.35}).observe(D.getElementById('px'));
+  cols.forEach(function(c,i){c.addEventListener('click',function(){show(i,true)})});
+  show(0);
+  new IntersectionObserver(function(es){if(es[0].isIntersecting&&!auto&&!reduce){auto=setInterval(function(){show((cur+1)%5)},4500)}else if(!es[0].isIntersecting&&auto){clearInterval(auto);auto=null}},{threshold:.4}).observe($('.detail'));
+})();
 
+/* Mon juriste : scénarios illustratifs */
+(function(){
+  var S=[
+    ['Mon propriétaire m\'a dit que je dois partir demain, sans rien d\'écrit. Il a le droit ?','En principe, non. Un bailleur ne peut pas te mettre dehors du jour au lendemain : il y a des règles, notamment un <b>préavis</b>, et si tu refuses de partir, c\'est au <b>juge</b> de décider.','Ce que tu peux faire : garde ton <b>contrat de bail</b> et tes <b>preuves de paiement</b>, demande-lui sa demande <b>par écrit</b>, et ne pars pas sous la pression. Si ça chauffe, vois un professionnel.'],
+    ['Un ami a posté une vidéo de moi sans me demander. Je fais quoi ?','Ton image t\'appartient. En principe, on ne peut pas la publier sans ton <b>accord</b>, surtout si elle te met mal à l\'aise.','Fais des <b>captures d\'écran</b> avec la date, demande-lui calmement de la <b>retirer</b>, puis <b>signale</b> la publication à la plateforme. Si ça continue, parles-en à un professionnel du droit.'],
+    ['Mon patron ne veut pas me donner de bulletin de paie. C\'est normal ?','En principe, un employeur doit te remettre un <b>bulletin de paie</b>. Ce n\'est pas un cadeau, c\'est une preuve de ton travail et de ton salaire.','Garde tout ce qui prouve que tu travailles : <b>messages</b>, <b>virements</b>, noms de collègues. Demande le bulletin <b>par écrit</b>. L\'<b>inspection du travail</b> peut aussi t\'aider.']
+  ];
+  var box=$('#msgs'),btns=$$('#scn button'),tm=[],played=false,cur=0;
+  function clear(){tm.forEach(clearTimeout);tm=[];box.innerHTML=''}
+  function add(cls,html){var d=D.createElement('div');d.className='m '+cls;d.innerHTML=html;box.appendChild(d);return d}
+  function typing(){var d=D.createElement('div');d.className='m j typing';d.innerHTML='<i></i><i></i><i></i>';box.appendChild(d);return d}
+  function play(i){
+    clear();cur=i;var s=S[i],t=0;
+    function at(ms,fn){tm.push(setTimeout(fn,ms))}
+    at(200,function(){add('u',s[0])});
+    var ty;
+    at(1100,function(){ty=typing()});
+    at(2400,function(){ty.remove();add('j',s[1])});
+    at(3000,function(){ty=typing()});
+    at(4300,function(){ty.remove();add('j',s[2])});
+  }
+  btns.forEach(function(b,i){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.toggle('on',x===b)});played=true;play(i)})});
+  new IntersectionObserver(function(es){if(es[0].isIntersecting&&!played){played=true;play(0)}},{threshold:.35}).observe(box);
+})();
+
+/* vrai ou faux */
+(function(){
+  var Q=[
+    ['« Je ne savais pas que c\'était interdit » suffit à t\'excuser devant la loi.',false,'La loi s\'applique à tout le monde, même à ceux qui ne la connaissent pas. « Nul n\'est censé ignorer la loi » : c\'est pour ça qu\'il faut la connaître.'],
+    ['Un contrat peut être valable même s\'il n\'a jamais été écrit.',true,'En principe, oui : l\'accord des deux parties suffit. Mais sans écrit, c\'est très difficile à prouver, et certains contrats exigent un écrit.'],
+    ['Une photo de toi peut être publiée par n\'importe qui, du moment qu\'elle est sur Internet.',false,'Non. Ton image t\'appartient : en principe, on ne peut pas la publier sans ton accord, même si elle circule déjà en ligne.'],
+    ['Quand on t\'accuse, tu as le droit de te défendre avant d\'être jugé.',true,'Oui. Ce sont les droits de la défense : être entendu, connaître ce qu\'on te reproche et pouvoir répondre.']
+  ];
+  var card=$('#vfc'),prog=$('#vfp'),i=0,score=0,res=[];
+  function bar(){prog.innerHTML=Q.map(function(_,k){return '<i class="'+(res[k]===1?'ok':res[k]===0?'ko':'')+'"></i>'}).join('')}
+  function spark(){for(var k=0;k<26;k++){var s=D.createElement('i');s.className='spark';var a=Math.random()*6.28,d=60+Math.random()*130;s.style.cssText='left:50%;top:44%;--x:'+Math.cos(a)*d+'px;--y:'+Math.sin(a)*d+'px';card.appendChild(s);setTimeout(function(n){n.remove()},1200,s)}}
+  function ask(){
+    bar();card.classList.remove('done','hit');var q=Q[i];
+    card.innerHTML='<div class="q">'+q[0]+'</div><div class="vf-btns"><button class="btn gold" data-a="1" data-mag>✔ Vrai</button><button class="btn ghost" data-a="0" data-mag>✘ Faux</button></div><div class="vf-res"></div>';
+    $$('.vf-btns button',card).forEach(function(b){b.addEventListener('click',function(){answer(b.dataset.a==='1')})});
+  }
+  function answer(v){
+    var q=Q[i],ok=(v===q[1]);res[i]=ok?1:0;if(ok)score++;bar();
+    card.classList.add('hit');setTimeout(function(){card.classList.remove('hit')},450);
+    var r=$('.vf-res',card);
+    r.innerHTML='<span class="stamp '+(q[1]?'v':'f')+'">'+(q[1]?'VRAI':'FAUX')+'</span><p><b>'+(ok?'Bien vu ! ':'Pas tout à fait. ')+'</b>'+q[2]+'</p><button class="btn gold" id="nx">'+(i<Q.length-1?'Question suivante →':'Voir mon verdict')+'</button>';
+    card.classList.add('done');if(ok)spark();
+    $('#nx').addEventListener('click',function(){i++;if(i<Q.length)ask();else end()});
+  }
+  function end(){
+    bar();var m=score===4?'Maître du barreau !':score>=3?'Tu connais bien tes droits.':score>=2?'Pas mal, mais LEGALO va t\'aider.':'Bonne nouvelle : tu es au bon endroit.';
+    card.classList.remove('done');
+    card.innerHTML='<div class="vf-end"><div class="score">'+score+'/'+Q.length+'</div><div class="q" style="margin:10px 0 24px">'+m+'</div><div class="vf-btns" style="display:flex"><a class="btn gold sheen" href="/store">⬇ Télécharger LEGALO</a><button class="btn ghost" id="rp">Rejouer</button></div></div>';
+    $('#rp').addEventListener('click',function(){i=0;score=0;res=[];ask()});
+    if(score>=3)spark();
+  }
+  ask();
+})();
+
+/* Codex : recherche démo */
+(function(){
+  var DOCS=[
+    ['📜','Constitution de la République de Côte d\'Ivoire','Loi n° 2016-886 du 8 novembre 2016','constitution droits libertés état institutions'],
+    ['👷','Code du travail','Loi n° 2015-532 du 20 juillet 2015','travail contrat salaire employeur licenciement emploi bulletin'],
+    ['🔐','Protection des données à caractère personnel','Loi n° 2013-450 du 19 juin 2013','données personnelles vie privée numérique'],
+    ['💻','Lutte contre la cybercriminalité','Loi n° 2013-451 du 19 juin 2013','cybercriminalité internet numérique données pénal infraction'],
+    ['⚖️','Code pénal','Loi n° 2019-574 du 26 juin 2019','pénal infraction peine crime délit'],
+    ['🧾','Code de procédure pénale','Loi n° 2018-975 du 27 décembre 2018','pénal procédure enquête jugement défense'],
+    ['🤝','Acte uniforme OHADA : droit commercial général','OHADA','commerce commerçant vente société'],
+    ['🏢','Acte uniforme OHADA : sociétés commerciales et GIE','OHADA','société associés gérant entreprise commerce'],
+    ['📑','Acte uniforme OHADA : recouvrement et voies d\'exécution','OHADA','recouvrement dette exécution huissier commerce']
+  ];
+  var q=$('#q'),res=$('#res');
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+  function hl(t,w){if(!w)return t;var i=norm(t).indexOf(w);return i<0?t:t.slice(0,i)+'<mark>'+t.slice(i,i+w.length)+'</mark>'+t.slice(i+w.length)}
+  function render(){
+    var w=norm(q.value.trim()),out=DOCS.filter(function(d){return !w||norm(d[1]+' '+d[2]+' '+d[3]).indexOf(w)>-1});
+    res.innerHTML=out.length?out.slice(0,5).map(function(d,k){return '<a href="/store" style="animation-delay:'+k*60+'ms"><span class="ic">'+d[0]+'</span><div><b>'+hl(d[1],w)+'</b><span>'+d[2]+'</span></div></a>'}).join(''):'<div class="none">Aucun exemple ici, mais le Codex en contient plus de 350. Télécharge l\'appli pour tout explorer.</div>';
+  }
+  q.addEventListener('input',render);
+  $$('#chips button').forEach(function(b){b.addEventListener('click',function(){q.value=b.textContent;render()})});
+  render();
+})();
+
+/* onglets de téléchargement */
+$$('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+  $$('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+  $('#p-a').classList.toggle('on',b.dataset.t==='a');$('#p-i').classList.toggle('on',b.dataset.t==='i');
+  $('#tuto').src='videos/'+(b.dataset.t==='a'?'tuto-android.mp4':'tuto-iphone.mp4');
+})});
+
+/* intro */
+(function(){
   /* ===== intro (7 secondes, démarre toute seule) ===== */
   (function(){
     var I=D.getElementById('ov');
@@ -1337,6 +882,8 @@ a.store:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--gold
     I.querySelector('.ov-skip').addEventListener('click',function(e){e.stopPropagation();skip()});
     addEventListener('keydown',function(e){if(e.key==='Escape'&&M.hidden)skip()});
   })();
+})();
+
 })();
 </script>
 </body>
