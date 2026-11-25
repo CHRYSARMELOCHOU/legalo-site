@@ -354,6 +354,9 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
       <a href="https://legal.legalo-officiel.com/cgu.html">Conditions d'utilisation</a>
       <a href="https://legal.legalo-officiel.com/confidentialite.html">Confidentialité</a>
     </div>
+    <p class="legalnote" style="margin:18px auto 0;max-width:760px;font-size:.72rem;line-height:1.6;color:rgba(255,255,255,.62);text-align:center">
+      © 2026 Chrys Armel Ochou. L'application LEGALO, son code, ses contenus et son identité visuelle sont la propriété exclusive de leur auteur, Chrys Armel Ochou, et sont protégés par le droit d'auteur. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite est interdite et constitue le délit de contrefaçon, puni d'un emprisonnement de trois mois à deux ans et d'une amende, selon les articles 70 et 73 de l'Annexe VII (propriété littéraire et artistique) de l'Accord de Bangui révisé de 2015 (OAPI). Les programmes d'ordinateur sont protégés en tant qu'œuvres par l'article 4 de cette Annexe.
+    </p>
     <small>Bouaké, Côte d'Ivoire. LEGALO est un outil d'information et d'apprentissage ; il ne remplace pas un professionnel du droit.</small>
   </div>
 </footer>
@@ -587,7 +590,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
       else{setTimeout(function(){location.href=APP_IOS},reduce?0:450)}
       return;
     }
-    setTimeout(function(){openGuide(platform)},reduce?0:350);
+    if(platform!=='android')setTimeout(function(){openGuide(platform)},reduce?0:350);
   }
   $('#cta').addEventListener('click',startDownload);
 
