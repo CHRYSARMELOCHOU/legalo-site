@@ -256,7 +256,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
 
       <button class="cta" id="cta" type="button">
         <span class="ic" id="ctaIc">⬇️</span>
-        <span><span id="ctaT">Télécharger LEGALO</span><small id="ctaS">Application Android · 20 Mo</small></span>
+        <span><span id="ctaT">Télécharger LEGALO</span><small id="ctaS">Application Android · 13 Mo</small></span>
       </button>
       <p id="seeSteps" style="display:none;text-align:center;margin-top:12px"><a href="#" id="seeStepsA" style="color:var(--gold2);font-weight:800;text-decoration:underline">Voir d'abord les 6 gestes</a></p>
 
@@ -337,7 +337,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
     <p class="sub">Les réponses avant que tu les poses.</p>
     <details><summary>Pourquoi mon téléphone affiche un avertissement ?</summary><p>Sur Android, toute application installée en dehors du Play Store déclenche un message standard de sécurité. C'est normal. Le guide te montre exactement quoi toucher.</p></details>
     <details><summary>C'est gratuit ?</summary><p>Tu peux commencer gratuitement, avec par exemple « Le droit en 2 minutes » chaque jour. Des formules Premium (semaine, mois, trimestre) donnent accès à plus de contenus.</p></details>
-    <details><summary>Le téléchargement est long, c'est normal ?</summary><p>Le fichier Android pèse environ 20 Mo. Avec une connexion correcte, compte 1 à 2 minutes. Reste sur la page jusqu'à la fin.</p></details>
+    <details><summary>Le téléchargement est long, c'est normal ?</summary><p>Le fichier Android pèse environ 13 Mo. Avec une connexion correcte, compte 1 à 2 minutes. Reste sur la page jusqu'à la fin.</p></details>
     <details><summary>Et sur iPhone ?</summary><p>Tu touches « Télécharger » : LEGALO s'ouvre dans Safari et te montre les gestes pour l'ajouter à ton écran d'accueil. Il s'ouvre ensuite comme une vraie application.</p></details>
     <details><summary>Où va ma vie privée ?</summary><p>Tout est expliqué dans la <a href="https://legal.legalo-officiel.com/confidentialite.html" rel="noopener">politique de confidentialité</a> et dans les <a href="https://legal.legalo-officiel.com/cgu.html" rel="noopener">conditions d'utilisation</a>.</p></details>
     <details><summary>Ça ne marche pas, je fais quoi ?</summary><p>Écris-nous sur <a href="https://wa.me/2250161213169" rel="noopener">WhatsApp</a>. On t'aide à finir l'installation.</p></details>
@@ -448,7 +448,7 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
   function setPlatform(p){
     platform=p;if(typeof setHeroVid==='function')setHeroVid(p);var seg=$('#seg');seg.dataset.p=p;
     $$('button',seg).forEach(function(b){b.setAttribute('aria-selected',b.dataset.p===p)});
-    if(p==='android'){$('#ctaIc').textContent='⬇️';$('#ctaT').textContent='Télécharger LEGALO';$('#ctaS').textContent='Application Android · 20 Mo'}
+    if(p==='android'){$('#ctaIc').textContent='⬇️';$('#ctaT').textContent='Télécharger LEGALO';$('#ctaS').textContent='Application Android · 13 Mo'}
     else{$('#ctaIc').textContent='📲';$('#ctaT').textContent='Installer LEGALO';$('#ctaS').textContent='iPhone · gratuit · s\'ouvre en un geste'}
   }
   $$('#seg button').forEach(function(b){b.addEventListener('click',function(){setPlatform(b.dataset.p);$('#seeSteps').style.display=(b.dataset.p==='iphone')?'block':'none'})});
@@ -516,12 +516,12 @@ footer small{display:block;margin-top:14px;color:#8ea0c4;line-height:1.5}
   /* ---------- guide ---------- */
   var STEPS={
     android:[
-      {t:'Touche « Télécharger »',p:'Une fenêtre demande « Télécharger le fichier ? LEGALO.apk (20,67 Mo) ». Touche « Télécharger ».',n:'Ne ferme pas la page.',
-       m:'<div class="card"><b>Télécharger le fichier ?</b>LEGALO.apk (20,67 Mo)<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Télécharger</span></div></div><span class="hand">👆</span>'},
+      {t:'Touche « Télécharger »',p:'Une fenêtre demande « Télécharger le fichier ? LEGALO.apk (12,97 Mo) ». Touche « Télécharger ».',n:'Ne ferme pas la page.',
+       m:'<div class="card"><b>Télécharger le fichier ?</b>LEGALO.apk (12,97 Mo)<div class="row"><span class="btn">Annuler</span><span class="btn hot ring">Télécharger</span></div></div><span class="hand">👆</span>'},
       {t:'Touche « Télécharger quand même »',p:'Ton téléphone dit « Fichier potentiellement dangereux ». C\'est normal : LEGALO ne vient pas du Play Store. Touche « Télécharger quand même ».',n:'Tu ne le fais qu\'une seule fois.',
        m:'<div class="card"><b>Fichier potentiellement dangereux</b><div class="row" style="flex-direction:column;align-items:stretch"><span class="btn hot ring" style="text-align:center">Télécharger quand même</span><span class="btn" style="text-align:center">Annuler</span></div></div><span class="hand">👆</span>'},
-      {t:'Attends la fin, puis touche « Ouvrir »',p:'Le fichier pèse environ 20 Mo : compte 1 à 2 minutes. Quand « Fichier téléchargé » apparaît en haut de l\'écran, touche « Ouvrir ».',n:'Tu ne le vois pas ? Ouvre l\'appli « Fichiers », puis « Téléchargements ».',
-       m:'<div class="card"><b>Fichier téléchargé</b>(20,67 Mo) siteweb.legalo-officiel.com<div class="row"><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'},
+      {t:'Attends la fin, puis touche « Ouvrir »',p:'Le fichier pèse environ 13 Mo : compte 1 à 2 minutes. Quand « Fichier téléchargé » apparaît en haut de l\'écran, touche « Ouvrir ».',n:'Tu ne le vois pas ? Ouvre l\'appli « Fichiers », puis « Téléchargements ».',
+       m:'<div class="card"><b>Fichier téléchargé</b>(12,97 Mo) siteweb.legalo-officiel.com<div class="row"><span class="btn hot ring">Ouvrir</span></div></div><span class="hand">👆</span>'},
       {t:'Choisis « Programme d\'installation »',p:'Une fenêtre « Ouvrir avec » s\'affiche. Touche « Programme d\'installation », puis « Une seule fois ».',n:'',
        m:'<div class="card"><b>Ouvrir avec</b><div style="display:flex;gap:18px;margin-top:8px"><span class="ring" style="padding:6px 10px;border-radius:12px">📦<br><small>Programme d\'installation</small></span><span>📄<br><small>Autre appli</small></span></div></div><span class="hand">👆</span>'},
       {t:'Touche « Installer »',p:'Une fenêtre demande « Voulez-vous installer cette appli ? ». Touche « Installer ».',n:'',
